@@ -22,12 +22,16 @@ This repo was initialized with the KRAIL engine and seeded from Akash's June 6, 
 - `specs/research_question.yaml`
 - `research_plan/current_plan.md`
 - `topics/notes/initial-systems-landscape.md`
+- `topics/notes/benchmark-and-tooling-map.md`
+- `topics/notes/llms-execution-and-applications.md`
+- `research_plan/source_registry.md`
+- `docs/index.html`
 - `topics/inbox/`
 
 ## Status
 
 The project structure is healthy under `krail doctor`.
-Initial material has been captured, but this is still an early-stage knowledge base rather than a polished literature map.
+The repo now has a public-facing GitHub Pages site under `docs/` plus a stronger first-pass literature map across foundations, benchmarks, geometry, execution, and LLM-interface work.
 
 ## Intended workflow
 

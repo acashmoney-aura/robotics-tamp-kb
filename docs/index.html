@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Robotics TAMP Knowledge Base</title>
+  <meta name="description" content="A public-facing snapshot of a KRAIL-powered robotics task-and-motion-planning knowledge base.">
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121a31;
+      --panel2: #182341;
+      --text: #eaf0ff;
+      --muted: #9eb0d6;
+      --accent: #72d6ff;
+      --accent2: #9dffb0;
+      --border: rgba(255,255,255,.08);
+      --max: 1100px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font: 16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #09101f 0%, #0b1020 100%);
+      color: var(--text);
+    }
+    a { color: var(--accent); }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 32px 20px 72px; }
+    .hero {
+      padding: 40px 0 24px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 28px;
+    }
+    .eyebrow { color: var(--accent2); text-transform: uppercase; letter-spacing: .12em; font-size: 12px; }
+    h1, h2, h3 { line-height: 1.15; }
+    h1 { font-size: clamp(36px, 7vw, 64px); margin: 10px 0 14px; }
+    .lede { font-size: 19px; color: var(--muted); max-width: 760px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin: 28px 0;
+    }
+    .card {
+      background: linear-gradient(180deg, var(--panel) 0%, var(--panel2) 100%);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.18);
+    }
+    .pill {
+      display: inline-block;
+      padding: 6px 10px;
+      margin: 4px 6px 0 0;
+      border-radius: 999px;
+      background: rgba(114,214,255,.08);
+      border: 1px solid rgba(114,214,255,.18);
+      color: #c8efff;
+      font-size: 14px;
+    }
+    ul { padding-left: 20px; }
+    code {
+      background: rgba(255,255,255,.06);
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+    .section { margin-top: 34px; }
+    .footer { margin-top: 48px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--border); padding-top: 18px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="eyebrow">KRAIL project • robotics research</div>
+      <h1>Robotics TAMP Knowledge Base</h1>
+      <p class="lede">A public-facing window into a KRAIL-powered repository focused on dual-arm task-and-motion planning, scheduling, geometry-aware feasibility, and execution-time recovery.</p>
+      <p>
+        <span class="pill">dual-arm planning</span>
+        <span class="pill">PDDLStream</span>
+        <span class="pill">Drake / IRIS / GCS</span>
+        <span class="pill">execution & behavior trees</span>
+        <span class="pill">benchmark design</span>
+      </p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Core thesis</h2>
+        <p>The hardest part of modern dual-arm TAMP is the missing middle layer between symbolic plans and geometric execution: <strong>task-motion-scheduling</strong>.</p>
+      </article>
+      <article class="card">
+        <h2>What this repo tracks</h2>
+        <ul>
+          <li>papers and code</li>
+          <li>benchmark ideas</li>
+          <li>tooling tradeoffs</li>
+          <li>opinions, not just bookmarks</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2>Why it exists</h2>
+        <p>To turn scattered robotics reading into a durable systems map that is searchable, inspectable in git, and easy to extend with daily research updates.</p>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2>Current research map</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Foundations</h3>
+          <p>PDDLStream remains the cleanest baseline abstraction for combining symbolic planning with geometric samplers and feasibility checks.</p>
+          <p><a href="https://arxiv.org/abs/1802.08705">Paper</a> · <a href="https://github.com/caelan/pddlstream">Code</a></p>
+        </article>
+        <article class="card">
+          <h3>Dual-arm target system</h3>
+          <p>SDAR is the most on-target current reference: dependency-driven task decomposition plus synchronous dual-arm motion planning for entangled tabletop rearrangement.</p>
+          <p><a href="https://arxiv.org/abs/2512.08206">Paper</a> · <a href="https://github.com/arc-l/dual-arm">Code</a></p>
+        </article>
+        <article class="card">
+          <h3>Geometry layer</h3>
+          <p>Drake, IRIS, and GCS matter when the problem becomes how to summarize feasible regions before symbolic plans drift too far from reality.</p>
+          <p><a href="https://drake.mit.edu/doxygen_cxx/group__planning__iris.html">IRIS docs</a> · <a href="https://www.roboticsproceedings.org/rss20/p113.html">IxG / RSS 2024</a></p>
+        </article>
+        <article class="card">
+          <h3>Execution layer</h3>
+          <p>Behavior trees are still one of the most practical abstractions for retries, local recovery, and planner-to-executor handoff.</p>
+          <p><a href="https://arxiv.org/abs/2403.12761">Source</a></p>
+        </article>
+        <article class="card">
+          <h3>Constraint-first search</h3>
+          <p>COAST and related work are promising because they try to narrow the search earlier instead of waiting for late geometric collapse.</p>
+          <p><a href="https://branvu.github.io/coast.github.io/">COAST</a></p>
+        </article>
+        <article class="card">
+          <h3>LLMs in the loop</h3>
+          <p>The repo’s current view: language models work best as interfaces and repair modules, not as the trust anchor for core planning.</p>
+          <p><a href="https://arxiv.org/abs/2510.00182">Systematic study</a> · <a href="https://ac-rad.github.io/clairify/">CLAIRify</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Best first implementation path</h2>
+      <div class="card">
+        <ol>
+          <li>Start with a PDDLStream-style formulation for interpretability.</li>
+          <li>Make scheduling and shared-resource conflicts explicit.</li>
+          <li>Use a fast motion backend to test synchronized candidates.</li>
+          <li>Add execution recovery with behavior-tree-style fallbacks.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Repo entry points</h2>
+      <div class="card">
+        <ul>
+          <li><a href="../README.md">README</a></li>
+          <li><a href="../topics/brief.md">Project brief</a></li>
+          <li><a href="../topics/notes/initial-systems-landscape.md">Initial systems landscape</a></li>
+          <li><a href="../topics/notes/benchmark-and-tooling-map.md">Benchmark and tooling map</a></li>
+          <li><a href="../topics/notes/llms-execution-and-applications.md">LLMs, execution, and applications</a></li>
+          <li><a href="../research_plan/source_registry.md">Source registry</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <p class="footer">Built inside the repo so GitHub Pages can expose the research directly. Last refreshed: 2026-06-06.</p>
+  </div>
+</body>
+</html>

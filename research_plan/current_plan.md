@@ -10,6 +10,7 @@ Build a durable robotics knowledge base around dual-arm task-and-motion planning
 4. Keep the repository auditable so daily updates are visible in git history.
 
 ## Next moves
-- Add notes on scene-graph planning and chemistry/automation applications.
-- Identify one best first implementation path for experimentation.
-- Add daily refresh automation tied to research emails and planning digests.
+- Add one scheduling-focused note that explicitly compares symbolic-only, hybrid, and optimization-based formulations.
+- Add one assembly-specific benchmark/source bundle to complement rearrangement-heavy coverage.
+- Turn the GitHub Pages site into a cleaner source browser with auto-generated sections if the repo grows.
+- Keep the daily refresh automation tied to research emails and lightweight web checks.
