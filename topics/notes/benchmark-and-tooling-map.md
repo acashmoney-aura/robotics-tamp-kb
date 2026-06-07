@@ -1,6 +1,95 @@
+---
+title: Benchmark and tooling map for dual-arm TAMP
+kind: synthesis-note
+updated: 2026-06-07
+topics:
+  - benchmarks
+  - packages
+  - geometry
+  - gpu-motion-planning
+  - dual-arm-planning
+entities:
+  - SDAR
+  - PDDLStream
+  - Fast Downward
+  - COAST
+  - Drake
+  - IRIS
+  - Graphs of Convex Sets
+  - CuRobo
+  - entangled tabletop rearrangement
+  - platform-independent TAMP benchmarks
+  - assembly benchmarks
+  - execution-heavy benchmarks
+  - shared-resource conflict
+entity_metadata:
+  - name: SDAR
+    entity_type: Method
+  - name: PDDLStream
+    entity_type: Package
+  - name: Fast Downward
+    entity_type: Package
+  - name: COAST
+    entity_type: Package
+  - name: Drake
+    entity_type: Package
+  - name: IRIS
+    entity_type: GeometryTechnique
+  - name: Graphs of Convex Sets
+    entity_type: GeometryTechnique
+  - name: CuRobo
+    entity_type: Package
+  - name: entangled tabletop rearrangement
+    entity_type: Benchmark
+  - name: platform-independent TAMP benchmarks
+    entity_type: Benchmark
+  - name: assembly benchmarks
+    entity_type: Benchmark
+  - name: execution-heavy benchmarks
+    entity_type: Benchmark
+  - name: shared-resource conflict
+    entity_type: FailureMode
+sources:
+  - https://arxiv.org/abs/2512.08206
+  - https://github.com/arc-l/dual-arm
+  - https://duozhangrobotics.github.io/projects/dual-arm-icra-2026/
+  - https://kavrakilab.rice.edu/publications/lagriffoul2018tmp-benchmarks.pdf
+  - https://arxiv.org/abs/1802.08705
+  - https://github.com/caelan/pddlstream
+  - https://github.com/aibasel/downward
+  - https://branvu.github.io/coast.github.io/
+  - https://drake.mit.edu/doxygen_cxx/group__planning__iris.html
+  - https://www.roboticsproceedings.org/rss20/p113.html
+relations:
+  - from: SDAR
+    type: evaluates_on
+    to: entangled tabletop rearrangement
+  - from: entangled tabletop rearrangement
+    type: exposes
+    to: shared-resource conflict
+  - from: PDDLStream
+    type: baseline_for
+    to: dual-arm TAMP experiments
+  - from: Fast Downward
+    type: symbolic_backbone_for
+    to: PDDL-style planning
+  - from: COAST
+    type: narrows
+    to: symbolic search
+  - from: Drake
+    type: includes
+    to: IRIS
+  - from: Graphs of Convex Sets
+    type: supports
+    to: motion search acceleration
+  - from: CuRobo
+    type: accelerates
+    to: motion feasibility evaluation
+---
+
 # Benchmark and tooling map for dual-arm TAMP
 
-Updated: 2026-06-06
+Updated: 2026-06-07
 
 ## Why this note exists
 

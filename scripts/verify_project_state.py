@@ -17,6 +17,8 @@ REQUIRED_LEDGERS = [
     "research_plan/target_state.md",
     "research_plan/source_registry.md",
     "research_plan/data_gaps.md",
+    "research_plan/graph/knowledge-graph-design.md",
+    "research_plan/graph/markdown-metadata-schema.md",
 ]
 
 PLACEHOLDER_MARKERS = [
@@ -90,6 +92,10 @@ def load_panel_rows() -> tuple[list[str], list[dict[str, str]]]:
 
 
 def check_panel(failures: list[str]) -> None:
+    outcomes = required_outcomes()
+    if not outcomes:
+        return
+
     columns, rows = load_panel_rows()
     if not columns or not rows:
         fail("Missing processed longitudinal panel dataset: topics/data/processed/longitudinal_panel.csv", failures)
@@ -103,7 +109,6 @@ def check_panel(failures: list[str]) -> None:
         if treated_values == {"1"}:
             fail("Panel contains treated=1 for all rows; a real control group is still missing.", failures)
 
-    outcomes = required_outcomes()
     for outcome in outcomes:
         if outcome == "employment":
             present = any("employment" in c or "employed" in c for c in lower_cols)
@@ -121,11 +126,34 @@ def check_panel(failures: list[str]) -> None:
             fail(f"Synthetic data detected in panel column {source_col} while integrity.allow_synthetic_data is false.", failures)
 
 
+def check_graph_outputs(failures: list[str]) -> None:
+    required = [
+        "research_plan/graph/graph.json",
+        "research_plan/graph/graph.mmd",
+        "research_plan/graph/summary.md",
+        "docs/data/graph.json",
+        "docs/data/graph.mmd",
+    ]
+    for rel in required:
+        path = ROOT / rel
+        if not path.exists() or not read_text(path).strip():
+            fail(f"Missing or empty graph artifact: {rel}", failures)
+
+    graph_json = ROOT / "research_plan/graph/graph.json"
+    if graph_json.exists():
+        raw = read_text(graph_json)
+        for marker in ["\"documents\": 0", '"nodes": 0', '"edges": 0']:
+            if marker in raw:
+                fail("Graph artifact appears empty; rebuild markdown metadata graph.", failures)
+                break
+
+
 def main() -> int:
     failures: list[str] = []
     require_ledgers(failures)
     check_sources(failures)
     check_panel(failures)
+    check_graph_outputs(failures)
 
     if failures:
         print("VERIFICATION FAILED")

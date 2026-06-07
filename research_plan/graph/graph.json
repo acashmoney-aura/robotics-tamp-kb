@@ -1,0 +1,2052 @@
+{
+  "generatedAt": "2026-06-07T13:48:03.399Z",
+  "counts": {
+    "nodes": 114,
+    "edges": 190,
+    "documents": 14
+  },
+  "nodes": [
+    {
+      "id": "doc:research_plan/current_plan.md",
+      "label": "Current Plan",
+      "nodeType": "document",
+      "kind": "plan",
+      "path": "research_plan/current_plan.md",
+      "updated": "2026-06-07"
+    },
+    {
+      "id": "doc:research_plan/graph/knowledge-graph-design.md",
+      "label": "Robotics TAMP knowledge graph design",
+      "nodeType": "document",
+      "kind": "design-note",
+      "path": "research_plan/graph/knowledge-graph-design.md",
+      "updated": "2026-06-07"
+    },
+    {
+      "id": "doc:research_plan/source_registry.md",
+      "label": "Source Registry",
+      "nodeType": "document",
+      "kind": "registry",
+      "path": "research_plan/source_registry.md",
+      "updated": "2026-06-07"
+    },
+    {
+      "id": "doc:topics/brief.md",
+      "label": "Robotics TAMP KB Brief",
+      "nodeType": "document",
+      "kind": "brief",
+      "path": "topics/brief.md",
+      "updated": "2026-06-07"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-34483c93a7.md",
+      "label": "SDAR dual-arm rearrangement paper capture",
+      "nodeType": "document",
+      "kind": "capture",
+      "path": "topics/inbox/2026-06-06-34483c93a7.md",
+      "updated": "2026-06-07T03:22:45.808377+00:00"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-4fd2bd87df.md",
+      "label": "Drake IRIS documentation capture",
+      "nodeType": "document",
+      "kind": "capture",
+      "path": "topics/inbox/2026-06-06-4fd2bd87df.md",
+      "updated": "2026-06-07T03:22:53.913905+00:00"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-5d195b149a.md",
+      "label": "Behavior-tree execution paper capture",
+      "nodeType": "document",
+      "kind": "capture",
+      "path": "topics/inbox/2026-06-06-5d195b149a.md",
+      "updated": "2026-06-07T03:22:53.913793+00:00"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-628505156e.md",
+      "label": "PDDLStream foundation paper capture",
+      "nodeType": "document",
+      "kind": "capture",
+      "path": "topics/inbox/2026-06-06-628505156e.md",
+      "updated": "2026-06-07T03:22:45.805934+00:00"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-8f4333ce44.md",
+      "label": "Akash robotics research seed note",
+      "nodeType": "document",
+      "kind": "research-note",
+      "path": "topics/inbox/2026-06-06-8f4333ce44.md",
+      "updated": "2026-06-07T03:22:34.662734+00:00"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-984e9173b1.md",
+      "label": "Policy-guided lazy search paper capture",
+      "nodeType": "document",
+      "kind": "capture",
+      "path": "topics/inbox/2026-06-06-984e9173b1.md",
+      "updated": "2026-06-07T03:22:45.799775+00:00"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-ff5d56d721.md",
+      "label": "COAST project capture",
+      "nodeType": "document",
+      "kind": "capture",
+      "path": "topics/inbox/2026-06-06-ff5d56d721.md",
+      "updated": "2026-06-07T03:22:45.795916+00:00"
+    },
+    {
+      "id": "doc:topics/notes/benchmark-and-tooling-map.md",
+      "label": "Benchmark and tooling map for dual-arm TAMP",
+      "nodeType": "document",
+      "kind": "synthesis-note",
+      "path": "topics/notes/benchmark-and-tooling-map.md",
+      "updated": "2026-06-07"
+    },
+    {
+      "id": "doc:topics/notes/initial-systems-landscape.md",
+      "label": "Initial systems landscape: dual-arm task and motion planning",
+      "nodeType": "document",
+      "kind": "synthesis-note",
+      "path": "topics/notes/initial-systems-landscape.md",
+      "updated": "2026-06-07"
+    },
+    {
+      "id": "doc:topics/notes/llms-execution-and-applications.md",
+      "label": "LLMs, execution, and applied TAMP frontiers",
+      "nodeType": "document",
+      "kind": "synthesis-note",
+      "path": "topics/notes/llms-execution-and-applications.md",
+      "updated": "2026-06-07"
+    },
+    {
+      "id": "entity:assembly-benchmarks",
+      "label": "assembly benchmarks",
+      "nodeType": "entity",
+      "entityType": "Benchmark",
+      "status": null
+    },
+    {
+      "id": "entity:assembly-with-precedence-constraints",
+      "label": "assembly with precedence constraints",
+      "nodeType": "entity",
+      "entityType": "Benchmark",
+      "status": null
+    },
+    {
+      "id": "entity:behavior-trees",
+      "label": "behavior trees",
+      "nodeType": "entity",
+      "entityType": "ExecutionFramework",
+      "status": null
+    },
+    {
+      "id": "entity:benchmark",
+      "label": "Benchmark",
+      "nodeType": "entity",
+      "entityType": "Concept"
+    },
+    {
+      "id": "entity:chemistry-robotics",
+      "label": "chemistry robotics",
+      "nodeType": "entity",
+      "entityType": "TaskFamily",
+      "status": null
+    },
+    {
+      "id": "entity:clairify",
+      "label": "CLAIRify",
+      "nodeType": "entity",
+      "entityType": "Package",
+      "status": null
+    },
+    {
+      "id": "entity:coast",
+      "label": "COAST",
+      "nodeType": "entity",
+      "entityType": "Package",
+      "status": null
+    },
+    {
+      "id": "entity:constrained-planning-tasks",
+      "label": "constrained planning tasks",
+      "nodeType": "entity"
+    },
+    {
+      "id": "entity:corridor-interference",
+      "label": "corridor interference",
+      "nodeType": "entity",
+      "entityType": "FailureMode",
+      "status": null
+    },
+    {
+      "id": "entity:curobo",
+      "label": "CuRobo",
+      "nodeType": "entity",
+      "entityType": "Package",
+      "status": null
+    },
+    {
+      "id": "entity:dense-tabletop-rearrangement",
+      "label": "dense tabletop rearrangement",
+      "nodeType": "entity",
+      "entityType": "Benchmark",
+      "status": null
+    },
+    {
+      "id": "entity:drake",
+      "label": "Drake",
+      "nodeType": "entity",
+      "entityType": "Package",
+      "status": null
+    },
+    {
+      "id": "entity:dual-arm-rearrangement",
+      "label": "dual-arm rearrangement",
+      "nodeType": "entity",
+      "entityType": "Benchmark",
+      "status": null
+    },
+    {
+      "id": "entity:dual-arm-tamp-experiments",
+      "label": "dual-arm TAMP experiments",
+      "nodeType": "entity"
+    },
+    {
+      "id": "entity:dynamic-queue-continuous-task-stream",
+      "label": "dynamic queue / continuous task stream",
+      "nodeType": "entity",
+      "entityType": "Benchmark",
+      "status": null
+    },
+    {
+      "id": "entity:entangled-tabletop-rearrangement",
+      "label": "entangled tabletop rearrangement",
+      "nodeType": "entity",
+      "entityType": "Benchmark",
+      "status": null
+    },
+    {
+      "id": "entity:execution-heavy-benchmarks",
+      "label": "execution-heavy benchmarks",
+      "nodeType": "entity",
+      "entityType": "Benchmark",
+      "status": null
+    },
+    {
+      "id": "entity:execution-recovery",
+      "label": "execution recovery",
+      "nodeType": "entity",
+      "entityType": "FailureMode",
+      "status": null
+    },
+    {
+      "id": "entity:execution-replanning",
+      "label": "execution-replanning",
+      "nodeType": "entity"
+    },
+    {
+      "id": "entity:failuremode",
+      "label": "FailureMode",
+      "nodeType": "entity",
+      "entityType": "Concept"
+    },
+    {
+      "id": "entity:fast-downward",
+      "label": "Fast Downward",
+      "nodeType": "entity",
+      "entityType": "Package",
+      "status": null
+    },
+    {
+      "id": "entity:geometry-aware-feasibility",
+      "label": "geometry-aware-feasibility",
+      "nodeType": "entity"
+    },
+    {
+      "id": "entity:graph-mediator",
+      "label": "graph mediator",
+      "nodeType": "entity",
+      "entityType": "Concept"
+    },
+    {
+      "id": "entity:graphs-of-convex-sets",
+      "label": "Graphs of Convex Sets",
+      "nodeType": "entity",
+      "entityType": "GeometryTechnique",
+      "status": null
+    },
+    {
+      "id": "entity:handoff-benchmark",
+      "label": "handoff benchmark",
+      "nodeType": "entity",
+      "entityType": "Benchmark",
+      "status": null
+    },
+    {
+      "id": "entity:iris",
+      "label": "IRIS",
+      "nodeType": "entity",
+      "entityType": "GeometryTechnique",
+      "status": null
+    },
+    {
+      "id": "entity:language-interface",
+      "label": "language interface",
+      "nodeType": "entity"
+    },
+    {
+      "id": "entity:markdown-metadata",
+      "label": "markdown metadata",
+      "nodeType": "entity",
+      "entityType": "Concept"
+    },
+    {
+      "id": "entity:markdown-metadata-graph",
+      "label": "markdown metadata graph",
+      "nodeType": "entity",
+      "entityType": "SystemDesign",
+      "status": null
+    },
+    {
+      "id": "entity:method",
+      "label": "Method",
+      "nodeType": "entity",
+      "entityType": "Concept"
+    },
+    {
+      "id": "entity:motion-feasibility-evaluation",
+      "label": "motion feasibility evaluation",
+      "nodeType": "entity"
+    },
+    {
+      "id": "entity:motion-search-acceleration",
+      "label": "motion search acceleration",
+      "nodeType": "entity"
+    },
+    {
+      "id": "entity:multi-arm-assembly",
+      "label": "multi-arm assembly",
+      "nodeType": "entity",
+      "entityType": "Benchmark",
+      "status": null
+    },
+    {
+      "id": "entity:package",
+      "label": "Package",
+      "nodeType": "entity",
+      "entityType": "Concept"
+    },
+    {
+      "id": "entity:pddl-style-planning",
+      "label": "PDDL-style planning",
+      "nodeType": "entity"
+    },
+    {
+      "id": "entity:pddlstream",
+      "label": "PDDLStream",
+      "nodeType": "entity",
+      "entityType": "Package",
+      "status": null
+    },
+    {
+      "id": "entity:platform-independent-tamp-benchmarks",
+      "label": "platform-independent TAMP benchmarks",
+      "nodeType": "entity",
+      "entityType": "Benchmark",
+      "status": null
+    },
+    {
+      "id": "entity:policy-guided-lazy-search-with-feedback",
+      "label": "Policy-Guided Lazy Search with Feedback",
+      "nodeType": "entity",
+      "entityType": "Method",
+      "status": null
+    },
+    {
+      "id": "entity:projectidea",
+      "label": "ProjectIdea",
+      "nodeType": "entity",
+      "entityType": "Concept"
+    },
+    {
+      "id": "entity:robotics-knowledge-base",
+      "label": "robotics knowledge base",
+      "nodeType": "entity"
+    },
+    {
+      "id": "entity:scheduling-formulations",
+      "label": "scheduling formulations",
+      "nodeType": "entity",
+      "entityType": "Method",
+      "status": null
+    },
+    {
+      "id": "entity:sdar",
+      "label": "SDAR",
+      "nodeType": "entity",
+      "entityType": "Method",
+      "status": null
+    },
+    {
+      "id": "entity:shared-resource-conflict",
+      "label": "shared-resource conflict",
+      "nodeType": "entity",
+      "entityType": "FailureMode",
+      "status": null
+    },
+    {
+      "id": "entity:shared-shelf-organization",
+      "label": "shared shelf organization",
+      "nodeType": "entity",
+      "entityType": "Benchmark",
+      "status": null
+    },
+    {
+      "id": "entity:source-registry",
+      "label": "Source Registry",
+      "nodeType": "entity"
+    },
+    {
+      "id": "entity:structured-graph",
+      "label": "structured graph",
+      "nodeType": "entity"
+    },
+    {
+      "id": "entity:symbolic-search",
+      "label": "symbolic search",
+      "nodeType": "entity"
+    },
+    {
+      "id": "entity:task-and-motion-planning",
+      "label": "task-and-motion planning",
+      "nodeType": "entity"
+    },
+    {
+      "id": "entity:task-motion-scheduling",
+      "label": "task-motion-scheduling",
+      "nodeType": "entity",
+      "entityType": "Method",
+      "status": null
+    },
+    {
+      "id": "entity:verification",
+      "label": "verification",
+      "nodeType": "entity"
+    },
+    {
+      "id": "source:https-ac-rad-github-io-clairify",
+      "label": "https://ac-rad.github.io/clairify/",
+      "nodeType": "source",
+      "url": "https://ac-rad.github.io/clairify/"
+    },
+    {
+      "id": "source:https-arxiv-org-abs-1802-08705",
+      "label": "https://arxiv.org/abs/1802.08705",
+      "nodeType": "source",
+      "url": "https://arxiv.org/abs/1802.08705"
+    },
+    {
+      "id": "source:https-arxiv-org-abs-2210-14055",
+      "label": "https://arxiv.org/abs/2210.14055",
+      "nodeType": "source",
+      "url": "https://arxiv.org/abs/2210.14055"
+    },
+    {
+      "id": "source:https-arxiv-org-abs-2403-12761",
+      "label": "https://arxiv.org/abs/2403.12761",
+      "nodeType": "source",
+      "url": "https://arxiv.org/abs/2403.12761"
+    },
+    {
+      "id": "source:https-arxiv-org-abs-2510-00182",
+      "label": "https://arxiv.org/abs/2510.00182",
+      "nodeType": "source",
+      "url": "https://arxiv.org/abs/2510.00182"
+    },
+    {
+      "id": "source:https-arxiv-org-abs-2512-08206",
+      "label": "https://arxiv.org/abs/2512.08206",
+      "nodeType": "source",
+      "url": "https://arxiv.org/abs/2512.08206"
+    },
+    {
+      "id": "source:https-branvu-github-io-coast-github-io",
+      "label": "https://branvu.github.io/coast.github.io/",
+      "nodeType": "source",
+      "url": "https://branvu.github.io/coast.github.io/"
+    },
+    {
+      "id": "source:https-drake-mit-edu-doxygen-cxx-group-planning-iris-html",
+      "label": "https://drake.mit.edu/doxygen_cxx/group__planning__iris.html",
+      "nodeType": "source",
+      "url": "https://drake.mit.edu/doxygen_cxx/group__planning__iris.html"
+    },
+    {
+      "id": "source:https-duozhangrobotics-github-io-projects-dual-arm-icra-2026",
+      "label": "https://duozhangrobotics.github.io/projects/dual-arm-icra-2026/",
+      "nodeType": "source",
+      "url": "https://duozhangrobotics.github.io/projects/dual-arm-icra-2026/"
+    },
+    {
+      "id": "source:https-github-com-aibasel-downward",
+      "label": "https://github.com/aibasel/downward",
+      "nodeType": "source",
+      "url": "https://github.com/aibasel/downward"
+    },
+    {
+      "id": "source:https-github-com-arc-l-dual-arm",
+      "label": "https://github.com/arc-l/dual-arm",
+      "nodeType": "source",
+      "url": "https://github.com/arc-l/dual-arm"
+    },
+    {
+      "id": "source:https-github-com-caelan-pddlstream",
+      "label": "https://github.com/caelan/pddlstream",
+      "nodeType": "source",
+      "url": "https://github.com/caelan/pddlstream"
+    },
+    {
+      "id": "source:https-kavrakilab-rice-edu-publications-lagriffoul2018tmp-benchmarks-pdf",
+      "label": "https://kavrakilab.rice.edu/publications/lagriffoul2018tmp-benchmarks.pdf",
+      "nodeType": "source",
+      "url": "https://kavrakilab.rice.edu/publications/lagriffoul2018tmp-benchmarks.pdf"
+    },
+    {
+      "id": "source:https-link-springer-com-article-10-1007-s10514-023-10136-2",
+      "label": "https://link.springer.com/article/10.1007/s10514-023-10136-2",
+      "nodeType": "source",
+      "url": "https://link.springer.com/article/10.1007/s10514-023-10136-2"
+    },
+    {
+      "id": "source:https-www-roboticsproceedings-org-rss20-p113-html",
+      "label": "https://www.roboticsproceedings.org/rss20/p113.html",
+      "nodeType": "source",
+      "url": "https://www.roboticsproceedings.org/rss20/p113.html"
+    },
+    {
+      "id": "topic:applied-tamp",
+      "label": "applied-tamp",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:behavior-trees",
+      "label": "behavior-trees",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:benchmarks",
+      "label": "benchmarks",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:chemistry-robotics",
+      "label": "chemistry-robotics",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:constraints",
+      "label": "constraints",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:daily-refresh",
+      "label": "daily-refresh",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:drake",
+      "label": "drake",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:dual-arm-planning",
+      "label": "dual-arm-planning",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:execution",
+      "label": "execution",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:execution-replanning",
+      "label": "execution-replanning",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:feasibility",
+      "label": "feasibility",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:geometry",
+      "label": "geometry",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:geometry-aware-feasibility",
+      "label": "geometry-aware-feasibility",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:gpu-motion-planning",
+      "label": "gpu-motion-planning",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:graph-building",
+      "label": "graph-building",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:graph-mediator",
+      "label": "graph-mediator",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:llms",
+      "label": "llms",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:markdown-frontmatter",
+      "label": "markdown-frontmatter",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:motion-planning",
+      "label": "motion-planning",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:ontology-lite",
+      "label": "ontology-lite",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:packages",
+      "label": "packages",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:papers",
+      "label": "papers",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:pddlstream",
+      "label": "pddlstream",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:planning",
+      "label": "planning",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:rail-usage",
+      "label": "rail-usage",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:rearrangement",
+      "label": "rearrangement",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:replanning",
+      "label": "replanning",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:research-directions",
+      "label": "research-directions",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:scheduling",
+      "label": "scheduling",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:search-guidance",
+      "label": "search-guidance",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:search-pruning",
+      "label": "search-pruning",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:sources",
+      "label": "sources",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:symbolic-planning",
+      "label": "symbolic-planning",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:task-motion-planning",
+      "label": "task-motion-planning",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:task-motion-scheduling",
+      "label": "task-motion-scheduling",
+      "nodeType": "topic"
+    }
+  ],
+  "edges": [
+    {
+      "id": "doc:research_plan/current_plan.md::has_topic::topic:daily-refresh",
+      "from": "doc:research_plan/current_plan.md",
+      "type": "has_topic",
+      "to": "topic:daily-refresh",
+      "source": "research_plan/current_plan.md"
+    },
+    {
+      "id": "doc:research_plan/current_plan.md::has_topic::topic:graph-building",
+      "from": "doc:research_plan/current_plan.md",
+      "type": "has_topic",
+      "to": "topic:graph-building",
+      "source": "research_plan/current_plan.md"
+    },
+    {
+      "id": "doc:research_plan/current_plan.md::has_topic::topic:ontology-lite",
+      "from": "doc:research_plan/current_plan.md",
+      "type": "has_topic",
+      "to": "topic:ontology-lite",
+      "source": "research_plan/current_plan.md"
+    },
+    {
+      "id": "doc:research_plan/current_plan.md::has_topic::topic:planning",
+      "from": "doc:research_plan/current_plan.md",
+      "type": "has_topic",
+      "to": "topic:planning",
+      "source": "research_plan/current_plan.md"
+    },
+    {
+      "id": "doc:research_plan/current_plan.md::mentions::entity:assembly-benchmarks",
+      "from": "doc:research_plan/current_plan.md",
+      "type": "mentions",
+      "to": "entity:assembly-benchmarks",
+      "source": "research_plan/current_plan.md"
+    },
+    {
+      "id": "doc:research_plan/current_plan.md::mentions::entity:behavior-trees",
+      "from": "doc:research_plan/current_plan.md",
+      "type": "mentions",
+      "to": "entity:behavior-trees",
+      "source": "research_plan/current_plan.md"
+    },
+    {
+      "id": "doc:research_plan/current_plan.md::mentions::entity:coast",
+      "from": "doc:research_plan/current_plan.md",
+      "type": "mentions",
+      "to": "entity:coast",
+      "source": "research_plan/current_plan.md"
+    },
+    {
+      "id": "doc:research_plan/current_plan.md::mentions::entity:drake",
+      "from": "doc:research_plan/current_plan.md",
+      "type": "mentions",
+      "to": "entity:drake",
+      "source": "research_plan/current_plan.md"
+    },
+    {
+      "id": "doc:research_plan/current_plan.md::mentions::entity:iris",
+      "from": "doc:research_plan/current_plan.md",
+      "type": "mentions",
+      "to": "entity:iris",
+      "source": "research_plan/current_plan.md"
+    },
+    {
+      "id": "doc:research_plan/current_plan.md::mentions::entity:markdown-metadata-graph",
+      "from": "doc:research_plan/current_plan.md",
+      "type": "mentions",
+      "to": "entity:markdown-metadata-graph",
+      "source": "research_plan/current_plan.md"
+    },
+    {
+      "id": "doc:research_plan/current_plan.md::mentions::entity:pddlstream",
+      "from": "doc:research_plan/current_plan.md",
+      "type": "mentions",
+      "to": "entity:pddlstream",
+      "source": "research_plan/current_plan.md"
+    },
+    {
+      "id": "doc:research_plan/current_plan.md::mentions::entity:scheduling-formulations",
+      "from": "doc:research_plan/current_plan.md",
+      "type": "mentions",
+      "to": "entity:scheduling-formulations",
+      "source": "research_plan/current_plan.md"
+    },
+    {
+      "id": "doc:research_plan/graph/knowledge-graph-design.md::has_topic::topic:graph-mediator",
+      "from": "doc:research_plan/graph/knowledge-graph-design.md",
+      "type": "has_topic",
+      "to": "topic:graph-mediator",
+      "source": "research_plan/graph/knowledge-graph-design.md"
+    },
+    {
+      "id": "doc:research_plan/graph/knowledge-graph-design.md::has_topic::topic:markdown-frontmatter",
+      "from": "doc:research_plan/graph/knowledge-graph-design.md",
+      "type": "has_topic",
+      "to": "topic:markdown-frontmatter",
+      "source": "research_plan/graph/knowledge-graph-design.md"
+    },
+    {
+      "id": "doc:research_plan/graph/knowledge-graph-design.md::has_topic::topic:ontology-lite",
+      "from": "doc:research_plan/graph/knowledge-graph-design.md",
+      "type": "has_topic",
+      "to": "topic:ontology-lite",
+      "source": "research_plan/graph/knowledge-graph-design.md"
+    },
+    {
+      "id": "doc:research_plan/graph/knowledge-graph-design.md::has_topic::topic:rail-usage",
+      "from": "doc:research_plan/graph/knowledge-graph-design.md",
+      "type": "has_topic",
+      "to": "topic:rail-usage",
+      "source": "research_plan/graph/knowledge-graph-design.md"
+    },
+    {
+      "id": "doc:research_plan/graph/knowledge-graph-design.md::mentions::entity:benchmark",
+      "from": "doc:research_plan/graph/knowledge-graph-design.md",
+      "type": "mentions",
+      "to": "entity:benchmark",
+      "source": "research_plan/graph/knowledge-graph-design.md"
+    },
+    {
+      "id": "doc:research_plan/graph/knowledge-graph-design.md::mentions::entity:failuremode",
+      "from": "doc:research_plan/graph/knowledge-graph-design.md",
+      "type": "mentions",
+      "to": "entity:failuremode",
+      "source": "research_plan/graph/knowledge-graph-design.md"
+    },
+    {
+      "id": "doc:research_plan/graph/knowledge-graph-design.md::mentions::entity:graph-mediator",
+      "from": "doc:research_plan/graph/knowledge-graph-design.md",
+      "type": "mentions",
+      "to": "entity:graph-mediator",
+      "source": "research_plan/graph/knowledge-graph-design.md"
+    },
+    {
+      "id": "doc:research_plan/graph/knowledge-graph-design.md::mentions::entity:markdown-metadata",
+      "from": "doc:research_plan/graph/knowledge-graph-design.md",
+      "type": "mentions",
+      "to": "entity:markdown-metadata",
+      "source": "research_plan/graph/knowledge-graph-design.md"
+    },
+    {
+      "id": "doc:research_plan/graph/knowledge-graph-design.md::mentions::entity:method",
+      "from": "doc:research_plan/graph/knowledge-graph-design.md",
+      "type": "mentions",
+      "to": "entity:method",
+      "source": "research_plan/graph/knowledge-graph-design.md"
+    },
+    {
+      "id": "doc:research_plan/graph/knowledge-graph-design.md::mentions::entity:package",
+      "from": "doc:research_plan/graph/knowledge-graph-design.md",
+      "type": "mentions",
+      "to": "entity:package",
+      "source": "research_plan/graph/knowledge-graph-design.md"
+    },
+    {
+      "id": "doc:research_plan/graph/knowledge-graph-design.md::mentions::entity:projectidea",
+      "from": "doc:research_plan/graph/knowledge-graph-design.md",
+      "type": "mentions",
+      "to": "entity:projectidea",
+      "source": "research_plan/graph/knowledge-graph-design.md"
+    },
+    {
+      "id": "doc:research_plan/source_registry.md::has_topic::topic:benchmarks",
+      "from": "doc:research_plan/source_registry.md",
+      "type": "has_topic",
+      "to": "topic:benchmarks",
+      "source": "research_plan/source_registry.md"
+    },
+    {
+      "id": "doc:research_plan/source_registry.md::has_topic::topic:packages",
+      "from": "doc:research_plan/source_registry.md",
+      "type": "has_topic",
+      "to": "topic:packages",
+      "source": "research_plan/source_registry.md"
+    },
+    {
+      "id": "doc:research_plan/source_registry.md::has_topic::topic:papers",
+      "from": "doc:research_plan/source_registry.md",
+      "type": "has_topic",
+      "to": "topic:papers",
+      "source": "research_plan/source_registry.md"
+    },
+    {
+      "id": "doc:research_plan/source_registry.md::has_topic::topic:sources",
+      "from": "doc:research_plan/source_registry.md",
+      "type": "has_topic",
+      "to": "topic:sources",
+      "source": "research_plan/source_registry.md"
+    },
+    {
+      "id": "doc:research_plan/source_registry.md::mentions::entity:clairify",
+      "from": "doc:research_plan/source_registry.md",
+      "type": "mentions",
+      "to": "entity:clairify",
+      "source": "research_plan/source_registry.md"
+    },
+    {
+      "id": "doc:research_plan/source_registry.md::mentions::entity:coast",
+      "from": "doc:research_plan/source_registry.md",
+      "type": "mentions",
+      "to": "entity:coast",
+      "source": "research_plan/source_registry.md"
+    },
+    {
+      "id": "doc:research_plan/source_registry.md::mentions::entity:drake",
+      "from": "doc:research_plan/source_registry.md",
+      "type": "mentions",
+      "to": "entity:drake",
+      "source": "research_plan/source_registry.md"
+    },
+    {
+      "id": "doc:research_plan/source_registry.md::mentions::entity:fast-downward",
+      "from": "doc:research_plan/source_registry.md",
+      "type": "mentions",
+      "to": "entity:fast-downward",
+      "source": "research_plan/source_registry.md"
+    },
+    {
+      "id": "doc:research_plan/source_registry.md::mentions::entity:iris",
+      "from": "doc:research_plan/source_registry.md",
+      "type": "mentions",
+      "to": "entity:iris",
+      "source": "research_plan/source_registry.md"
+    },
+    {
+      "id": "doc:research_plan/source_registry.md::mentions::entity:pddlstream",
+      "from": "doc:research_plan/source_registry.md",
+      "type": "mentions",
+      "to": "entity:pddlstream",
+      "source": "research_plan/source_registry.md"
+    },
+    {
+      "id": "doc:research_plan/source_registry.md::mentions::entity:sdar",
+      "from": "doc:research_plan/source_registry.md",
+      "type": "mentions",
+      "to": "entity:sdar",
+      "source": "research_plan/source_registry.md"
+    },
+    {
+      "id": "doc:topics/brief.md::has_topic::topic:dual-arm-planning",
+      "from": "doc:topics/brief.md",
+      "type": "has_topic",
+      "to": "topic:dual-arm-planning",
+      "source": "topics/brief.md"
+    },
+    {
+      "id": "doc:topics/brief.md::has_topic::topic:execution-replanning",
+      "from": "doc:topics/brief.md",
+      "type": "has_topic",
+      "to": "topic:execution-replanning",
+      "source": "topics/brief.md"
+    },
+    {
+      "id": "doc:topics/brief.md::has_topic::topic:geometry-aware-feasibility",
+      "from": "doc:topics/brief.md",
+      "type": "has_topic",
+      "to": "topic:geometry-aware-feasibility",
+      "source": "topics/brief.md"
+    },
+    {
+      "id": "doc:topics/brief.md::has_topic::topic:task-motion-scheduling",
+      "from": "doc:topics/brief.md",
+      "type": "has_topic",
+      "to": "topic:task-motion-scheduling",
+      "source": "topics/brief.md"
+    },
+    {
+      "id": "doc:topics/brief.md::mentions::entity:behavior-trees",
+      "from": "doc:topics/brief.md",
+      "type": "mentions",
+      "to": "entity:behavior-trees",
+      "source": "topics/brief.md"
+    },
+    {
+      "id": "doc:topics/brief.md::mentions::entity:coast",
+      "from": "doc:topics/brief.md",
+      "type": "mentions",
+      "to": "entity:coast",
+      "source": "topics/brief.md"
+    },
+    {
+      "id": "doc:topics/brief.md::mentions::entity:drake",
+      "from": "doc:topics/brief.md",
+      "type": "mentions",
+      "to": "entity:drake",
+      "source": "topics/brief.md"
+    },
+    {
+      "id": "doc:topics/brief.md::mentions::entity:dual-arm-rearrangement",
+      "from": "doc:topics/brief.md",
+      "type": "mentions",
+      "to": "entity:dual-arm-rearrangement",
+      "source": "topics/brief.md"
+    },
+    {
+      "id": "doc:topics/brief.md::mentions::entity:graphs-of-convex-sets",
+      "from": "doc:topics/brief.md",
+      "type": "mentions",
+      "to": "entity:graphs-of-convex-sets",
+      "source": "topics/brief.md"
+    },
+    {
+      "id": "doc:topics/brief.md::mentions::entity:iris",
+      "from": "doc:topics/brief.md",
+      "type": "mentions",
+      "to": "entity:iris",
+      "source": "topics/brief.md"
+    },
+    {
+      "id": "doc:topics/brief.md::mentions::entity:pddlstream",
+      "from": "doc:topics/brief.md",
+      "type": "mentions",
+      "to": "entity:pddlstream",
+      "source": "topics/brief.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-34483c93a7.md::cites::source:https-arxiv-org-abs-2512-08206",
+      "from": "doc:topics/inbox/2026-06-06-34483c93a7.md",
+      "type": "cites",
+      "to": "source:https-arxiv-org-abs-2512-08206",
+      "source": "topics/inbox/2026-06-06-34483c93a7.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-34483c93a7.md::has_topic::topic:dual-arm-planning",
+      "from": "doc:topics/inbox/2026-06-06-34483c93a7.md",
+      "type": "has_topic",
+      "to": "topic:dual-arm-planning",
+      "source": "topics/inbox/2026-06-06-34483c93a7.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-34483c93a7.md::has_topic::topic:rearrangement",
+      "from": "doc:topics/inbox/2026-06-06-34483c93a7.md",
+      "type": "has_topic",
+      "to": "topic:rearrangement",
+      "source": "topics/inbox/2026-06-06-34483c93a7.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-34483c93a7.md::has_topic::topic:scheduling",
+      "from": "doc:topics/inbox/2026-06-06-34483c93a7.md",
+      "type": "has_topic",
+      "to": "topic:scheduling",
+      "source": "topics/inbox/2026-06-06-34483c93a7.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-34483c93a7.md::mentions::entity:dual-arm-rearrangement",
+      "from": "doc:topics/inbox/2026-06-06-34483c93a7.md",
+      "type": "mentions",
+      "to": "entity:dual-arm-rearrangement",
+      "source": "topics/inbox/2026-06-06-34483c93a7.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-34483c93a7.md::mentions::entity:sdar",
+      "from": "doc:topics/inbox/2026-06-06-34483c93a7.md",
+      "type": "mentions",
+      "to": "entity:sdar",
+      "source": "topics/inbox/2026-06-06-34483c93a7.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-4fd2bd87df.md::cites::source:https-drake-mit-edu-doxygen-cxx-group-planning-iris-html",
+      "from": "doc:topics/inbox/2026-06-06-4fd2bd87df.md",
+      "type": "cites",
+      "to": "source:https-drake-mit-edu-doxygen-cxx-group-planning-iris-html",
+      "source": "topics/inbox/2026-06-06-4fd2bd87df.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-4fd2bd87df.md::has_topic::topic:drake",
+      "from": "doc:topics/inbox/2026-06-06-4fd2bd87df.md",
+      "type": "has_topic",
+      "to": "topic:drake",
+      "source": "topics/inbox/2026-06-06-4fd2bd87df.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-4fd2bd87df.md::has_topic::topic:feasibility",
+      "from": "doc:topics/inbox/2026-06-06-4fd2bd87df.md",
+      "type": "has_topic",
+      "to": "topic:feasibility",
+      "source": "topics/inbox/2026-06-06-4fd2bd87df.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-4fd2bd87df.md::has_topic::topic:geometry",
+      "from": "doc:topics/inbox/2026-06-06-4fd2bd87df.md",
+      "type": "has_topic",
+      "to": "topic:geometry",
+      "source": "topics/inbox/2026-06-06-4fd2bd87df.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-4fd2bd87df.md::mentions::entity:drake",
+      "from": "doc:topics/inbox/2026-06-06-4fd2bd87df.md",
+      "type": "mentions",
+      "to": "entity:drake",
+      "source": "topics/inbox/2026-06-06-4fd2bd87df.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-4fd2bd87df.md::mentions::entity:iris",
+      "from": "doc:topics/inbox/2026-06-06-4fd2bd87df.md",
+      "type": "mentions",
+      "to": "entity:iris",
+      "source": "topics/inbox/2026-06-06-4fd2bd87df.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-5d195b149a.md::cites::source:https-arxiv-org-abs-2403-12761",
+      "from": "doc:topics/inbox/2026-06-06-5d195b149a.md",
+      "type": "cites",
+      "to": "source:https-arxiv-org-abs-2403-12761",
+      "source": "topics/inbox/2026-06-06-5d195b149a.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-5d195b149a.md::has_topic::topic:behavior-trees",
+      "from": "doc:topics/inbox/2026-06-06-5d195b149a.md",
+      "type": "has_topic",
+      "to": "topic:behavior-trees",
+      "source": "topics/inbox/2026-06-06-5d195b149a.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-5d195b149a.md::has_topic::topic:execution",
+      "from": "doc:topics/inbox/2026-06-06-5d195b149a.md",
+      "type": "has_topic",
+      "to": "topic:execution",
+      "source": "topics/inbox/2026-06-06-5d195b149a.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-5d195b149a.md::has_topic::topic:replanning",
+      "from": "doc:topics/inbox/2026-06-06-5d195b149a.md",
+      "type": "has_topic",
+      "to": "topic:replanning",
+      "source": "topics/inbox/2026-06-06-5d195b149a.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-5d195b149a.md::mentions::entity:behavior-trees",
+      "from": "doc:topics/inbox/2026-06-06-5d195b149a.md",
+      "type": "mentions",
+      "to": "entity:behavior-trees",
+      "source": "topics/inbox/2026-06-06-5d195b149a.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-5d195b149a.md::mentions::entity:execution-recovery",
+      "from": "doc:topics/inbox/2026-06-06-5d195b149a.md",
+      "type": "mentions",
+      "to": "entity:execution-recovery",
+      "source": "topics/inbox/2026-06-06-5d195b149a.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-628505156e.md::cites::source:https-arxiv-org-abs-1802-08705",
+      "from": "doc:topics/inbox/2026-06-06-628505156e.md",
+      "type": "cites",
+      "to": "source:https-arxiv-org-abs-1802-08705",
+      "source": "topics/inbox/2026-06-06-628505156e.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-628505156e.md::has_topic::topic:motion-planning",
+      "from": "doc:topics/inbox/2026-06-06-628505156e.md",
+      "type": "has_topic",
+      "to": "topic:motion-planning",
+      "source": "topics/inbox/2026-06-06-628505156e.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-628505156e.md::has_topic::topic:pddlstream",
+      "from": "doc:topics/inbox/2026-06-06-628505156e.md",
+      "type": "has_topic",
+      "to": "topic:pddlstream",
+      "source": "topics/inbox/2026-06-06-628505156e.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-628505156e.md::has_topic::topic:symbolic-planning",
+      "from": "doc:topics/inbox/2026-06-06-628505156e.md",
+      "type": "has_topic",
+      "to": "topic:symbolic-planning",
+      "source": "topics/inbox/2026-06-06-628505156e.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-628505156e.md::mentions::entity:pddlstream",
+      "from": "doc:topics/inbox/2026-06-06-628505156e.md",
+      "type": "mentions",
+      "to": "entity:pddlstream",
+      "source": "topics/inbox/2026-06-06-628505156e.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-8f4333ce44.md::has_topic::topic:benchmarks",
+      "from": "doc:topics/inbox/2026-06-06-8f4333ce44.md",
+      "type": "has_topic",
+      "to": "topic:benchmarks",
+      "source": "topics/inbox/2026-06-06-8f4333ce44.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-8f4333ce44.md::has_topic::topic:dual-arm-planning",
+      "from": "doc:topics/inbox/2026-06-06-8f4333ce44.md",
+      "type": "has_topic",
+      "to": "topic:dual-arm-planning",
+      "source": "topics/inbox/2026-06-06-8f4333ce44.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-8f4333ce44.md::has_topic::topic:research-directions",
+      "from": "doc:topics/inbox/2026-06-06-8f4333ce44.md",
+      "type": "has_topic",
+      "to": "topic:research-directions",
+      "source": "topics/inbox/2026-06-06-8f4333ce44.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-8f4333ce44.md::has_topic::topic:scheduling",
+      "from": "doc:topics/inbox/2026-06-06-8f4333ce44.md",
+      "type": "has_topic",
+      "to": "topic:scheduling",
+      "source": "topics/inbox/2026-06-06-8f4333ce44.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-8f4333ce44.md::mentions::entity:assembly-with-precedence-constraints",
+      "from": "doc:topics/inbox/2026-06-06-8f4333ce44.md",
+      "type": "mentions",
+      "to": "entity:assembly-with-precedence-constraints",
+      "source": "topics/inbox/2026-06-06-8f4333ce44.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-8f4333ce44.md::mentions::entity:behavior-trees",
+      "from": "doc:topics/inbox/2026-06-06-8f4333ce44.md",
+      "type": "mentions",
+      "to": "entity:behavior-trees",
+      "source": "topics/inbox/2026-06-06-8f4333ce44.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-8f4333ce44.md::mentions::entity:coast",
+      "from": "doc:topics/inbox/2026-06-06-8f4333ce44.md",
+      "type": "mentions",
+      "to": "entity:coast",
+      "source": "topics/inbox/2026-06-06-8f4333ce44.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-8f4333ce44.md::mentions::entity:drake",
+      "from": "doc:topics/inbox/2026-06-06-8f4333ce44.md",
+      "type": "mentions",
+      "to": "entity:drake",
+      "source": "topics/inbox/2026-06-06-8f4333ce44.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-8f4333ce44.md::mentions::entity:dynamic-queue-continuous-task-stream",
+      "from": "doc:topics/inbox/2026-06-06-8f4333ce44.md",
+      "type": "mentions",
+      "to": "entity:dynamic-queue-continuous-task-stream",
+      "source": "topics/inbox/2026-06-06-8f4333ce44.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-8f4333ce44.md::mentions::entity:entangled-tabletop-rearrangement",
+      "from": "doc:topics/inbox/2026-06-06-8f4333ce44.md",
+      "type": "mentions",
+      "to": "entity:entangled-tabletop-rearrangement",
+      "source": "topics/inbox/2026-06-06-8f4333ce44.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-8f4333ce44.md::mentions::entity:graphs-of-convex-sets",
+      "from": "doc:topics/inbox/2026-06-06-8f4333ce44.md",
+      "type": "mentions",
+      "to": "entity:graphs-of-convex-sets",
+      "source": "topics/inbox/2026-06-06-8f4333ce44.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-8f4333ce44.md::mentions::entity:handoff-benchmark",
+      "from": "doc:topics/inbox/2026-06-06-8f4333ce44.md",
+      "type": "mentions",
+      "to": "entity:handoff-benchmark",
+      "source": "topics/inbox/2026-06-06-8f4333ce44.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-8f4333ce44.md::mentions::entity:iris",
+      "from": "doc:topics/inbox/2026-06-06-8f4333ce44.md",
+      "type": "mentions",
+      "to": "entity:iris",
+      "source": "topics/inbox/2026-06-06-8f4333ce44.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-8f4333ce44.md::mentions::entity:pddlstream",
+      "from": "doc:topics/inbox/2026-06-06-8f4333ce44.md",
+      "type": "mentions",
+      "to": "entity:pddlstream",
+      "source": "topics/inbox/2026-06-06-8f4333ce44.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-8f4333ce44.md::mentions::entity:policy-guided-lazy-search-with-feedback",
+      "from": "doc:topics/inbox/2026-06-06-8f4333ce44.md",
+      "type": "mentions",
+      "to": "entity:policy-guided-lazy-search-with-feedback",
+      "source": "topics/inbox/2026-06-06-8f4333ce44.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-8f4333ce44.md::mentions::entity:sdar",
+      "from": "doc:topics/inbox/2026-06-06-8f4333ce44.md",
+      "type": "mentions",
+      "to": "entity:sdar",
+      "source": "topics/inbox/2026-06-06-8f4333ce44.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-8f4333ce44.md::mentions::entity:shared-shelf-organization",
+      "from": "doc:topics/inbox/2026-06-06-8f4333ce44.md",
+      "type": "mentions",
+      "to": "entity:shared-shelf-organization",
+      "source": "topics/inbox/2026-06-06-8f4333ce44.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-984e9173b1.md::cites::source:https-arxiv-org-abs-2210-14055",
+      "from": "doc:topics/inbox/2026-06-06-984e9173b1.md",
+      "type": "cites",
+      "to": "source:https-arxiv-org-abs-2210-14055",
+      "source": "topics/inbox/2026-06-06-984e9173b1.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-984e9173b1.md::has_topic::topic:motion-planning",
+      "from": "doc:topics/inbox/2026-06-06-984e9173b1.md",
+      "type": "has_topic",
+      "to": "topic:motion-planning",
+      "source": "topics/inbox/2026-06-06-984e9173b1.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-984e9173b1.md::has_topic::topic:search-guidance",
+      "from": "doc:topics/inbox/2026-06-06-984e9173b1.md",
+      "type": "has_topic",
+      "to": "topic:search-guidance",
+      "source": "topics/inbox/2026-06-06-984e9173b1.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-984e9173b1.md::has_topic::topic:symbolic-planning",
+      "from": "doc:topics/inbox/2026-06-06-984e9173b1.md",
+      "type": "has_topic",
+      "to": "topic:symbolic-planning",
+      "source": "topics/inbox/2026-06-06-984e9173b1.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-984e9173b1.md::mentions::entity:policy-guided-lazy-search-with-feedback",
+      "from": "doc:topics/inbox/2026-06-06-984e9173b1.md",
+      "type": "mentions",
+      "to": "entity:policy-guided-lazy-search-with-feedback",
+      "source": "topics/inbox/2026-06-06-984e9173b1.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-ff5d56d721.md::cites::source:https-branvu-github-io-coast-github-io",
+      "from": "doc:topics/inbox/2026-06-06-ff5d56d721.md",
+      "type": "cites",
+      "to": "source:https-branvu-github-io-coast-github-io",
+      "source": "topics/inbox/2026-06-06-ff5d56d721.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-ff5d56d721.md::has_topic::topic:constraints",
+      "from": "doc:topics/inbox/2026-06-06-ff5d56d721.md",
+      "type": "has_topic",
+      "to": "topic:constraints",
+      "source": "topics/inbox/2026-06-06-ff5d56d721.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-ff5d56d721.md::has_topic::topic:search-pruning",
+      "from": "doc:topics/inbox/2026-06-06-ff5d56d721.md",
+      "type": "has_topic",
+      "to": "topic:search-pruning",
+      "source": "topics/inbox/2026-06-06-ff5d56d721.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-ff5d56d721.md::has_topic::topic:task-motion-planning",
+      "from": "doc:topics/inbox/2026-06-06-ff5d56d721.md",
+      "type": "has_topic",
+      "to": "topic:task-motion-planning",
+      "source": "topics/inbox/2026-06-06-ff5d56d721.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-ff5d56d721.md::mentions::entity:coast",
+      "from": "doc:topics/inbox/2026-06-06-ff5d56d721.md",
+      "type": "mentions",
+      "to": "entity:coast",
+      "source": "topics/inbox/2026-06-06-ff5d56d721.md"
+    },
+    {
+      "id": "doc:topics/notes/benchmark-and-tooling-map.md::cites::source:https-arxiv-org-abs-1802-08705",
+      "from": "doc:topics/notes/benchmark-and-tooling-map.md",
+      "type": "cites",
+      "to": "source:https-arxiv-org-abs-1802-08705",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "doc:topics/notes/benchmark-and-tooling-map.md::cites::source:https-arxiv-org-abs-2512-08206",
+      "from": "doc:topics/notes/benchmark-and-tooling-map.md",
+      "type": "cites",
+      "to": "source:https-arxiv-org-abs-2512-08206",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "doc:topics/notes/benchmark-and-tooling-map.md::cites::source:https-branvu-github-io-coast-github-io",
+      "from": "doc:topics/notes/benchmark-and-tooling-map.md",
+      "type": "cites",
+      "to": "source:https-branvu-github-io-coast-github-io",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "doc:topics/notes/benchmark-and-tooling-map.md::cites::source:https-drake-mit-edu-doxygen-cxx-group-planning-iris-html",
+      "from": "doc:topics/notes/benchmark-and-tooling-map.md",
+      "type": "cites",
+      "to": "source:https-drake-mit-edu-doxygen-cxx-group-planning-iris-html",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "doc:topics/notes/benchmark-and-tooling-map.md::cites::source:https-duozhangrobotics-github-io-projects-dual-arm-icra-2026",
+      "from": "doc:topics/notes/benchmark-and-tooling-map.md",
+      "type": "cites",
+      "to": "source:https-duozhangrobotics-github-io-projects-dual-arm-icra-2026",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "doc:topics/notes/benchmark-and-tooling-map.md::cites::source:https-github-com-aibasel-downward",
+      "from": "doc:topics/notes/benchmark-and-tooling-map.md",
+      "type": "cites",
+      "to": "source:https-github-com-aibasel-downward",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "doc:topics/notes/benchmark-and-tooling-map.md::cites::source:https-github-com-arc-l-dual-arm",
+      "from": "doc:topics/notes/benchmark-and-tooling-map.md",
+      "type": "cites",
+      "to": "source:https-github-com-arc-l-dual-arm",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "doc:topics/notes/benchmark-and-tooling-map.md::cites::source:https-github-com-caelan-pddlstream",
+      "from": "doc:topics/notes/benchmark-and-tooling-map.md",
+      "type": "cites",
+      "to": "source:https-github-com-caelan-pddlstream",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "doc:topics/notes/benchmark-and-tooling-map.md::cites::source:https-kavrakilab-rice-edu-publications-lagriffoul2018tmp-benchmarks-pdf",
+      "from": "doc:topics/notes/benchmark-and-tooling-map.md",
+      "type": "cites",
+      "to": "source:https-kavrakilab-rice-edu-publications-lagriffoul2018tmp-benchmarks-pdf",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "doc:topics/notes/benchmark-and-tooling-map.md::cites::source:https-www-roboticsproceedings-org-rss20-p113-html",
+      "from": "doc:topics/notes/benchmark-and-tooling-map.md",
+      "type": "cites",
+      "to": "source:https-www-roboticsproceedings-org-rss20-p113-html",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "doc:topics/notes/benchmark-and-tooling-map.md::has_topic::topic:benchmarks",
+      "from": "doc:topics/notes/benchmark-and-tooling-map.md",
+      "type": "has_topic",
+      "to": "topic:benchmarks",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "doc:topics/notes/benchmark-and-tooling-map.md::has_topic::topic:dual-arm-planning",
+      "from": "doc:topics/notes/benchmark-and-tooling-map.md",
+      "type": "has_topic",
+      "to": "topic:dual-arm-planning",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "doc:topics/notes/benchmark-and-tooling-map.md::has_topic::topic:geometry",
+      "from": "doc:topics/notes/benchmark-and-tooling-map.md",
+      "type": "has_topic",
+      "to": "topic:geometry",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "doc:topics/notes/benchmark-and-tooling-map.md::has_topic::topic:gpu-motion-planning",
+      "from": "doc:topics/notes/benchmark-and-tooling-map.md",
+      "type": "has_topic",
+      "to": "topic:gpu-motion-planning",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "doc:topics/notes/benchmark-and-tooling-map.md::has_topic::topic:packages",
+      "from": "doc:topics/notes/benchmark-and-tooling-map.md",
+      "type": "has_topic",
+      "to": "topic:packages",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "doc:topics/notes/benchmark-and-tooling-map.md::mentions::entity:assembly-benchmarks",
+      "from": "doc:topics/notes/benchmark-and-tooling-map.md",
+      "type": "mentions",
+      "to": "entity:assembly-benchmarks",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "doc:topics/notes/benchmark-and-tooling-map.md::mentions::entity:coast",
+      "from": "doc:topics/notes/benchmark-and-tooling-map.md",
+      "type": "mentions",
+      "to": "entity:coast",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "doc:topics/notes/benchmark-and-tooling-map.md::mentions::entity:curobo",
+      "from": "doc:topics/notes/benchmark-and-tooling-map.md",
+      "type": "mentions",
+      "to": "entity:curobo",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "doc:topics/notes/benchmark-and-tooling-map.md::mentions::entity:drake",
+      "from": "doc:topics/notes/benchmark-and-tooling-map.md",
+      "type": "mentions",
+      "to": "entity:drake",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "doc:topics/notes/benchmark-and-tooling-map.md::mentions::entity:entangled-tabletop-rearrangement",
+      "from": "doc:topics/notes/benchmark-and-tooling-map.md",
+      "type": "mentions",
+      "to": "entity:entangled-tabletop-rearrangement",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "doc:topics/notes/benchmark-and-tooling-map.md::mentions::entity:execution-heavy-benchmarks",
+      "from": "doc:topics/notes/benchmark-and-tooling-map.md",
+      "type": "mentions",
+      "to": "entity:execution-heavy-benchmarks",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "doc:topics/notes/benchmark-and-tooling-map.md::mentions::entity:fast-downward",
+      "from": "doc:topics/notes/benchmark-and-tooling-map.md",
+      "type": "mentions",
+      "to": "entity:fast-downward",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "doc:topics/notes/benchmark-and-tooling-map.md::mentions::entity:graphs-of-convex-sets",
+      "from": "doc:topics/notes/benchmark-and-tooling-map.md",
+      "type": "mentions",
+      "to": "entity:graphs-of-convex-sets",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "doc:topics/notes/benchmark-and-tooling-map.md::mentions::entity:iris",
+      "from": "doc:topics/notes/benchmark-and-tooling-map.md",
+      "type": "mentions",
+      "to": "entity:iris",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "doc:topics/notes/benchmark-and-tooling-map.md::mentions::entity:pddlstream",
+      "from": "doc:topics/notes/benchmark-and-tooling-map.md",
+      "type": "mentions",
+      "to": "entity:pddlstream",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "doc:topics/notes/benchmark-and-tooling-map.md::mentions::entity:platform-independent-tamp-benchmarks",
+      "from": "doc:topics/notes/benchmark-and-tooling-map.md",
+      "type": "mentions",
+      "to": "entity:platform-independent-tamp-benchmarks",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "doc:topics/notes/benchmark-and-tooling-map.md::mentions::entity:sdar",
+      "from": "doc:topics/notes/benchmark-and-tooling-map.md",
+      "type": "mentions",
+      "to": "entity:sdar",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "doc:topics/notes/benchmark-and-tooling-map.md::mentions::entity:shared-resource-conflict",
+      "from": "doc:topics/notes/benchmark-and-tooling-map.md",
+      "type": "mentions",
+      "to": "entity:shared-resource-conflict",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "doc:topics/notes/initial-systems-landscape.md::cites::source:https-arxiv-org-abs-1802-08705",
+      "from": "doc:topics/notes/initial-systems-landscape.md",
+      "type": "cites",
+      "to": "source:https-arxiv-org-abs-1802-08705",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
+      "id": "doc:topics/notes/initial-systems-landscape.md::cites::source:https-arxiv-org-abs-2210-14055",
+      "from": "doc:topics/notes/initial-systems-landscape.md",
+      "type": "cites",
+      "to": "source:https-arxiv-org-abs-2210-14055",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
+      "id": "doc:topics/notes/initial-systems-landscape.md::cites::source:https-arxiv-org-abs-2403-12761",
+      "from": "doc:topics/notes/initial-systems-landscape.md",
+      "type": "cites",
+      "to": "source:https-arxiv-org-abs-2403-12761",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
+      "id": "doc:topics/notes/initial-systems-landscape.md::cites::source:https-arxiv-org-abs-2512-08206",
+      "from": "doc:topics/notes/initial-systems-landscape.md",
+      "type": "cites",
+      "to": "source:https-arxiv-org-abs-2512-08206",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
+      "id": "doc:topics/notes/initial-systems-landscape.md::cites::source:https-branvu-github-io-coast-github-io",
+      "from": "doc:topics/notes/initial-systems-landscape.md",
+      "type": "cites",
+      "to": "source:https-branvu-github-io-coast-github-io",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
+      "id": "doc:topics/notes/initial-systems-landscape.md::cites::source:https-drake-mit-edu-doxygen-cxx-group-planning-iris-html",
+      "from": "doc:topics/notes/initial-systems-landscape.md",
+      "type": "cites",
+      "to": "source:https-drake-mit-edu-doxygen-cxx-group-planning-iris-html",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
+      "id": "doc:topics/notes/initial-systems-landscape.md::has_topic::topic:dual-arm-planning",
+      "from": "doc:topics/notes/initial-systems-landscape.md",
+      "type": "has_topic",
+      "to": "topic:dual-arm-planning",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
+      "id": "doc:topics/notes/initial-systems-landscape.md::has_topic::topic:execution",
+      "from": "doc:topics/notes/initial-systems-landscape.md",
+      "type": "has_topic",
+      "to": "topic:execution",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
+      "id": "doc:topics/notes/initial-systems-landscape.md::has_topic::topic:motion-planning",
+      "from": "doc:topics/notes/initial-systems-landscape.md",
+      "type": "has_topic",
+      "to": "topic:motion-planning",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
+      "id": "doc:topics/notes/initial-systems-landscape.md::has_topic::topic:symbolic-planning",
+      "from": "doc:topics/notes/initial-systems-landscape.md",
+      "type": "has_topic",
+      "to": "topic:symbolic-planning",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
+      "id": "doc:topics/notes/initial-systems-landscape.md::has_topic::topic:task-motion-scheduling",
+      "from": "doc:topics/notes/initial-systems-landscape.md",
+      "type": "has_topic",
+      "to": "topic:task-motion-scheduling",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
+      "id": "doc:topics/notes/initial-systems-landscape.md::mentions::entity:behavior-trees",
+      "from": "doc:topics/notes/initial-systems-landscape.md",
+      "type": "mentions",
+      "to": "entity:behavior-trees",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
+      "id": "doc:topics/notes/initial-systems-landscape.md::mentions::entity:coast",
+      "from": "doc:topics/notes/initial-systems-landscape.md",
+      "type": "mentions",
+      "to": "entity:coast",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
+      "id": "doc:topics/notes/initial-systems-landscape.md::mentions::entity:corridor-interference",
+      "from": "doc:topics/notes/initial-systems-landscape.md",
+      "type": "mentions",
+      "to": "entity:corridor-interference",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
+      "id": "doc:topics/notes/initial-systems-landscape.md::mentions::entity:drake",
+      "from": "doc:topics/notes/initial-systems-landscape.md",
+      "type": "mentions",
+      "to": "entity:drake",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
+      "id": "doc:topics/notes/initial-systems-landscape.md::mentions::entity:entangled-tabletop-rearrangement",
+      "from": "doc:topics/notes/initial-systems-landscape.md",
+      "type": "mentions",
+      "to": "entity:entangled-tabletop-rearrangement",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
+      "id": "doc:topics/notes/initial-systems-landscape.md::mentions::entity:iris",
+      "from": "doc:topics/notes/initial-systems-landscape.md",
+      "type": "mentions",
+      "to": "entity:iris",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
+      "id": "doc:topics/notes/initial-systems-landscape.md::mentions::entity:pddlstream",
+      "from": "doc:topics/notes/initial-systems-landscape.md",
+      "type": "mentions",
+      "to": "entity:pddlstream",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
+      "id": "doc:topics/notes/initial-systems-landscape.md::mentions::entity:policy-guided-lazy-search-with-feedback",
+      "from": "doc:topics/notes/initial-systems-landscape.md",
+      "type": "mentions",
+      "to": "entity:policy-guided-lazy-search-with-feedback",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
+      "id": "doc:topics/notes/initial-systems-landscape.md::mentions::entity:sdar",
+      "from": "doc:topics/notes/initial-systems-landscape.md",
+      "type": "mentions",
+      "to": "entity:sdar",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
+      "id": "doc:topics/notes/initial-systems-landscape.md::mentions::entity:shared-resource-conflict",
+      "from": "doc:topics/notes/initial-systems-landscape.md",
+      "type": "mentions",
+      "to": "entity:shared-resource-conflict",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
+      "id": "doc:topics/notes/initial-systems-landscape.md::mentions::entity:task-motion-scheduling",
+      "from": "doc:topics/notes/initial-systems-landscape.md",
+      "type": "mentions",
+      "to": "entity:task-motion-scheduling",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
+      "id": "doc:topics/notes/llms-execution-and-applications.md::cites::source:https-ac-rad-github-io-clairify",
+      "from": "doc:topics/notes/llms-execution-and-applications.md",
+      "type": "cites",
+      "to": "source:https-ac-rad-github-io-clairify",
+      "source": "topics/notes/llms-execution-and-applications.md"
+    },
+    {
+      "id": "doc:topics/notes/llms-execution-and-applications.md::cites::source:https-arxiv-org-abs-2403-12761",
+      "from": "doc:topics/notes/llms-execution-and-applications.md",
+      "type": "cites",
+      "to": "source:https-arxiv-org-abs-2403-12761",
+      "source": "topics/notes/llms-execution-and-applications.md"
+    },
+    {
+      "id": "doc:topics/notes/llms-execution-and-applications.md::cites::source:https-arxiv-org-abs-2510-00182",
+      "from": "doc:topics/notes/llms-execution-and-applications.md",
+      "type": "cites",
+      "to": "source:https-arxiv-org-abs-2510-00182",
+      "source": "topics/notes/llms-execution-and-applications.md"
+    },
+    {
+      "id": "doc:topics/notes/llms-execution-and-applications.md::cites::source:https-link-springer-com-article-10-1007-s10514-023-10136-2",
+      "from": "doc:topics/notes/llms-execution-and-applications.md",
+      "type": "cites",
+      "to": "source:https-link-springer-com-article-10-1007-s10514-023-10136-2",
+      "source": "topics/notes/llms-execution-and-applications.md"
+    },
+    {
+      "id": "doc:topics/notes/llms-execution-and-applications.md::has_topic::topic:applied-tamp",
+      "from": "doc:topics/notes/llms-execution-and-applications.md",
+      "type": "has_topic",
+      "to": "topic:applied-tamp",
+      "source": "topics/notes/llms-execution-and-applications.md"
+    },
+    {
+      "id": "doc:topics/notes/llms-execution-and-applications.md::has_topic::topic:behavior-trees",
+      "from": "doc:topics/notes/llms-execution-and-applications.md",
+      "type": "has_topic",
+      "to": "topic:behavior-trees",
+      "source": "topics/notes/llms-execution-and-applications.md"
+    },
+    {
+      "id": "doc:topics/notes/llms-execution-and-applications.md::has_topic::topic:chemistry-robotics",
+      "from": "doc:topics/notes/llms-execution-and-applications.md",
+      "type": "has_topic",
+      "to": "topic:chemistry-robotics",
+      "source": "topics/notes/llms-execution-and-applications.md"
+    },
+    {
+      "id": "doc:topics/notes/llms-execution-and-applications.md::has_topic::topic:execution",
+      "from": "doc:topics/notes/llms-execution-and-applications.md",
+      "type": "has_topic",
+      "to": "topic:execution",
+      "source": "topics/notes/llms-execution-and-applications.md"
+    },
+    {
+      "id": "doc:topics/notes/llms-execution-and-applications.md::has_topic::topic:llms",
+      "from": "doc:topics/notes/llms-execution-and-applications.md",
+      "type": "has_topic",
+      "to": "topic:llms",
+      "source": "topics/notes/llms-execution-and-applications.md"
+    },
+    {
+      "id": "doc:topics/notes/llms-execution-and-applications.md::mentions::entity:behavior-trees",
+      "from": "doc:topics/notes/llms-execution-and-applications.md",
+      "type": "mentions",
+      "to": "entity:behavior-trees",
+      "source": "topics/notes/llms-execution-and-applications.md"
+    },
+    {
+      "id": "doc:topics/notes/llms-execution-and-applications.md::mentions::entity:chemistry-robotics",
+      "from": "doc:topics/notes/llms-execution-and-applications.md",
+      "type": "mentions",
+      "to": "entity:chemistry-robotics",
+      "source": "topics/notes/llms-execution-and-applications.md"
+    },
+    {
+      "id": "doc:topics/notes/llms-execution-and-applications.md::mentions::entity:clairify",
+      "from": "doc:topics/notes/llms-execution-and-applications.md",
+      "type": "mentions",
+      "to": "entity:clairify",
+      "source": "topics/notes/llms-execution-and-applications.md"
+    },
+    {
+      "id": "doc:topics/notes/llms-execution-and-applications.md::mentions::entity:dense-tabletop-rearrangement",
+      "from": "doc:topics/notes/llms-execution-and-applications.md",
+      "type": "mentions",
+      "to": "entity:dense-tabletop-rearrangement",
+      "source": "topics/notes/llms-execution-and-applications.md"
+    },
+    {
+      "id": "doc:topics/notes/llms-execution-and-applications.md::mentions::entity:execution-recovery",
+      "from": "doc:topics/notes/llms-execution-and-applications.md",
+      "type": "mentions",
+      "to": "entity:execution-recovery",
+      "source": "topics/notes/llms-execution-and-applications.md"
+    },
+    {
+      "id": "doc:topics/notes/llms-execution-and-applications.md::mentions::entity:multi-arm-assembly",
+      "from": "doc:topics/notes/llms-execution-and-applications.md",
+      "type": "mentions",
+      "to": "entity:multi-arm-assembly",
+      "source": "topics/notes/llms-execution-and-applications.md"
+    },
+    {
+      "id": "doc:topics/notes/llms-execution-and-applications.md::mentions::entity:pddlstream",
+      "from": "doc:topics/notes/llms-execution-and-applications.md",
+      "type": "mentions",
+      "to": "entity:pddlstream",
+      "source": "topics/notes/llms-execution-and-applications.md"
+    },
+    {
+      "id": "entity:behavior-trees::supports::entity:execution-recovery",
+      "from": "entity:behavior-trees",
+      "type": "supports",
+      "to": "entity:execution-recovery",
+      "source": "topics/inbox/2026-06-06-5d195b149a.md"
+    },
+    {
+      "id": "entity:behavior-trees::supports::entity:execution-replanning",
+      "from": "entity:behavior-trees",
+      "type": "supports",
+      "to": "entity:execution-replanning",
+      "source": "topics/brief.md"
+    },
+    {
+      "id": "entity:chemistry-robotics::benefits_from::entity:language-interface",
+      "from": "entity:chemistry-robotics",
+      "type": "benefits_from",
+      "to": "entity:language-interface",
+      "source": "topics/notes/llms-execution-and-applications.md"
+    },
+    {
+      "id": "entity:clairify::combines::entity:language-interface",
+      "from": "entity:clairify",
+      "type": "combines",
+      "to": "entity:language-interface",
+      "source": "topics/notes/llms-execution-and-applications.md"
+    },
+    {
+      "id": "entity:clairify::combines::entity:task-and-motion-planning",
+      "from": "entity:clairify",
+      "type": "combines",
+      "to": "entity:task-and-motion-planning",
+      "source": "topics/notes/llms-execution-and-applications.md"
+    },
+    {
+      "id": "entity:clairify::combines::entity:verification",
+      "from": "entity:clairify",
+      "type": "combines",
+      "to": "entity:verification",
+      "source": "topics/notes/llms-execution-and-applications.md"
+    },
+    {
+      "id": "entity:coast::narrows::entity:symbolic-search",
+      "from": "entity:coast",
+      "type": "narrows",
+      "to": "entity:symbolic-search",
+      "source": "topics/brief.md"
+    },
+    {
+      "id": "entity:curobo::accelerates::entity:motion-feasibility-evaluation",
+      "from": "entity:curobo",
+      "type": "accelerates",
+      "to": "entity:motion-feasibility-evaluation",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "entity:drake::includes::entity:iris",
+      "from": "entity:drake",
+      "type": "includes",
+      "to": "entity:iris",
+      "source": "topics/brief.md"
+    },
+    {
+      "id": "entity:entangled-tabletop-rearrangement::exposes::entity:shared-resource-conflict",
+      "from": "entity:entangled-tabletop-rearrangement",
+      "type": "exposes",
+      "to": "entity:shared-resource-conflict",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "entity:fast-downward::symbolic_backbone_for::entity:pddl-style-planning",
+      "from": "entity:fast-downward",
+      "type": "symbolic_backbone_for",
+      "to": "entity:pddl-style-planning",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "entity:graph-mediator::constructs::entity:structured-graph",
+      "from": "entity:graph-mediator",
+      "type": "constructs",
+      "to": "entity:structured-graph",
+      "source": "research_plan/graph/knowledge-graph-design.md"
+    },
+    {
+      "id": "entity:graphs-of-convex-sets::supports::entity:geometry-aware-feasibility",
+      "from": "entity:graphs-of-convex-sets",
+      "type": "supports",
+      "to": "entity:geometry-aware-feasibility",
+      "source": "topics/brief.md"
+    },
+    {
+      "id": "entity:graphs-of-convex-sets::supports::entity:motion-search-acceleration",
+      "from": "entity:graphs-of-convex-sets",
+      "type": "supports",
+      "to": "entity:motion-search-acceleration",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "entity:markdown-metadata-graph::expands::entity:robotics-knowledge-base",
+      "from": "entity:markdown-metadata-graph",
+      "type": "expands",
+      "to": "entity:robotics-knowledge-base",
+      "source": "research_plan/current_plan.md"
+    },
+    {
+      "id": "entity:markdown-metadata::feeds::entity:graph-mediator",
+      "from": "entity:markdown-metadata",
+      "type": "feeds",
+      "to": "entity:graph-mediator",
+      "source": "research_plan/graph/knowledge-graph-design.md"
+    },
+    {
+      "id": "entity:pddlstream::baseline_for::entity:dual-arm-tamp-experiments",
+      "from": "entity:pddlstream",
+      "type": "baseline_for",
+      "to": "entity:dual-arm-tamp-experiments",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "entity:pddlstream::baseline_for::entity:task-motion-scheduling",
+      "from": "entity:pddlstream",
+      "type": "baseline_for",
+      "to": "entity:task-motion-scheduling",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
+      "id": "entity:pddlstream::outperforms_llm_variants_in::entity:constrained-planning-tasks",
+      "from": "entity:pddlstream",
+      "type": "outperforms_llm_variants_in",
+      "to": "entity:constrained-planning-tasks",
+      "source": "topics/notes/llms-execution-and-applications.md"
+    },
+    {
+      "id": "entity:pddlstream::relevant_to::entity:task-motion-scheduling",
+      "from": "entity:pddlstream",
+      "type": "relevant_to",
+      "to": "entity:task-motion-scheduling",
+      "source": "topics/brief.md"
+    },
+    {
+      "id": "entity:policy-guided-lazy-search-with-feedback::refines::entity:pddlstream",
+      "from": "entity:policy-guided-lazy-search-with-feedback",
+      "type": "refines",
+      "to": "entity:pddlstream",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
+      "id": "entity:sdar::evaluates_on::entity:entangled-tabletop-rearrangement",
+      "from": "entity:sdar",
+      "type": "evaluates_on",
+      "to": "entity:entangled-tabletop-rearrangement",
+      "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "entity:sdar::targets::entity:dual-arm-rearrangement",
+      "from": "entity:sdar",
+      "type": "targets",
+      "to": "entity:dual-arm-rearrangement",
+      "source": "topics/inbox/2026-06-06-34483c93a7.md"
+    },
+    {
+      "id": "entity:sdar::targets::entity:entangled-tabletop-rearrangement",
+      "from": "entity:sdar",
+      "type": "targets",
+      "to": "entity:entangled-tabletop-rearrangement",
+      "source": "topics/inbox/2026-06-06-8f4333ce44.md"
+    },
+    {
+      "id": "entity:source-registry::tracks::entity:clairify",
+      "from": "entity:source-registry",
+      "type": "tracks",
+      "to": "entity:clairify",
+      "source": "research_plan/source_registry.md"
+    },
+    {
+      "id": "entity:source-registry::tracks::entity:pddlstream",
+      "from": "entity:source-registry",
+      "type": "tracks",
+      "to": "entity:pddlstream",
+      "source": "research_plan/source_registry.md"
+    },
+    {
+      "id": "entity:source-registry::tracks::entity:sdar",
+      "from": "entity:source-registry",
+      "type": "tracks",
+      "to": "entity:sdar",
+      "source": "research_plan/source_registry.md"
+    },
+    {
+      "id": "entity:task-motion-scheduling::addresses::entity:corridor-interference",
+      "from": "entity:task-motion-scheduling",
+      "type": "addresses",
+      "to": "entity:corridor-interference",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
+      "id": "entity:task-motion-scheduling::addresses::entity:shared-resource-conflict",
+      "from": "entity:task-motion-scheduling",
+      "type": "addresses",
+      "to": "entity:shared-resource-conflict",
+      "source": "topics/notes/initial-systems-landscape.md"
+    }
+  ],
+  "nodeTypeCounts": {
+    "document": 14,
+    "entity": 50,
+    "source": 15,
+    "topic": 35
+  },
+  "entityTypeCounts": {
+    "Benchmark": 11,
+    "ExecutionFramework": 1,
+    "Concept": 7,
+    "TaskFamily": 1,
+    "Package": 6,
+    "Unspecified": 14,
+    "FailureMode": 3,
+    "GeometryTechnique": 2,
+    "SystemDesign": 1,
+    "Method": 4
+  }
+}

@@ -1,6 +1,85 @@
+---
+title: Initial systems landscape: dual-arm task and motion planning
+kind: synthesis-note
+updated: 2026-06-07
+topics:
+  - dual-arm-planning
+  - task-motion-scheduling
+  - symbolic-planning
+  - motion-planning
+  - execution
+entities:
+  - PDDLStream
+  - Policy-Guided Lazy Search with Feedback
+  - COAST
+  - Drake
+  - IRIS
+  - behavior trees
+  - SDAR
+  - task-motion-scheduling
+  - entangled tabletop rearrangement
+  - shared-resource conflict
+  - corridor interference
+entity_metadata:
+  - name: PDDLStream
+    entity_type: Package
+  - name: Policy-Guided Lazy Search with Feedback
+    entity_type: Method
+  - name: COAST
+    entity_type: Package
+  - name: Drake
+    entity_type: Package
+  - name: IRIS
+    entity_type: GeometryTechnique
+  - name: behavior trees
+    entity_type: ExecutionFramework
+  - name: SDAR
+    entity_type: Method
+  - name: task-motion-scheduling
+    entity_type: Method
+  - name: entangled tabletop rearrangement
+    entity_type: Benchmark
+  - name: shared-resource conflict
+    entity_type: FailureMode
+  - name: corridor interference
+    entity_type: FailureMode
+sources:
+  - https://arxiv.org/abs/1802.08705
+  - https://arxiv.org/abs/2210.14055
+  - https://branvu.github.io/coast.github.io/
+  - https://drake.mit.edu/doxygen_cxx/group__planning__iris.html
+  - https://arxiv.org/abs/2403.12761
+  - https://arxiv.org/abs/2512.08206
+relations:
+  - from: PDDLStream
+    type: baseline_for
+    to: task-motion-scheduling
+  - from: Policy-Guided Lazy Search with Feedback
+    type: refines
+    to: PDDLStream
+  - from: COAST
+    type: narrows
+    to: symbolic search
+  - from: Drake
+    type: includes
+    to: IRIS
+  - from: SDAR
+    type: targets
+    to: entangled tabletop rearrangement
+  - from: task-motion-scheduling
+    type: addresses
+    to: shared-resource conflict
+  - from: task-motion-scheduling
+    type: addresses
+    to: corridor interference
+  - from: behavior trees
+    type: supports
+    to: execution recovery
+---
+
 # Initial systems landscape: dual-arm task and motion planning
 
-Updated: 2026-06-06
+Updated: 2026-06-07
 
 ## Core thesis
 

@@ -1,6 +1,65 @@
+---
+title: LLMs, execution, and applied TAMP frontiers
+kind: synthesis-note
+updated: 2026-06-07
+topics:
+  - llms
+  - execution
+  - behavior-trees
+  - chemistry-robotics
+  - applied-tamp
+entities:
+  - CLAIRify
+  - PDDLStream
+  - behavior trees
+  - execution recovery
+  - chemistry robotics
+  - dense tabletop rearrangement
+  - multi-arm assembly
+entity_metadata:
+  - name: CLAIRify
+    entity_type: Package
+  - name: PDDLStream
+    entity_type: Package
+  - name: behavior trees
+    entity_type: ExecutionFramework
+  - name: execution recovery
+    entity_type: FailureMode
+  - name: chemistry robotics
+    entity_type: TaskFamily
+  - name: dense tabletop rearrangement
+    entity_type: Benchmark
+  - name: multi-arm assembly
+    entity_type: Benchmark
+sources:
+  - https://ac-rad.github.io/clairify/
+  - https://link.springer.com/article/10.1007/s10514-023-10136-2
+  - https://arxiv.org/abs/2510.00182
+  - https://arxiv.org/abs/2403.12761
+relations:
+  - from: CLAIRify
+    type: combines
+    to: language interface
+  - from: CLAIRify
+    type: combines
+    to: verification
+  - from: CLAIRify
+    type: combines
+    to: task-and-motion planning
+  - from: behavior trees
+    type: supports
+    to: execution recovery
+  - from: PDDLStream
+    type: outperforms_llm_variants_in
+    to: constrained planning tasks
+  - from: chemistry robotics
+    type: benefits_from
+    to: language interface
+---
+
 # LLMs, execution, and applied TAMP frontiers
 
-Updated: 2026-06-06
+Updated: 2026-06-07
 
 ## Core view
 

@@ -1,0 +1,36 @@
+name: graph-refresh
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify-graph:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python deps
+        run: pip install pyyaml
+
+      - name: Rebuild markdown graph
+        run: node scripts/build_markdown_graph.js
+
+      - name: Run verification
+        run: bash scripts/run-verification.sh
+
+      - name: Ensure generated artifacts are committed
+        run: git diff --exit-code

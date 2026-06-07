@@ -1,6 +1,50 @@
+---
+title: Source Registry
+kind: registry
+updated: 2026-06-07
+topics:
+  - sources
+  - packages
+  - papers
+  - benchmarks
+entities:
+  - PDDLStream
+  - Fast Downward
+  - COAST
+  - Drake
+  - IRIS
+  - SDAR
+  - CLAIRify
+entity_metadata:
+  - name: PDDLStream
+    entity_type: Package
+  - name: Fast Downward
+    entity_type: Package
+  - name: COAST
+    entity_type: Package
+  - name: Drake
+    entity_type: Package
+  - name: IRIS
+    entity_type: GeometryTechnique
+  - name: SDAR
+    entity_type: Method
+  - name: CLAIRify
+    entity_type: Package
+relations:
+  - from: Source Registry
+    type: tracks
+    to: PDDLStream
+  - from: Source Registry
+    type: tracks
+    to: SDAR
+  - from: Source Registry
+    type: tracks
+    to: CLAIRify
+---
+
 # Source Registry
 
-Updated: 2026-06-06
+Updated: 2026-06-07
 
 | Bucket | Source | Type | Why it matters | Status |
 |---|---|---|---|---|

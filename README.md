@@ -36,6 +36,18 @@ The repo now has a public-facing GitHub Pages site under `docs/` plus a stronger
 ## Intended workflow
 
 1. capture raw notes, links, and papers into `topics/inbox/`
-2. turn them into synthesis notes in `topics/notes/`
-3. keep the repo updated daily when there is meaningful new signal
-4. use git history as the research trail
+2. add markdown frontmatter metadata to core notes (`title`, `kind`, `topics`, `entities`, `sources`, `relations`)
+3. turn raw captures into synthesis notes in `topics/notes/`
+4. build lightweight graph artifacts from markdown metadata with `node scripts/build_markdown_graph.js`
+5. keep the repo updated daily when there is meaningful new signal
+6. use git history as the research trail
+
+## Markdown-native graph mode
+
+This repo now uses a lightweight markdown mediator instead of waiting for full ontology build-out first.
+
+See:
+- `research_plan/graph/markdown-metadata-schema.md`
+- `research_plan/graph/knowledge-graph-design.md`
+- `research_plan/graph/graph.json`
+- `research_plan/graph/graph.mmd`
