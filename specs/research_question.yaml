@@ -1,0 +1,15 @@
+question: >-
+  What should a strong modern robotics task-and-motion-planning stack look like
+  for dual-arm manipulation, especially when long-horizon symbolic plans fail
+  because geometry, timing, or shared resources break late?
+required_sources:
+  - pddlstream-and-descendants
+  - dual-arm-benchmark-papers
+  - drake-gcs-iris-material
+  - execution-and-behavior-tree-material
+  - practical-open-source-tooling
+subquestions:
+  - What benchmark tasks best expose the hard parts of dual-arm coordination?
+  - Where should scheduling sit between task planning and motion planning?
+  - How early should feasibility checks be inserted to avoid late symbolic collapse?
+  - Which tools are most realistic for experiments Akash could actually run?
