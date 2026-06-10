@@ -1,13 +1,15 @@
 ---
 title: Initial systems landscape: dual-arm task and motion planning
 kind: synthesis-note
-updated: 2026-06-07
+updated: 2026-06-10
 topics:
   - dual-arm-planning
   - task-motion-scheduling
   - symbolic-planning
   - motion-planning
   - execution
+  - geometry
+  - scene-graphs
 entities:
   - PDDLStream
   - Policy-Guided Lazy Search with Feedback
@@ -20,6 +22,8 @@ entities:
   - entangled tabletop rearrangement
   - shared-resource conflict
   - corridor interference
+  - C-IRIS
+  - hierarchical 3D scene graphs
 entity_metadata:
   - name: PDDLStream
     entity_type: Package
@@ -43,6 +47,10 @@ entity_metadata:
     entity_type: FailureMode
   - name: corridor interference
     entity_type: FailureMode
+  - name: C-IRIS
+    entity_type: GeometryTechnique
+  - name: hierarchical 3D scene graphs
+    entity_type: Method
 sources:
   - https://arxiv.org/abs/1802.08705
   - https://arxiv.org/abs/2210.14055
@@ -50,6 +58,8 @@ sources:
   - https://drake.mit.edu/doxygen_cxx/group__planning__iris.html
   - https://arxiv.org/abs/2403.12761
   - https://arxiv.org/abs/2512.08206
+  - https://alexandreamice.github.io/publication/dai-2023-certified/
+  - https://arxiv.org/abs/2403.08094
 relations:
   - from: PDDLStream
     type: baseline_for
@@ -79,7 +89,7 @@ relations:
 
 # Initial systems landscape: dual-arm task and motion planning
 
-Updated: 2026-06-07
+Updated: 2026-06-10
 
 ## Core thesis
 
@@ -124,7 +134,13 @@ Source: https://branvu.github.io/coast.github.io/
 ### Geometry-aware feasibility layers
 Drake, IRIS, and Graphs of Convex Sets look promising for a more structured geometry layer. They matter when the question becomes: how do we represent feasible regions cleanly enough that high-level plans are not lying to us?
 
-Source: https://drake.mit.edu/doxygen_cxx/group__planning__iris.html
+The strongest new addition here is C-IRIS. It is not just another motion-planning paper; it is evidence that certified convex decompositions can scale to a 12-DOF bimanual manipulator. That makes it much more relevant to dual-arm TAMP than generic geometry papers that never leave low-DOF toy settings.
+
+Practical opinion: if a future stack wants to use Drake seriously, C-IRIS-style regions look like one of the few geometry summaries that could actually be surfaced early enough to help scheduling and avoid late symbolic collapse.
+
+Sources:
+- https://drake.mit.edu/doxygen_cxx/group__planning__iris.html
+- https://alexandreamice.github.io/publication/dai-2023-certified/
 
 ### Execution / recovery layer
 Behavior trees are interesting not as hype, but as a practical execution abstraction for retries, fallbacks, and replanning transitions.
@@ -135,6 +151,13 @@ Source: https://arxiv.org/abs/2403.12761
 SDAR is the most directly relevant seed item because it focuses on synchronous dual-arm rearrangement, dependency-driven task planning, layered motion planning, and hardware transfer.
 
 Source: https://arxiv.org/abs/2512.08206
+
+### World-model abstraction, but with caution
+Hierarchical 3D scene graphs are interesting because they show how to derive sparse planning domains from a much richer world model. That is a useful abstraction lesson for any knowledge-heavy planning system.
+
+But this should stay secondary for now. It is more relevant to large-scene mobile manipulation than to the repo's core dual-arm tabletop focus. Good idea to borrow from; bad idea to let it distract the main benchmark path.
+
+Source: https://arxiv.org/abs/2403.08094
 
 ## Benchmark tasks worth tracking
 
@@ -153,7 +176,7 @@ It is probably a layered system:
 
 1. symbolic abstraction,
 2. scheduling / resource reasoning,
-3. geometry-aware feasibility checks,
+3. geometry-aware feasibility checks, ideally with reusable summaries rather than only fresh stream calls,
 4. fast motion planning backend,
 5. execution and recovery.
 

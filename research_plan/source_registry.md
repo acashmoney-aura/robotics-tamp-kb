@@ -1,7 +1,7 @@
 ---
 title: Source Registry
 kind: registry
-updated: 2026-06-07
+updated: 2026-06-10
 topics:
   - sources
   - packages
@@ -15,6 +15,7 @@ entities:
   - IRIS
   - SDAR
   - CLAIRify
+  - C-IRIS
 entity_metadata:
   - name: PDDLStream
     entity_type: Package
@@ -30,6 +31,8 @@ entity_metadata:
     entity_type: Method
   - name: CLAIRify
     entity_type: Package
+  - name: C-IRIS
+    entity_type: GeometryTechnique
 relations:
   - from: Source Registry
     type: tracks
@@ -40,11 +43,14 @@ relations:
   - from: Source Registry
     type: tracks
     to: CLAIRify
+  - from: Source Registry
+    type: tracks
+    to: C-IRIS
 ---
 
 # Source Registry
 
-Updated: 2026-06-07
+Updated: 2026-06-10
 
 | Bucket | Source | Type | Why it matters | Status |
 |---|---|---|---|---|
@@ -54,6 +60,8 @@ Updated: 2026-06-07
 | Search guidance | https://arxiv.org/abs/2210.14055 | paper | lazy / policy-guided search perspective for TAMP | captured |
 | Constraint-guided TAMP | https://branvu.github.io/coast.github.io/ | project page | constraint-first narrowing of symbolic search | captured |
 | Geometry regions | https://drake.mit.edu/doxygen_cxx/group__planning__iris.html | docs | IRIS free-space regions in Drake | captured |
+| Certified geometry decomposition | https://alexandreamice.github.io/publication/dai-2023-certified/ | paper | C-IRIS gives certified collision-free convex regions and explicitly scales to a 12-DOF bimanual setup | captured + synthesized |
+| Scene-graph planning abstraction | https://arxiv.org/abs/2403.08094 | paper | useful contrast case for deriving sparse planning domains from rich world models; more mobile-manipulation than dual-arm, but good abstraction lesson | captured + synthesized |
 | GCS search acceleration | https://www.roboticsproceedings.org/rss20/p113.html | paper | search-based planning over graphs of convex sets | captured |
 | Execution layer | https://arxiv.org/abs/2403.12761 | paper | behavior-tree / execution-recovery relevance | captured |
 | Dual-arm target system | https://arxiv.org/abs/2512.08206 | paper | most on-target dual-arm rearrangement paper in current set | captured + synthesized |
@@ -70,3 +78,4 @@ Updated: 2026-06-07
 - one assembly-specific dual-arm benchmark set
 - one source on scheduling formulations between symbolic and geometric layers
 - one reproducible Drake/GCS example that is easier to run than a full lab stack
+- one direct comparison of C-IRIS-style geometry summaries vs stream-only feasibility checks in manipulation planning

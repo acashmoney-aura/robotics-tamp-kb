@@ -1,17 +1,17 @@
 # Markdown graph summary
 
-Generated: 2026-06-07T13:48:03.399Z
+Generated: 2026-06-10T11:11:43.239Z
 
-- Documents: 14
-- Nodes: 114
-- Edges: 190
+- Documents: 16
+- Nodes: 124
+- Edges: 208
 
 ## Node types
 
-- document: 14
-- entity: 50
-- source: 15
-- topic: 35
+- document: 16
+- entity: 53
+- source: 17
+- topic: 38
 
 ## Entity types
 
@@ -19,8 +19,8 @@ Generated: 2026-06-07T13:48:03.399Z
 - Concept: 7
 - ExecutionFramework: 1
 - FailureMode: 3
-- GeometryTechnique: 2
-- Method: 4
+- GeometryTechnique: 3
+- Method: 6
 - Package: 6
 - SystemDesign: 1
 - TaskFamily: 1
@@ -29,10 +29,10 @@ Generated: 2026-06-07T13:48:03.399Z
 ## Documents with metadata
 
 - Benchmark and tooling map for dual-arm TAMP (synthesis-note) — 26 entities, 8 relations, 10 sources — topics/notes/benchmark-and-tooling-map.md
-- Initial systems landscape: dual-arm task and motion planning (synthesis-note) — 22 entities, 8 relations, 6 sources — topics/notes/initial-systems-landscape.md
+- Initial systems landscape: dual-arm task and motion planning (synthesis-note) — 26 entities, 8 relations, 8 sources — topics/notes/initial-systems-landscape.md
 - LLMs, execution, and applied TAMP frontiers (synthesis-note) — 14 entities, 6 relations, 4 sources — topics/notes/llms-execution-and-applications.md
 - Robotics TAMP KB Brief (brief) — 14 entities, 5 relations, 0 sources — topics/brief.md
-- Source Registry (registry) — 14 entities, 3 relations, 0 sources — research_plan/source_registry.md
+- Source Registry (registry) — 16 entities, 4 relations, 0 sources — research_plan/source_registry.md
 - Akash robotics research seed note (research-note) — 26 entities, 2 relations, 0 sources — topics/inbox/2026-06-06-8f4333ce44.md
 - Robotics TAMP knowledge graph design (design-note) — 7 entities, 2 relations, 0 sources — research_plan/graph/knowledge-graph-design.md
 - Current Plan (plan) — 16 entities, 1 relations, 0 sources — research_plan/current_plan.md
@@ -42,6 +42,8 @@ Generated: 2026-06-07T13:48:03.399Z
 - PDDLStream foundation paper capture (capture) — 2 entities, 0 relations, 1 sources — topics/inbox/2026-06-06-628505156e.md
 - Policy-guided lazy search paper capture (capture) — 2 entities, 0 relations, 1 sources — topics/inbox/2026-06-06-984e9173b1.md
 - COAST project capture (capture) — 2 entities, 0 relations, 1 sources — topics/inbox/2026-06-06-ff5d56d721.md
+- Certified polyhedral decomposition / C-IRIS capture (paper) — 2 entities, 0 relations, 1 sources — topics/inbox/2026-06-10-003cf0c02b.md
+- Hierarchical 3D scene graph TAMP capture (paper) — 2 entities, 0 relations, 1 sources — topics/inbox/2026-06-10-055dd8b2d2.md
 
 ## Output files
 

@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-06-07T13:48:03.399Z",
+  "generatedAt": "2026-06-10T11:11:43.239Z",
   "counts": {
-    "nodes": 114,
-    "edges": 190,
-    "documents": 14
+    "nodes": 124,
+    "edges": 208,
+    "documents": 16
   },
   "nodes": [
     {
@@ -28,7 +28,7 @@
       "nodeType": "document",
       "kind": "registry",
       "path": "research_plan/source_registry.md",
-      "updated": "2026-06-07"
+      "updated": "2026-06-10"
     },
     {
       "id": "doc:topics/brief.md",
@@ -95,6 +95,22 @@
       "updated": "2026-06-07T03:22:45.795916+00:00"
     },
     {
+      "id": "doc:topics/inbox/2026-06-10-003cf0c02b.md",
+      "label": "Certified polyhedral decomposition / C-IRIS capture",
+      "nodeType": "document",
+      "kind": "paper",
+      "path": "topics/inbox/2026-06-10-003cf0c02b.md",
+      "updated": "2026-06-10T11:10:47.087579+00:00"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-10-055dd8b2d2.md",
+      "label": "Hierarchical 3D scene graph TAMP capture",
+      "nodeType": "document",
+      "kind": "paper",
+      "path": "topics/inbox/2026-06-10-055dd8b2d2.md",
+      "updated": "2026-06-10T11:10:47.227317+00:00"
+    },
+    {
       "id": "doc:topics/notes/benchmark-and-tooling-map.md",
       "label": "Benchmark and tooling map for dual-arm TAMP",
       "nodeType": "document",
@@ -108,7 +124,7 @@
       "nodeType": "document",
       "kind": "synthesis-note",
       "path": "topics/notes/initial-systems-landscape.md",
-      "updated": "2026-06-07"
+      "updated": "2026-06-10"
     },
     {
       "id": "doc:topics/notes/llms-execution-and-applications.md",
@@ -144,6 +160,13 @@
       "label": "Benchmark",
       "nodeType": "entity",
       "entityType": "Concept"
+    },
+    {
+      "id": "entity:c-iris",
+      "label": "C-IRIS",
+      "nodeType": "entity",
+      "entityType": "GeometryTechnique",
+      "status": null
     },
     {
       "id": "entity:chemistry-robotics",
@@ -280,6 +303,13 @@
       "label": "handoff benchmark",
       "nodeType": "entity",
       "entityType": "Benchmark",
+      "status": null
+    },
+    {
+      "id": "entity:hierarchical-3d-scene-graphs",
+      "label": "hierarchical 3D scene graphs",
+      "nodeType": "entity",
+      "entityType": "Method",
       "status": null
     },
     {
@@ -422,6 +452,13 @@
       "nodeType": "entity"
     },
     {
+      "id": "entity:task-and-motion-planning-in-hierarchical-3d-scene-graphs",
+      "label": "Task and Motion Planning in Hierarchical 3D Scene Graphs",
+      "nodeType": "entity",
+      "entityType": "Method",
+      "status": null
+    },
+    {
       "id": "entity:task-motion-scheduling",
       "label": "task-motion-scheduling",
       "nodeType": "entity",
@@ -440,6 +477,12 @@
       "url": "https://ac-rad.github.io/clairify/"
     },
     {
+      "id": "source:https-alexandreamice-github-io-publication-dai-2023-certified",
+      "label": "https://alexandreamice.github.io/publication/dai-2023-certified/",
+      "nodeType": "source",
+      "url": "https://alexandreamice.github.io/publication/dai-2023-certified/"
+    },
+    {
       "id": "source:https-arxiv-org-abs-1802-08705",
       "label": "https://arxiv.org/abs/1802.08705",
       "nodeType": "source",
@@ -450,6 +493,12 @@
       "label": "https://arxiv.org/abs/2210.14055",
       "nodeType": "source",
       "url": "https://arxiv.org/abs/2210.14055"
+    },
+    {
+      "id": "source:https-arxiv-org-abs-2403-08094",
+      "label": "https://arxiv.org/abs/2403.08094",
+      "nodeType": "source",
+      "url": "https://arxiv.org/abs/2403.08094"
     },
     {
       "id": "source:https-arxiv-org-abs-2403-12761",
@@ -539,6 +588,11 @@
       "nodeType": "topic"
     },
     {
+      "id": "topic:c-iris",
+      "label": "c-iris",
+      "nodeType": "topic"
+    },
+    {
       "id": "topic:chemistry-robotics",
       "label": "chemistry-robotics",
       "nodeType": "topic"
@@ -604,6 +658,11 @@
       "nodeType": "topic"
     },
     {
+      "id": "topic:large-scale-planning",
+      "label": "large-scale-planning",
+      "nodeType": "topic"
+    },
+    {
       "id": "topic:llms",
       "label": "llms",
       "nodeType": "topic"
@@ -661,6 +720,11 @@
     {
       "id": "topic:research-directions",
       "label": "research-directions",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:scene-graphs",
+      "label": "scene-graphs",
       "nodeType": "topic"
     },
     {
@@ -887,6 +951,13 @@
       "from": "doc:research_plan/source_registry.md",
       "type": "has_topic",
       "to": "topic:sources",
+      "source": "research_plan/source_registry.md"
+    },
+    {
+      "id": "doc:research_plan/source_registry.md::mentions::entity:c-iris",
+      "from": "doc:research_plan/source_registry.md",
+      "type": "mentions",
+      "to": "entity:c-iris",
       "source": "research_plan/source_registry.md"
     },
     {
@@ -1366,6 +1437,76 @@
       "source": "topics/inbox/2026-06-06-ff5d56d721.md"
     },
     {
+      "id": "doc:topics/inbox/2026-06-10-003cf0c02b.md::cites::source:https-alexandreamice-github-io-publication-dai-2023-certified",
+      "from": "doc:topics/inbox/2026-06-10-003cf0c02b.md",
+      "type": "cites",
+      "to": "source:https-alexandreamice-github-io-publication-dai-2023-certified",
+      "source": "topics/inbox/2026-06-10-003cf0c02b.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-10-003cf0c02b.md::has_topic::topic:c-iris",
+      "from": "doc:topics/inbox/2026-06-10-003cf0c02b.md",
+      "type": "has_topic",
+      "to": "topic:c-iris",
+      "source": "topics/inbox/2026-06-10-003cf0c02b.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-10-003cf0c02b.md::has_topic::topic:drake",
+      "from": "doc:topics/inbox/2026-06-10-003cf0c02b.md",
+      "type": "has_topic",
+      "to": "topic:drake",
+      "source": "topics/inbox/2026-06-10-003cf0c02b.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-10-003cf0c02b.md::has_topic::topic:geometry",
+      "from": "doc:topics/inbox/2026-06-10-003cf0c02b.md",
+      "type": "has_topic",
+      "to": "topic:geometry",
+      "source": "topics/inbox/2026-06-10-003cf0c02b.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-10-003cf0c02b.md::mentions::entity:c-iris",
+      "from": "doc:topics/inbox/2026-06-10-003cf0c02b.md",
+      "type": "mentions",
+      "to": "entity:c-iris",
+      "source": "topics/inbox/2026-06-10-003cf0c02b.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-10-055dd8b2d2.md::cites::source:https-arxiv-org-abs-2403-08094",
+      "from": "doc:topics/inbox/2026-06-10-055dd8b2d2.md",
+      "type": "cites",
+      "to": "source:https-arxiv-org-abs-2403-08094",
+      "source": "topics/inbox/2026-06-10-055dd8b2d2.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-10-055dd8b2d2.md::has_topic::topic:large-scale-planning",
+      "from": "doc:topics/inbox/2026-06-10-055dd8b2d2.md",
+      "type": "has_topic",
+      "to": "topic:large-scale-planning",
+      "source": "topics/inbox/2026-06-10-055dd8b2d2.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-10-055dd8b2d2.md::has_topic::topic:scene-graphs",
+      "from": "doc:topics/inbox/2026-06-10-055dd8b2d2.md",
+      "type": "has_topic",
+      "to": "topic:scene-graphs",
+      "source": "topics/inbox/2026-06-10-055dd8b2d2.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-10-055dd8b2d2.md::has_topic::topic:task-motion-planning",
+      "from": "doc:topics/inbox/2026-06-10-055dd8b2d2.md",
+      "type": "has_topic",
+      "to": "topic:task-motion-planning",
+      "source": "topics/inbox/2026-06-10-055dd8b2d2.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-10-055dd8b2d2.md::mentions::entity:task-and-motion-planning-in-hierarchical-3d-scene-graphs",
+      "from": "doc:topics/inbox/2026-06-10-055dd8b2d2.md",
+      "type": "mentions",
+      "to": "entity:task-and-motion-planning-in-hierarchical-3d-scene-graphs",
+      "source": "topics/inbox/2026-06-10-055dd8b2d2.md"
+    },
+    {
       "id": "doc:topics/notes/benchmark-and-tooling-map.md::cites::source:https-arxiv-org-abs-1802-08705",
       "from": "doc:topics/notes/benchmark-and-tooling-map.md",
       "type": "cites",
@@ -1562,6 +1703,13 @@
       "source": "topics/notes/benchmark-and-tooling-map.md"
     },
     {
+      "id": "doc:topics/notes/initial-systems-landscape.md::cites::source:https-alexandreamice-github-io-publication-dai-2023-certified",
+      "from": "doc:topics/notes/initial-systems-landscape.md",
+      "type": "cites",
+      "to": "source:https-alexandreamice-github-io-publication-dai-2023-certified",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
       "id": "doc:topics/notes/initial-systems-landscape.md::cites::source:https-arxiv-org-abs-1802-08705",
       "from": "doc:topics/notes/initial-systems-landscape.md",
       "type": "cites",
@@ -1573,6 +1721,13 @@
       "from": "doc:topics/notes/initial-systems-landscape.md",
       "type": "cites",
       "to": "source:https-arxiv-org-abs-2210-14055",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
+      "id": "doc:topics/notes/initial-systems-landscape.md::cites::source:https-arxiv-org-abs-2403-08094",
+      "from": "doc:topics/notes/initial-systems-landscape.md",
+      "type": "cites",
+      "to": "source:https-arxiv-org-abs-2403-08094",
       "source": "topics/notes/initial-systems-landscape.md"
     },
     {
@@ -1618,10 +1773,24 @@
       "source": "topics/notes/initial-systems-landscape.md"
     },
     {
+      "id": "doc:topics/notes/initial-systems-landscape.md::has_topic::topic:geometry",
+      "from": "doc:topics/notes/initial-systems-landscape.md",
+      "type": "has_topic",
+      "to": "topic:geometry",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
       "id": "doc:topics/notes/initial-systems-landscape.md::has_topic::topic:motion-planning",
       "from": "doc:topics/notes/initial-systems-landscape.md",
       "type": "has_topic",
       "to": "topic:motion-planning",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
+      "id": "doc:topics/notes/initial-systems-landscape.md::has_topic::topic:scene-graphs",
+      "from": "doc:topics/notes/initial-systems-landscape.md",
+      "type": "has_topic",
+      "to": "topic:scene-graphs",
       "source": "topics/notes/initial-systems-landscape.md"
     },
     {
@@ -1643,6 +1812,13 @@
       "from": "doc:topics/notes/initial-systems-landscape.md",
       "type": "mentions",
       "to": "entity:behavior-trees",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
+      "id": "doc:topics/notes/initial-systems-landscape.md::mentions::entity:c-iris",
+      "from": "doc:topics/notes/initial-systems-landscape.md",
+      "type": "mentions",
+      "to": "entity:c-iris",
       "source": "topics/notes/initial-systems-landscape.md"
     },
     {
@@ -1671,6 +1847,13 @@
       "from": "doc:topics/notes/initial-systems-landscape.md",
       "type": "mentions",
       "to": "entity:entangled-tabletop-rearrangement",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
+      "id": "doc:topics/notes/initial-systems-landscape.md::mentions::entity:hierarchical-3d-scene-graphs",
+      "from": "doc:topics/notes/initial-systems-landscape.md",
+      "type": "mentions",
+      "to": "entity:hierarchical-3d-scene-graphs",
       "source": "topics/notes/initial-systems-landscape.md"
     },
     {
@@ -1996,6 +2179,13 @@
       "source": "topics/inbox/2026-06-06-8f4333ce44.md"
     },
     {
+      "id": "entity:source-registry::tracks::entity:c-iris",
+      "from": "entity:source-registry",
+      "type": "tracks",
+      "to": "entity:c-iris",
+      "source": "research_plan/source_registry.md"
+    },
+    {
       "id": "entity:source-registry::tracks::entity:clairify",
       "from": "entity:source-registry",
       "type": "tracks",
@@ -2032,21 +2222,21 @@
     }
   ],
   "nodeTypeCounts": {
-    "document": 14,
-    "entity": 50,
-    "source": 15,
-    "topic": 35
+    "document": 16,
+    "entity": 53,
+    "source": 17,
+    "topic": 38
   },
   "entityTypeCounts": {
     "Benchmark": 11,
     "ExecutionFramework": 1,
     "Concept": 7,
+    "GeometryTechnique": 3,
     "TaskFamily": 1,
     "Package": 6,
     "Unspecified": 14,
     "FailureMode": 3,
-    "GeometryTechnique": 2,
-    "SystemDesign": 1,
-    "Method": 4
+    "Method": 6,
+    "SystemDesign": 1
   }
 }
