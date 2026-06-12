@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-06-10T11:11:43.239Z",
+  "generatedAt": "2026-06-12T21:22:49.772Z",
   "counts": {
-    "nodes": 124,
-    "edges": 208,
-    "documents": 16
+    "nodes": 160,
+    "edges": 249,
+    "documents": 17
   },
   "nodes": [
     {
@@ -135,6 +135,21 @@
       "updated": "2026-06-07"
     },
     {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "label": "Recent robotics interfaces, world models, and embodied structure",
+      "nodeType": "document",
+      "kind": "synthesis-note",
+      "path": "topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "updated": "2026-06-12"
+    },
+    {
+      "id": "entity:apt",
+      "label": "APT",
+      "nodeType": "entity",
+      "entityType": "Method",
+      "status": null
+    },
+    {
       "id": "entity:assembly-benchmarks",
       "label": "assembly benchmarks",
       "nodeType": "entity",
@@ -176,6 +191,13 @@
       "status": null
     },
     {
+      "id": "entity:chorus",
+      "label": "CHORUS",
+      "nodeType": "entity",
+      "entityType": "Method",
+      "status": null
+    },
+    {
       "id": "entity:clairify",
       "label": "CLAIRify",
       "nodeType": "entity",
@@ -213,6 +235,18 @@
       "label": "dense tabletop rearrangement",
       "nodeType": "entity",
       "entityType": "Benchmark",
+      "status": null
+    },
+    {
+      "id": "entity:dexterous-tool-use",
+      "label": "dexterous tool use",
+      "nodeType": "entity"
+    },
+    {
+      "id": "entity:direct",
+      "label": "DIRECT",
+      "nodeType": "entity",
+      "entityType": "Method",
       "status": null
     },
     {
@@ -268,6 +302,13 @@
       "nodeType": "entity"
     },
     {
+      "id": "entity:factr-2",
+      "label": "FACTR 2",
+      "nodeType": "entity",
+      "entityType": "Method",
+      "status": null
+    },
+    {
       "id": "entity:failuremode",
       "label": "FailureMode",
       "nodeType": "entity",
@@ -278,6 +319,20 @@
       "label": "Fast Downward",
       "nodeType": "entity",
       "entityType": "Package",
+      "status": null
+    },
+    {
+      "id": "entity:flow-reversal-steering",
+      "label": "Flow Reversal Steering",
+      "nodeType": "entity",
+      "entityType": "Method",
+      "status": null
+    },
+    {
+      "id": "entity:force-aware-manipulation",
+      "label": "force-aware manipulation",
+      "nodeType": "entity",
+      "entityType": "ResearchTheme",
       "status": null
     },
     {
@@ -320,9 +375,23 @@
       "status": null
     },
     {
+      "id": "entity:labvla",
+      "label": "LabVLA",
+      "nodeType": "entity",
+      "entityType": "Method",
+      "status": null
+    },
+    {
       "id": "entity:language-interface",
       "label": "language interface",
       "nodeType": "entity"
+    },
+    {
+      "id": "entity:mana",
+      "label": "Mana",
+      "nodeType": "entity",
+      "entityType": "Method",
+      "status": null
     },
     {
       "id": "entity:markdown-metadata",
@@ -335,6 +404,20 @@
       "label": "markdown metadata graph",
       "nodeType": "entity",
       "entityType": "SystemDesign",
+      "status": null
+    },
+    {
+      "id": "entity:maskwam",
+      "label": "MaskWAM",
+      "nodeType": "entity",
+      "entityType": "Method",
+      "status": null
+    },
+    {
+      "id": "entity:mcr-bionic-hand",
+      "label": "MCR-Bionic Hand",
+      "nodeType": "entity",
+      "entityType": "System",
       "status": null
     },
     {
@@ -379,6 +462,18 @@
       "status": null
     },
     {
+      "id": "entity:physical-priors",
+      "label": "physical priors",
+      "nodeType": "entity"
+    },
+    {
+      "id": "entity:planner-compute-routing",
+      "label": "planner compute routing",
+      "nodeType": "entity",
+      "entityType": "ResearchTheme",
+      "status": null
+    },
+    {
       "id": "entity:platform-independent-tamp-benchmarks",
       "label": "platform-independent TAMP benchmarks",
       "nodeType": "entity",
@@ -411,6 +506,11 @@
       "status": null
     },
     {
+      "id": "entity:scientific-laboratories",
+      "label": "scientific laboratories",
+      "nodeType": "entity"
+    },
+    {
       "id": "entity:sdar",
       "label": "SDAR",
       "nodeType": "entity",
@@ -434,6 +534,11 @@
     {
       "id": "entity:source-registry",
       "label": "Source Registry",
+      "nodeType": "entity"
+    },
+    {
+      "id": "entity:spatial-grounding",
+      "label": "spatial grounding",
       "nodeType": "entity"
     },
     {
@@ -469,6 +574,62 @@
       "id": "entity:verification",
       "label": "verification",
       "nodeType": "entity"
+    },
+    {
+      "id": "entity:vision-language-action-policies",
+      "label": "vision-language-action policies",
+      "nodeType": "entity"
+    },
+    {
+      "id": "entity:weaver",
+      "label": "WEAVER",
+      "nodeType": "entity",
+      "entityType": "Method",
+      "status": null
+    },
+    {
+      "id": "entity:world-action-priors",
+      "label": "world-action priors",
+      "nodeType": "entity",
+      "entityType": "ResearchTheme",
+      "status": null
+    },
+    {
+      "id": "entity:world-pilot",
+      "label": "World Pilot",
+      "nodeType": "entity",
+      "entityType": "Method",
+      "status": null
+    },
+    {
+      "id": "source:http-arxiv-org-abs-2606-12352",
+      "label": "http://arxiv.org/abs/2606.12352",
+      "nodeType": "source",
+      "url": "http://arxiv.org/abs/2606.12352"
+    },
+    {
+      "id": "source:http-arxiv-org-abs-2606-12366",
+      "label": "http://arxiv.org/abs/2606.12366",
+      "nodeType": "source",
+      "url": "http://arxiv.org/abs/2606.12366"
+    },
+    {
+      "id": "source:http-arxiv-org-abs-2606-12402",
+      "label": "http://arxiv.org/abs/2606.12402",
+      "nodeType": "source",
+      "url": "http://arxiv.org/abs/2606.12402"
+    },
+    {
+      "id": "source:http-arxiv-org-abs-2606-12403",
+      "label": "http://arxiv.org/abs/2606.12403",
+      "nodeType": "source",
+      "url": "http://arxiv.org/abs/2606.12403"
+    },
+    {
+      "id": "source:http-arxiv-org-abs-2606-12406",
+      "label": "http://arxiv.org/abs/2606.12406",
+      "nodeType": "source",
+      "url": "http://arxiv.org/abs/2606.12406"
     },
     {
       "id": "source:https-ac-rad-github-io-clairify",
@@ -517,6 +678,42 @@
       "label": "https://arxiv.org/abs/2512.08206",
       "nodeType": "source",
       "url": "https://arxiv.org/abs/2512.08206"
+    },
+    {
+      "id": "source:https-arxiv-org-abs-2606-13515",
+      "label": "https://arxiv.org/abs/2606.13515",
+      "nodeType": "source",
+      "url": "https://arxiv.org/abs/2606.13515"
+    },
+    {
+      "id": "source:https-arxiv-org-abs-2606-13578",
+      "label": "https://arxiv.org/abs/2606.13578",
+      "nodeType": "source",
+      "url": "https://arxiv.org/abs/2606.13578"
+    },
+    {
+      "id": "source:https-arxiv-org-abs-2606-13601",
+      "label": "https://arxiv.org/abs/2606.13601",
+      "nodeType": "source",
+      "url": "https://arxiv.org/abs/2606.13601"
+    },
+    {
+      "id": "source:https-arxiv-org-abs-2606-13672",
+      "label": "https://arxiv.org/abs/2606.13672",
+      "nodeType": "source",
+      "url": "https://arxiv.org/abs/2606.13672"
+    },
+    {
+      "id": "source:https-arxiv-org-abs-2606-13675",
+      "label": "https://arxiv.org/abs/2606.13675",
+      "nodeType": "source",
+      "url": "https://arxiv.org/abs/2606.13675"
+    },
+    {
+      "id": "source:https-arxiv-org-abs-2606-13677",
+      "label": "https://arxiv.org/abs/2606.13677",
+      "nodeType": "source",
+      "url": "https://arxiv.org/abs/2606.13677"
     },
     {
       "id": "source:https-branvu-github-io-coast-github-io",
@@ -608,6 +805,11 @@
       "nodeType": "topic"
     },
     {
+      "id": "topic:dexterity",
+      "label": "dexterity",
+      "nodeType": "topic"
+    },
+    {
       "id": "topic:drake",
       "label": "drake",
       "nodeType": "topic"
@@ -615,6 +817,11 @@
     {
       "id": "topic:dual-arm-planning",
       "label": "dual-arm-planning",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:embodied-intelligence",
+      "label": "embodied-intelligence",
       "nodeType": "topic"
     },
     {
@@ -723,6 +930,11 @@
       "nodeType": "topic"
     },
     {
+      "id": "topic:robotics",
+      "label": "robotics",
+      "nodeType": "topic"
+    },
+    {
       "id": "topic:scene-graphs",
       "label": "scene-graphs",
       "nodeType": "topic"
@@ -760,6 +972,16 @@
     {
       "id": "topic:task-motion-scheduling",
       "label": "task-motion-scheduling",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:vision-language-action",
+      "label": "vision-language-action",
+      "nodeType": "topic"
+    },
+    {
+      "id": "topic:world-models",
+      "label": "world-models",
       "nodeType": "topic"
     }
   ],
@@ -2011,6 +2233,230 @@
       "source": "topics/notes/llms-execution-and-applications.md"
     },
     {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md::cites::source:http-arxiv-org-abs-2606-12352",
+      "from": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "type": "cites",
+      "to": "source:http-arxiv-org-abs-2606-12352",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md::cites::source:http-arxiv-org-abs-2606-12366",
+      "from": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "type": "cites",
+      "to": "source:http-arxiv-org-abs-2606-12366",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md::cites::source:http-arxiv-org-abs-2606-12402",
+      "from": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "type": "cites",
+      "to": "source:http-arxiv-org-abs-2606-12402",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md::cites::source:http-arxiv-org-abs-2606-12403",
+      "from": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "type": "cites",
+      "to": "source:http-arxiv-org-abs-2606-12403",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md::cites::source:http-arxiv-org-abs-2606-12406",
+      "from": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "type": "cites",
+      "to": "source:http-arxiv-org-abs-2606-12406",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md::cites::source:https-arxiv-org-abs-2606-13515",
+      "from": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "type": "cites",
+      "to": "source:https-arxiv-org-abs-2606-13515",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md::cites::source:https-arxiv-org-abs-2606-13578",
+      "from": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "type": "cites",
+      "to": "source:https-arxiv-org-abs-2606-13578",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md::cites::source:https-arxiv-org-abs-2606-13601",
+      "from": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "type": "cites",
+      "to": "source:https-arxiv-org-abs-2606-13601",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md::cites::source:https-arxiv-org-abs-2606-13672",
+      "from": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "type": "cites",
+      "to": "source:https-arxiv-org-abs-2606-13672",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md::cites::source:https-arxiv-org-abs-2606-13675",
+      "from": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "type": "cites",
+      "to": "source:https-arxiv-org-abs-2606-13675",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md::cites::source:https-arxiv-org-abs-2606-13677",
+      "from": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "type": "cites",
+      "to": "source:https-arxiv-org-abs-2606-13677",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md::has_topic::topic:dexterity",
+      "from": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "type": "has_topic",
+      "to": "topic:dexterity",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md::has_topic::topic:embodied-intelligence",
+      "from": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "type": "has_topic",
+      "to": "topic:embodied-intelligence",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md::has_topic::topic:execution",
+      "from": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "type": "has_topic",
+      "to": "topic:execution",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md::has_topic::topic:robotics",
+      "from": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "type": "has_topic",
+      "to": "topic:robotics",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md::has_topic::topic:vision-language-action",
+      "from": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "type": "has_topic",
+      "to": "topic:vision-language-action",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md::has_topic::topic:world-models",
+      "from": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "type": "has_topic",
+      "to": "topic:world-models",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md::mentions::entity:apt",
+      "from": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "type": "mentions",
+      "to": "entity:apt",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md::mentions::entity:chorus",
+      "from": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "type": "mentions",
+      "to": "entity:chorus",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md::mentions::entity:direct",
+      "from": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "type": "mentions",
+      "to": "entity:direct",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md::mentions::entity:factr-2",
+      "from": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "type": "mentions",
+      "to": "entity:factr-2",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md::mentions::entity:flow-reversal-steering",
+      "from": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "type": "mentions",
+      "to": "entity:flow-reversal-steering",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md::mentions::entity:force-aware-manipulation",
+      "from": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "type": "mentions",
+      "to": "entity:force-aware-manipulation",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md::mentions::entity:labvla",
+      "from": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "type": "mentions",
+      "to": "entity:labvla",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md::mentions::entity:mana",
+      "from": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "type": "mentions",
+      "to": "entity:mana",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md::mentions::entity:maskwam",
+      "from": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "type": "mentions",
+      "to": "entity:maskwam",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md::mentions::entity:mcr-bionic-hand",
+      "from": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "type": "mentions",
+      "to": "entity:mcr-bionic-hand",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md::mentions::entity:planner-compute-routing",
+      "from": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "type": "mentions",
+      "to": "entity:planner-compute-routing",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md::mentions::entity:task-motion-scheduling",
+      "from": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "type": "mentions",
+      "to": "entity:task-motion-scheduling",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md::mentions::entity:weaver",
+      "from": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "type": "mentions",
+      "to": "entity:weaver",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md::mentions::entity:world-action-priors",
+      "from": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "type": "mentions",
+      "to": "entity:world-action-priors",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md::mentions::entity:world-pilot",
+      "from": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "type": "mentions",
+      "to": "entity:world-pilot",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
       "id": "entity:behavior-trees::supports::entity:execution-recovery",
       "from": "entity:behavior-trees",
       "type": "supports",
@@ -2067,6 +2513,13 @@
       "source": "topics/notes/benchmark-and-tooling-map.md"
     },
     {
+      "id": "entity:direct::exemplifies::entity:planner-compute-routing",
+      "from": "entity:direct",
+      "type": "exemplifies",
+      "to": "entity:planner-compute-routing",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
       "id": "entity:drake::includes::entity:iris",
       "from": "entity:drake",
       "type": "includes",
@@ -2081,11 +2534,25 @@
       "source": "topics/notes/benchmark-and-tooling-map.md"
     },
     {
+      "id": "entity:factr-2::advances::entity:force-aware-manipulation",
+      "from": "entity:factr-2",
+      "type": "advances",
+      "to": "entity:force-aware-manipulation",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
       "id": "entity:fast-downward::symbolic_backbone_for::entity:pddl-style-planning",
       "from": "entity:fast-downward",
       "type": "symbolic_backbone_for",
       "to": "entity:pddl-style-planning",
       "source": "topics/notes/benchmark-and-tooling-map.md"
+    },
+    {
+      "id": "entity:flow-reversal-steering::steers::entity:vision-language-action-policies",
+      "from": "entity:flow-reversal-steering",
+      "type": "steers",
+      "to": "entity:vision-language-action-policies",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
     },
     {
       "id": "entity:graph-mediator::constructs::entity:structured-graph",
@@ -2109,6 +2576,20 @@
       "source": "topics/notes/benchmark-and-tooling-map.md"
     },
     {
+      "id": "entity:labvla::applies_to::entity:scientific-laboratories",
+      "from": "entity:labvla",
+      "type": "applies_to",
+      "to": "entity:scientific-laboratories",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "entity:mana::structures::entity:dexterous-tool-use",
+      "from": "entity:mana",
+      "type": "structures",
+      "to": "entity:dexterous-tool-use",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
       "id": "entity:markdown-metadata-graph::expands::entity:robotics-knowledge-base",
       "from": "entity:markdown-metadata-graph",
       "type": "expands",
@@ -2121,6 +2602,20 @@
       "type": "feeds",
       "to": "entity:graph-mediator",
       "source": "research_plan/graph/knowledge-graph-design.md"
+    },
+    {
+      "id": "entity:maskwam::sharpens::entity:spatial-grounding",
+      "from": "entity:maskwam",
+      "type": "sharpens",
+      "to": "entity:spatial-grounding",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "entity:mcr-bionic-hand::embeds::entity:physical-priors",
+      "from": "entity:mcr-bionic-hand",
+      "type": "embeds",
+      "to": "entity:physical-priors",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
     },
     {
       "id": "entity:pddlstream::baseline_for::entity:dual-arm-tamp-experiments",
@@ -2219,24 +2714,40 @@
       "type": "addresses",
       "to": "entity:shared-resource-conflict",
       "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
+      "id": "entity:weaver::supports::entity:world-action-priors",
+      "from": "entity:weaver",
+      "type": "supports",
+      "to": "entity:world-action-priors",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
+    },
+    {
+      "id": "entity:world-pilot::uses::entity:world-action-priors",
+      "from": "entity:world-pilot",
+      "type": "uses",
+      "to": "entity:world-action-priors",
+      "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
     }
   ],
   "nodeTypeCounts": {
-    "document": 16,
-    "entity": 53,
-    "source": 17,
-    "topic": 38
+    "document": 17,
+    "entity": 72,
+    "source": 28,
+    "topic": 43
   },
   "entityTypeCounts": {
+    "Method": 16,
     "Benchmark": 11,
     "ExecutionFramework": 1,
     "Concept": 7,
     "GeometryTechnique": 3,
     "TaskFamily": 1,
     "Package": 6,
-    "Unspecified": 14,
+    "Unspecified": 19,
     "FailureMode": 3,
-    "Method": 6,
-    "SystemDesign": 1
+    "ResearchTheme": 3,
+    "SystemDesign": 1,
+    "System": 1
   }
 }

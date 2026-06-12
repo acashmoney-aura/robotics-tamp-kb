@@ -71,6 +71,17 @@ Updated: 2026-06-10
 | LLM + TAMP systematic eval | https://arxiv.org/abs/2510.00182 | paper | direct evidence against naive LLM-centered TAMP | captured |
 | Language-to-TAMP application | https://ac-rad.github.io/clairify/ | project page | good example of language + verification + TAMP | captured |
 | CLAIRify paper | https://link.springer.com/article/10.1007/s10514-023-10136-2 | paper | applied robotics pipeline for chemistry tasks | captured |
+| Planner compute routing | http://arxiv.org/abs/2606.12402 | paper | adaptive test-time compute allocation for embodied planners; strong latency/success framing | captured + synthesized |
+| Force-aware cheap-arm manipulation | http://arxiv.org/abs/2606.12406 | paper | learned external torque estimation without premium force hardware | captured + synthesized |
+| World-action priors for VLAs | http://arxiv.org/abs/2606.12403 | paper | scene-evolution priors steering manipulation policies | captured + synthesized |
+| Decentralized shared VLA collaboration | http://arxiv.org/abs/2606.12352 | paper | multi-robot coordination from one shared backbone without inference-time communication | captured + synthesized |
+| Action-expert pretraining | http://arxiv.org/abs/2606.12366 | paper | better instruction generalization by factoring action priors from language conditioning | captured + synthesized |
+| Dexterous articulated tool use | https://arxiv.org/abs/2606.13677 | paper | structured keyframe/planning/RL pipeline for tool manipulation | captured + synthesized |
+| Fast manipulation world model | https://arxiv.org/abs/2606.13672 | paper | practical long-horizon world model with hardware relevance and speed claims | captured + synthesized |
+| Flow reversal steering | https://arxiv.org/abs/2606.13675 | paper | steerable robot generalists via latent inversion and nearby action-mode guidance | captured + synthesized |
+| Scientific-lab VLA | https://arxiv.org/abs/2606.13578 | paper | meaningful robotics × laboratory workflow frontier | captured + synthesized |
+| Mask-centric world-action modeling | https://arxiv.org/abs/2606.13515 | paper | stronger spatial grounding than text-only prompting for manipulation | captured + synthesized |
+| Anatomical priors in dexterity | https://arxiv.org/abs/2606.13601 | paper | embodiment itself carrying part of the control prior | captured + synthesized |
 
 ## Gaps to fill next
 

@@ -1,0 +1,482 @@
+{
+  "generatedAt": "2026-06-12T21:22:49.772Z",
+  "documents": [
+    {
+      "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "slug": "topics-notes-recent-robotics-interfaces-and-world-models-md",
+      "title": "Recent robotics interfaces, world models, and embodied structure",
+      "kind": "synthesis-note",
+      "path": "topics/notes/recent-robotics-interfaces-and-world-models.md",
+      "updated": "2026-06-12",
+      "topics": [
+        "robotics",
+        "world-models",
+        "dexterity",
+        "vision-language-action",
+        "execution",
+        "embodied-intelligence"
+      ],
+      "entities": [
+        "DIRECT",
+        "FACTR 2",
+        "World Pilot",
+        "CHORUS",
+        "APT",
+        "Mana",
+        "WEAVER",
+        "Flow Reversal Steering",
+        "LabVLA",
+        "MaskWAM",
+        "MCR-Bionic Hand",
+        "task-motion-scheduling",
+        "force-aware manipulation",
+        "planner compute routing",
+        "world-action priors"
+      ],
+      "sources": [
+        "http://arxiv.org/abs/2606.12402",
+        "http://arxiv.org/abs/2606.12406",
+        "http://arxiv.org/abs/2606.12403",
+        "http://arxiv.org/abs/2606.12352",
+        "http://arxiv.org/abs/2606.12366",
+        "https://arxiv.org/abs/2606.13677",
+        "https://arxiv.org/abs/2606.13672",
+        "https://arxiv.org/abs/2606.13675",
+        "https://arxiv.org/abs/2606.13578",
+        "https://arxiv.org/abs/2606.13515",
+        "https://arxiv.org/abs/2606.13601"
+      ],
+      "excerpt": "Recent robotics interfaces, world models, and embodied structure Updated: 2026-06-12 Core thesis The newest robotics digest material keeps reinforcing the same systems lesson: the strongest progress is not coming from generic end-to-end scale alone. It is coming from better inter…",
+      "body": "Recent robotics interfaces, world models, and embodied structure\n\nUpdated: 2026-06-12\n\nCore thesis\n\nThe newest robotics digest material keeps reinforcing the same systems lesson: the strongest progress is not coming from generic end-to-end scale alone. It is coming from better intermediate structure between perception, planning, control, and embodiment.\n\nThat matters for this repo because it sharpens how to think about modern TAMP-adjacent systems:\n• where extra planning compute should be spent,\n• what world-model abstractions are actually fast enough to matter,\n• how much contact or force structure can be recovered on cheaper hardware,\n• and which parts of control should be solved in software versus physical design.\n\nThe recurring patterns\n\nCompute routing matters more than always using the biggest planner\nDIRECT is a useful planning-systems paper because it frames test-time compute as a routing problem. The key question is not \"should the robot reason more?\" but when a bigger model, deeper chain-of-thought, or more memory actually changes success enough to justify latency.\n\nWhy this matters here:\n• this is planner-facing systems work, not generic VLM showmanship\n• it fits the repo's interest in explicit scheduling and failure-aware decision layers\n• it suggests a benchmark direction around latency/success tradeoffs rather than one-shot wins\n\nContact awareness is becoming available on less expensive hardware\nFACTR 2 is important because it tries to recover force-relevant signals without assuming premium torque-sensing arms. That is a very practical research direction.\n\nWhy this matters here:\n• long-horizon manipulation failures are often contact failures in disguise\n• if learned external torque estimation is good enough, cheap-arm experimentation becomes more credible\n• a future student project could compare vision-only behavior cloning against force-aware variants on insertion, wiping, or cable-routing tasks\n\nWorld models are only interesting if they are fast enough to sit in the loop\nWorld Pilot and WEAVER are a useful pair. World Pilot shows how scene-evolution priors can steer VLA policies, while WEAVER argues that a world model can be fast, long-horizon, and useful enough for policy evaluation, policy improvement, and planning.\n\nStrong takeaway:\n• forecasting world evolution is becoming a practical action prior, not just a visualization trick\n• the useful interface is not raw prediction alone but prediction that can guide action selection or planner choice\n• this is relevant to TAMP because world summaries may eventually help decide when symbolic plans are fragile before execution collapse\n\nGeneralist policies become more useful when they are steerable\nFlow Reversal Steering and APT both point in the same direction: robot generalists improve when the training or inference interface is shaped carefully.\n\n• Flow Reversal Steering says: start from a reasonable action mode, then steer toward a better nearby mode.\n• APT says: separate the vision-action prior from language-conditioned guidance so instruction generalization is less brittle.\n\nThis matters because it is a reminder that representation and interface design often beat naive scaling.\n\nSpatial grounding is still a bottleneck\nMaskWAM is worth tracking because it makes an obvious but important point: language is often too weak a spatial interface for manipulation in clutter. Mask-centric prompting and prediction may be a cleaner bridge between perception and action than richer text alone.\n\nThis feels relevant to any future stack that wants to convert human intent into benchmarkable robotic actions without ambiguity.\n\nEmbodiment is still part of the algorithm\nMana and the MCR-Bionic Hand are a good pair because both reject the idea that all intelligence must sit in policy weights.\n\n• Mana structures articulated tool use with keyframes, motion planning, and RL.\n• MCR-Bionic Hand pushes useful priors into anatomy itself.\n\nThe practical lesson is simple: physical priors are still priors. In some settings, better embodiment may remove more complexity than another policy-layer trick.\n\nScientific laboratories are a serious application frontier\nLabVLA is the strongest recent example of robotics overlapping with structured scientific workflows rather than generic household demos.\n\nWhy it matters:\n• labs have reusable workflows, high-value tasks, and constrained actions\n• that makes them a plausible domain where VLA systems plus structured workflow engines could become economically real\n• this connects naturally to Akash's interest in comp-bio and scientific automation, not just pure robotics\n\nStrong opinion\n\nThe recent digests strengthen a repo-level view:\n\nThe modern winning stack is probably not:\n• giant policy\n• giant world model\n• giant planner\n\nIt is more likely:\n• adaptive planner compute,\n• force/contact-aware execution,\n• fast world-model infrastructure,\n• steerable action priors,\n• better spatial interfaces,\n• and embodiment that already does part of the control work.\n\nThat is very aligned with the broader task-motion-scheduling thesis: performance comes from good interfaces between layers, not from pretending one layer can absorb everything.\n\nPractical project ideas that became sharper\n\nPlanner-versus-policy compute router\nBuild a benchmarked router for when extra reasoning depth, larger planner models, or richer history actually help embodied tasks.\n\nForce-aware cheap-arm manipulation\nPrototype learned external torque estimation plus contact-aware resampling on modest hardware.\n\nStructure-versus-scale benchmark\nCompare raw policy control against mask-anchored, world-model-guided, and affordance/keyframe-guided variants on one narrow manipulation family.\n\nScientific-workflow robotics map\nTrack where laboratory robotics needs workflow structure, verification, or planner interfaces more than generic agent behavior.\n\nImmediate next questions\n\n• Which of these ideas are easiest to test with open-source code and realistic hardware access?\n• Can world-model summaries be exposed early enough to help scheduling or symbolic pruning?\n• What is the best benchmark for comparing explicit structure against pure policy scale in manipulation?\n• How should execution traces, contact signals, and planner-routing decisions be logged so they become reusable knowledge rather than just one-off runs?"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-10-055dd8b2d2.md",
+      "slug": "topics-inbox-2026-06-10-055dd8b2d2-md",
+      "title": "Hierarchical 3D scene graph TAMP capture",
+      "kind": "paper",
+      "path": "topics/inbox/2026-06-10-055dd8b2d2.md",
+      "updated": "2026-06-10T11:10:47.227317+00:00",
+      "topics": [
+        "scene-graphs",
+        "task-motion-planning",
+        "large-scale-planning"
+      ],
+      "entities": [
+        "Task and Motion Planning in Hierarchical 3D Scene Graphs"
+      ],
+      "sources": [
+        "https://arxiv.org/abs/2403.08094"
+      ],
+      "excerpt": "Source URL: https://arxiv.org/abs/2403.08094",
+      "body": "Source URL: https://arxiv.org/abs/2403.08094"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-10-003cf0c02b.md",
+      "slug": "topics-inbox-2026-06-10-003cf0c02b-md",
+      "title": "Certified polyhedral decomposition / C-IRIS capture",
+      "kind": "paper",
+      "path": "topics/inbox/2026-06-10-003cf0c02b.md",
+      "updated": "2026-06-10T11:10:47.087579+00:00",
+      "topics": [
+        "geometry",
+        "c-iris",
+        "drake"
+      ],
+      "entities": [
+        "C-IRIS"
+      ],
+      "sources": [
+        "https://alexandreamice.github.io/publication/dai-2023-certified/"
+      ],
+      "excerpt": "Source URL: https://alexandreamice.github.io/publication/dai-2023-certified/",
+      "body": "Source URL: https://alexandreamice.github.io/publication/dai-2023-certified/"
+    },
+    {
+      "id": "doc:topics/notes/initial-systems-landscape.md",
+      "slug": "topics-notes-initial-systems-landscape-md",
+      "title": "Initial systems landscape: dual-arm task and motion planning",
+      "kind": "synthesis-note",
+      "path": "topics/notes/initial-systems-landscape.md",
+      "updated": "2026-06-10",
+      "topics": [
+        "dual-arm-planning",
+        "task-motion-scheduling",
+        "symbolic-planning",
+        "motion-planning",
+        "execution",
+        "geometry",
+        "scene-graphs"
+      ],
+      "entities": [
+        "PDDLStream",
+        "Policy-Guided Lazy Search with Feedback",
+        "COAST",
+        "Drake",
+        "IRIS",
+        "behavior trees",
+        "SDAR",
+        "task-motion-scheduling",
+        "entangled tabletop rearrangement",
+        "shared-resource conflict",
+        "corridor interference",
+        "C-IRIS",
+        "hierarchical 3D scene graphs"
+      ],
+      "sources": [
+        "https://arxiv.org/abs/1802.08705",
+        "https://arxiv.org/abs/2210.14055",
+        "https://branvu.github.io/coast.github.io/",
+        "https://drake.mit.edu/doxygen_cxx/group__planning__iris.html",
+        "https://arxiv.org/abs/2403.12761",
+        "https://arxiv.org/abs/2512.08206",
+        "https://alexandreamice.github.io/publication/dai-2023-certified/",
+        "https://arxiv.org/abs/2403.08094"
+      ],
+      "excerpt": "Initial systems landscape: dual-arm task and motion planning Updated: 2026-06-10 Core thesis The biggest systems gap is not just task planning or motion planning alone. It is the missing middle layer that decides: • what each arm should do, • which actions may overlap, • which sh…",
+      "body": "Initial systems landscape: dual-arm task and motion planning\n\nUpdated: 2026-06-10\n\nCore thesis\n\nThe biggest systems gap is not just task planning or motion planning alone.\nIt is the missing middle layer that decides:\n\n• what each arm should do,\n• which actions may overlap,\n• which shared resources are locked,\n• when geometry should be tested early enough to avoid late collapse,\n• and how execution should recover when the symbolic plan stops being feasible.\n\nThat gap is best described here as task-motion-scheduling.\n\nWhy this matters\n\nLong-horizon dual-arm tasks are much harsher than single-arm toy domains. A symbolic plan can look perfectly fine, but fail late because:\n\n• arms interfere in shared workspace,\n• one arm blocks the other's motion corridor,\n• feasibility checks are deferred too long,\n• durations drift and invalidate overlap assumptions,\n• handoff or assembly order creates fragile dependencies.\n\nKey source buckets\n\nPDDLStream foundation\nPDDLStream is the cleanest base abstraction for mixing symbolic planning with black-box geometric sampling. It is still one of the clearest starting points for reasoning about TAMP systems that must deal with kinematics, collisions, visibility, and motion constraints.\n\nSource: https://arxiv.org/abs/1802.08705\n\nSearch improvements over action skeletons\nLAZY / Policy-Guided Lazy Search matters because it tries to keep a single integrated search that becomes progressively more geometrically informed, instead of separating symbolic planning too sharply from motion feasibility.\n\nSource: https://arxiv.org/abs/2210.14055\n\nConstraint-guided TAMP\nCOAST is important because it uses constraints and streams together to shrink the task-planning search space before or during sampling. That feels especially relevant for dual-arm settings where brute-force symbolic branching explodes quickly.\n\nSource: https://branvu.github.io/coast.github.io/\n\nGeometry-aware feasibility layers\nDrake, IRIS, and Graphs of Convex Sets look promising for a more structured geometry layer. They matter when the question becomes: how do we represent feasible regions cleanly enough that high-level plans are not lying to us?\n\nThe strongest new addition here is C-IRIS. It is not just another motion-planning paper; it is evidence that certified convex decompositions can scale to a 12-DOF bimanual manipulator. That makes it much more relevant to dual-arm TAMP than generic geometry papers that never leave low-DOF toy settings.\n\nPractical opinion: if a future stack wants to use Drake seriously, C-IRIS-style regions look like one of the few geometry summaries that could actually be surfaced early enough to help scheduling and avoid late symbolic collapse.\n\nSources:\n• https://drake.mit.edu/doxygencxx/groupplanningiris.html\n• https://alexandreamice.github.io/publication/dai-2023-certified/\n\nExecution / recovery layer\nBehavior trees are interesting not as hype, but as a practical execution abstraction for retries, fallbacks, and replanning transitions.\n\nSource: https://arxiv.org/abs/2403.12761\n\nDirect dual-arm target system\nSDAR is the most directly relevant seed item because it focuses on synchronous dual-arm rearrangement, dependency-driven task planning, layered motion planning, and hardware transfer.\n\nSource: https://arxiv.org/abs/2512.08206\n\nWorld-model abstraction, but with caution\nHierarchical 3D scene graphs are interesting because they show how to derive sparse planning domains from a much richer world model. That is a useful abstraction lesson for any knowledge-heavy planning system.\n\nBut this should stay secondary for now. It is more relevant to large-scene mobile manipulation than to the repo's core dual-arm tabletop focus. Good idea to borrow from; bad idea to let it distract the main benchmark path.\n\nSource: https://arxiv.org/abs/2403.08094\n\nBenchmark tasks worth tracking\n\n• entangled tabletop rearrangement\n• shared shelf organization\n• dual-arm assembly / block construction\n• handoff across arm workspaces\n• obstacle-clearing plus placement\n• queue or conveyor tasks with continuous arrivals\n• container holding plus insertion\n\nPractical opinion\n\nThe likely winning stack is not “LLM planner solves robotics.”\nIt is probably a layered system:\n\nsymbolic abstraction,\nscheduling / resource reasoning,\ngeometry-aware feasibility checks, ideally with reusable summaries rather than only fresh stream calls,\nfast motion planning backend,\nexecution and recovery.\n\nThat is a systems-engineering problem more than a prompting problem.\n\nImmediate next questions\n\n• What is the cleanest open-source experiment path: PDDLStream, Drake/GCS, or a hybrid?\n• How should dual-arm scheduling be represented explicitly rather than buried inside symbolic operators?\n• Which benchmark should become the first reproducible project target?\n• How should this map onto Akash's path-planning / CUDA / ARC interests?"
+    },
+    {
+      "id": "doc:research_plan/source_registry.md",
+      "slug": "research-plan-source-registry-md",
+      "title": "Source Registry",
+      "kind": "registry",
+      "path": "research_plan/source_registry.md",
+      "updated": "2026-06-10",
+      "topics": [
+        "sources",
+        "packages",
+        "papers",
+        "benchmarks"
+      ],
+      "entities": [
+        "PDDLStream",
+        "Fast Downward",
+        "COAST",
+        "Drake",
+        "IRIS",
+        "SDAR",
+        "CLAIRify",
+        "C-IRIS"
+      ],
+      "sources": [],
+      "excerpt": "Source Registry Updated: 2026-06-10 Bucket Source Type Why it matters Status --- --- --- --- --- PDDLStream foundation https://arxiv.org/abs/1802.08705 paper canonical integrated symbolic + sampler-based TAMP baseline captured + synthesized PDDLStream code https://github.com/cael…",
+      "body": "Source Registry\n\nUpdated: 2026-06-10\n\n  Bucket   Source   Type   Why it matters   Status  \n --- --- --- --- --- \n  PDDLStream foundation   https://arxiv.org/abs/1802.08705   paper   canonical integrated symbolic + sampler-based TAMP baseline   captured + synthesized  \n  PDDLStream code   https://github.com/caelan/pddlstream   code   practical reference implementation and examples   captured  \n  Symbolic backend   https://github.com/aibasel/downward   code   classical-planning backbone used by many PDDL systems   captured  \n  Search guidance   https://arxiv.org/abs/2210.14055   paper   lazy / policy-guided search perspective for TAMP   captured  \n  Constraint-guided TAMP   https://branvu.github.io/coast.github.io/   project page   constraint-first narrowing of symbolic search   captured  \n  Geometry regions   https://drake.mit.edu/doxygencxx/groupplanningiris.html   docs   IRIS free-space regions in Drake   captured  \n  Certified geometry decomposition   https://alexandreamice.github.io/publication/dai-2023-certified/   paper   C-IRIS gives certified collision-free convex regions and explicitly scales to a 12-DOF bimanual setup   captured + synthesized  \n  Scene-graph planning abstraction   https://arxiv.org/abs/2403.08094   paper   useful contrast case for deriving sparse planning domains from rich world models; more mobile-manipulation than dual-arm, but good abstraction lesson   captured + synthesized  \n  GCS search acceleration   https://www.roboticsproceedings.org/rss20/p113.html   paper   search-based planning over graphs of convex sets   captured  \n  Execution layer   https://arxiv.org/abs/2403.12761   paper   behavior-tree / execution-recovery relevance   captured  \n  Dual-arm target system   https://arxiv.org/abs/2512.08206   paper   most on-target dual-arm rearrangement paper in current set   captured + synthesized  \n  Dual-arm implementation   https://github.com/arc-l/dual-arm   code   concrete SDAR code, benchmark scripts, task JSON structure   captured  \n  Dual-arm project page   https://duozhangrobotics.github.io/projects/dual-arm-icra-2026/   project page   concise system + hardware-transfer summary   captured  \n  Benchmark framing   https://kavrakilab.rice.edu/publications/lagriffoul2018tmp-benchmarks.pdf   paper   platform-independent TAMP benchmark framing   tracked, needs cleaner extract  \n  LLM + TAMP systematic eval   https://arxiv.org/abs/2510.00182   paper   direct evidence against naive LLM-centered TAMP   captured  \n  Language-to-TAMP application   https://ac-rad.github.io/clairify/   project page   good example of language + verification + TAMP   captured  \n  CLAIRify paper   https://link.springer.com/article/10.1007/s10514-023-10136-2   paper   applied robotics pipeline for chemistry tasks   captured  \n  Planner compute routing   http://arxiv.org/abs/2606.12402   paper   adaptive test-time compute allocation for embodied planners; strong latency/success framing   captured + synthesized  \n  Force-aware cheap-arm manipulation   http://arxiv.org/abs/2606.12406   paper   learned external torque estimation without premium force hardware   captured + synthesized  \n  World-action priors for VLAs   http://arxiv.org/abs/2606.12403   paper   scene-evolution priors steering manipulation policies   captured + synthesized  \n  Decentralized shared VLA collaboration   http://arxiv.org/abs/2606.12352   paper   multi-robot coordination from one shared backbone without inference-time communication   captured + synthesized  \n  Action-expert pretraining   http://arxiv.org/abs/2606.12366   paper   better instruction generalization by factoring action priors from language conditioning   captured + synthesized  \n  Dexterous articulated tool use   https://arxiv.org/abs/2606.13677   paper   structured keyframe/planning/RL pipeline for tool manipulation   captured + synthesized  \n  Fast manipulation world model   https://arxiv.org/abs/2606.13672   paper   practical long-horizon world model with hardware relevance and speed claims   captured + synthesized  \n  Flow reversal steering   https://arxiv.org/abs/2606.13675   paper   steerable robot generalists via latent inversion and nearby action-mode guidance   captured + synthesized  \n  Scientific-lab VLA   https://arxiv.org/abs/2606.13578   paper   meaningful robotics × laboratory workflow frontier   captured + synthesized  \n  Mask-centric world-action modeling   https://arxiv.org/abs/2606.13515   paper   stronger spatial grounding than text-only prompting for manipulation   captured + synthesized  \n  Anatomical priors in dexterity   https://arxiv.org/abs/2606.13601   paper   embodiment itself carrying part of the control prior   captured + synthesized  \n\nGaps to fill next\n\n• one strong survey or tutorial that spans task planning, motion planning, and execution\n• one assembly-specific dual-arm benchmark set\n• one source on scheduling formulations between symbolic and geometric layers\n• one reproducible Drake/GCS example that is easier to run than a full lab stack\n• one direct comparison of C-IRIS-style geometry summaries vs stream-only feasibility checks in manipulation planning"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-4fd2bd87df.md",
+      "slug": "topics-inbox-2026-06-06-4fd2bd87df-md",
+      "title": "Drake IRIS documentation capture",
+      "kind": "capture",
+      "path": "topics/inbox/2026-06-06-4fd2bd87df.md",
+      "updated": "2026-06-07T03:22:53.913905+00:00",
+      "topics": [
+        "geometry",
+        "feasibility",
+        "drake"
+      ],
+      "entities": [
+        "Drake",
+        "IRIS"
+      ],
+      "sources": [
+        "https://drake.mit.edu/doxygen_cxx/group__planning__iris.html"
+      ],
+      "excerpt": "Source URL: https://drake.mit.edu/doxygencxx/groupplanningiris.html",
+      "body": "Source URL: https://drake.mit.edu/doxygencxx/groupplanningiris.html"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-5d195b149a.md",
+      "slug": "topics-inbox-2026-06-06-5d195b149a-md",
+      "title": "Behavior-tree execution paper capture",
+      "kind": "capture",
+      "path": "topics/inbox/2026-06-06-5d195b149a.md",
+      "updated": "2026-06-07T03:22:53.913793+00:00",
+      "topics": [
+        "execution",
+        "replanning",
+        "behavior-trees"
+      ],
+      "entities": [
+        "behavior trees",
+        "execution recovery"
+      ],
+      "sources": [
+        "https://arxiv.org/abs/2403.12761"
+      ],
+      "excerpt": "Source URL: https://arxiv.org/abs/2403.12761",
+      "body": "Source URL: https://arxiv.org/abs/2403.12761"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-34483c93a7.md",
+      "slug": "topics-inbox-2026-06-06-34483c93a7-md",
+      "title": "SDAR dual-arm rearrangement paper capture",
+      "kind": "capture",
+      "path": "topics/inbox/2026-06-06-34483c93a7.md",
+      "updated": "2026-06-07T03:22:45.808377+00:00",
+      "topics": [
+        "dual-arm-planning",
+        "rearrangement",
+        "scheduling"
+      ],
+      "entities": [
+        "SDAR",
+        "dual-arm rearrangement"
+      ],
+      "sources": [
+        "https://arxiv.org/abs/2512.08206"
+      ],
+      "excerpt": "Source URL: https://arxiv.org/abs/2512.08206",
+      "body": "Source URL: https://arxiv.org/abs/2512.08206"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-628505156e.md",
+      "slug": "topics-inbox-2026-06-06-628505156e-md",
+      "title": "PDDLStream foundation paper capture",
+      "kind": "capture",
+      "path": "topics/inbox/2026-06-06-628505156e.md",
+      "updated": "2026-06-07T03:22:45.805934+00:00",
+      "topics": [
+        "pddlstream",
+        "symbolic-planning",
+        "motion-planning"
+      ],
+      "entities": [
+        "PDDLStream"
+      ],
+      "sources": [
+        "https://arxiv.org/abs/1802.08705"
+      ],
+      "excerpt": "Source URL: https://arxiv.org/abs/1802.08705",
+      "body": "Source URL: https://arxiv.org/abs/1802.08705"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-984e9173b1.md",
+      "slug": "topics-inbox-2026-06-06-984e9173b1-md",
+      "title": "Policy-guided lazy search paper capture",
+      "kind": "capture",
+      "path": "topics/inbox/2026-06-06-984e9173b1.md",
+      "updated": "2026-06-07T03:22:45.799775+00:00",
+      "topics": [
+        "search-guidance",
+        "symbolic-planning",
+        "motion-planning"
+      ],
+      "entities": [
+        "Policy-Guided Lazy Search with Feedback"
+      ],
+      "sources": [
+        "https://arxiv.org/abs/2210.14055"
+      ],
+      "excerpt": "Source URL: https://arxiv.org/abs/2210.14055",
+      "body": "Source URL: https://arxiv.org/abs/2210.14055"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-ff5d56d721.md",
+      "slug": "topics-inbox-2026-06-06-ff5d56d721-md",
+      "title": "COAST project capture",
+      "kind": "capture",
+      "path": "topics/inbox/2026-06-06-ff5d56d721.md",
+      "updated": "2026-06-07T03:22:45.795916+00:00",
+      "topics": [
+        "constraints",
+        "search-pruning",
+        "task-motion-planning"
+      ],
+      "entities": [
+        "COAST"
+      ],
+      "sources": [
+        "https://branvu.github.io/coast.github.io/"
+      ],
+      "excerpt": "Source URL: https://branvu.github.io/coast.github.io/",
+      "body": "Source URL: https://branvu.github.io/coast.github.io/"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-06-8f4333ce44.md",
+      "slug": "topics-inbox-2026-06-06-8f4333ce44-md",
+      "title": "Akash robotics research seed note",
+      "kind": "research-note",
+      "path": "topics/inbox/2026-06-06-8f4333ce44.md",
+      "updated": "2026-06-07T03:22:34.662734+00:00",
+      "topics": [
+        "dual-arm-planning",
+        "scheduling",
+        "benchmarks",
+        "research-directions"
+      ],
+      "entities": [
+        "PDDLStream",
+        "COAST",
+        "Policy-Guided Lazy Search with Feedback",
+        "Graphs of Convex Sets",
+        "IRIS",
+        "Drake",
+        "behavior trees",
+        "SDAR",
+        "entangled tabletop rearrangement",
+        "shared shelf organization",
+        "assembly with precedence constraints",
+        "handoff benchmark",
+        "dynamic queue / continuous task stream"
+      ],
+      "sources": [],
+      "excerpt": "Seed from Akash's 2026-06-06 research email. Main theme: dual-arm task-motion-scheduling as the missing middle layer between symbolic task planning and geometric motion planning. Candidate benchmark tasks: • entangled tabletop rearrangement • shared shelf organization • dual-arm…",
+      "body": "Seed from Akash's 2026-06-06 research email.\n\nMain theme: dual-arm task-motion-scheduling as the missing middle layer between symbolic task planning and geometric motion planning.\n\nCandidate benchmark tasks:\n• entangled tabletop rearrangement\n• shared shelf organization\n• dual-arm block tower / shared construction zone\n• obstacle-clearing plus placement\n• dual-arm sorting with uncertain action durations\n• assembly with precedence constraints\n• container holding + insertion\n• handoff benchmark\n• dynamic queue / continuous task stream\n\nCore concepts/packages/papers to track first:\n• PDDLStream\n• COAST\n• Policy-Guided Lazy Search with Feedback (LAZY)\n• Graphs of Convex Sets / IRIS / Drake\n• behavior trees for execution / replanning\n• SDAR for dual-arm rearrangement"
+    },
+    {
+      "id": "doc:topics/notes/benchmark-and-tooling-map.md",
+      "slug": "topics-notes-benchmark-and-tooling-map-md",
+      "title": "Benchmark and tooling map for dual-arm TAMP",
+      "kind": "synthesis-note",
+      "path": "topics/notes/benchmark-and-tooling-map.md",
+      "updated": "2026-06-07",
+      "topics": [
+        "benchmarks",
+        "packages",
+        "geometry",
+        "gpu-motion-planning",
+        "dual-arm-planning"
+      ],
+      "entities": [
+        "SDAR",
+        "PDDLStream",
+        "Fast Downward",
+        "COAST",
+        "Drake",
+        "IRIS",
+        "Graphs of Convex Sets",
+        "CuRobo",
+        "entangled tabletop rearrangement",
+        "platform-independent TAMP benchmarks",
+        "assembly benchmarks",
+        "execution-heavy benchmarks",
+        "shared-resource conflict"
+      ],
+      "sources": [
+        "https://arxiv.org/abs/2512.08206",
+        "https://github.com/arc-l/dual-arm",
+        "https://duozhangrobotics.github.io/projects/dual-arm-icra-2026/",
+        "https://kavrakilab.rice.edu/publications/lagriffoul2018tmp-benchmarks.pdf",
+        "https://arxiv.org/abs/1802.08705",
+        "https://github.com/caelan/pddlstream",
+        "https://github.com/aibasel/downward",
+        "https://branvu.github.io/coast.github.io/",
+        "https://drake.mit.edu/doxygen_cxx/group__planning__iris.html",
+        "https://www.roboticsproceedings.org/rss20/p113.html"
+      ],
+      "excerpt": "Benchmark and tooling map for dual-arm TAMP Updated: 2026-06-07 Why this note exists A useful robotics knowledge base should not stop at papers. It should answer two practical questions: what benchmarks actually expose the hard systems failures? what open-source tools are realist…",
+      "body": "Benchmark and tooling map for dual-arm TAMP\n\nUpdated: 2026-06-07\n\nWhy this note exists\n\nA useful robotics knowledge base should not stop at papers. It should answer two practical questions:\n\nwhat benchmarks actually expose the hard systems failures?\nwhat open-source tools are realistic enough to build on?\n\nBenchmark families that matter\n\n1) Entangled tabletop rearrangement\nThis is the cleanest current benchmark family for dual-arm TAMP because the difficulty is not just grasping. The challenge is dependency structure: object A blocks B, B blocks C, and some moves become efficient only if both arms can operate synchronously.\n\nWhy it matters:\n• forces explicit coordination between arms\n• exposes when a planner lacks a scheduling layer\n• creates cases where a single-arm-optimal task order is globally bad for dual-arm execution\n\nMost directly relevant source right now: SDAR and its evaluation setup over random, cycled, double-cycled, and mixed dependency structures.\n\nSources:\n• https://arxiv.org/abs/2512.08206\n• https://github.com/arc-l/dual-arm\n• https://duozhangrobotics.github.io/projects/dual-arm-icra-2026/\n\n2) Platform-independent TAMP benchmarks\nThe older benchmark push still matters because it tried to separate benchmark design from any one robot stack. That is useful if the goal is to compare planning architectures rather than just one implementation.\n\nWhat to keep from this line of work:\n• standardized task descriptions\n• separation of manipulation difficulty from software idiosyncrasies\n• emphasis on reproducibility across systems\n\nSource:\n• https://kavrakilab.rice.edu/publications/lagriffoul2018tmp-benchmarks.pdf\n\n3) Assembly and multi-arm constrained workspaces\nAssembly-style domains matter because they introduce fixtures, narrow passages, and ordering constraints that punish late feasibility checks. They are a good next step after tabletop rearrangement because they make collision structure and shared-resource locks more explicit.\n\nDesired benchmark properties:\n• handoff or co-manipulation\n• constrained insertion or alignment\n• repeated need for regrasp / staging\n• time overlap decisions that can help or hurt feasibility\n\n4) Execution-heavy benchmarks\nA lot of planning work looks good until perception drifts, a grasp fails, or timing assumptions break. Behavior-tree and execution-layer benchmarks matter because they reveal whether the system can degrade gracefully.\n\nSource to track:\n• https://arxiv.org/abs/2403.12761\n\nTooling stack worth tracking\n\nPDDLStream\nStill one of the strongest base abstractions for integrated symbolic + geometric planning.\n\nWhy it stays important:\n• mature conceptual model\n• black-box samplers are flexible\n• many downstream papers still position against it\n• close enough to the robotics-planning literature to remain a reference point\n\nPractical note:\nIt is attractive for experiments because it is conceptually clean, but many interesting systems improvements now happen around search guidance, scheduling, and execution instead of only inside the core abstraction.\n\nSources:\n• https://arxiv.org/abs/1802.08705\n• https://github.com/caelan/pddlstream\n\nFast Downward\nFast Downward is not a TAMP system by itself, but it remains important as the symbolic backbone behind many PDDL-centric systems.\n\nWhy it matters:\n• strong baseline symbolic planning infrastructure\n• widely reused in research code\n• useful to understand where symbolic branching is being pushed before geometry enters\n\nSource:\n• https://github.com/aibasel/downward\n\nCOAST\nCOAST is worth watching because it tries to shrink search earlier using constraints and streams rather than waiting for a late geometric crash.\n\nThis is especially relevant for dual-arm systems, where symbolic branching can explode if the planner cannot cheaply recognize impossible coordination patterns.\n\nSource:\n• https://branvu.github.io/coast.github.io/\n\nDrake / IRIS / GCS\nThis family matters when the repo's focus shifts from planning logic to geometry structure.\n\nWhy it matters:\n• IRIS offers a way to carve out convex free-space regions\n• GCS gives a structured trajectory-planning view over those regions\n• Drake is an ecosystem where geometry, dynamics, and planning can live together\n\nThe most interesting systems question is not whether GCS replaces TAMP. It is whether geometry summaries from Drake/GCS-style methods can be surfaced early enough to improve task-level decisions.\n\nSources:\n• https://drake.mit.edu/doxygencxx/groupplanningiris.html\n• https://www.roboticsproceedings.org/rss20/p113.html\n\nCuRobo-style GPU motion planning\nGPU-accelerated motion planning becomes much more interesting when a dual-arm scheduler needs to evaluate many candidate synchronized plans quickly. SDAR is a concrete example of this direction.\n\nSource:\n• https://github.com/arc-l/dual-arm\n\nBest first experimental path\n\nIf the goal is a realistic Akash-aligned path:\n\nstart with a PDDLStream-style problem formulation for interpretability\nmake scheduling/resource conflicts explicit instead of burying them in operators\nuse a strong motion backend that can test many candidate synchronized plans\nadd execution fallbacks with behavior-tree-style recovery\n\nThat path fits better than jumping directly into \"LLM plans everything\".\n\nConcrete project ideas\n\n• Rebuild one entangled tabletop rearrangement benchmark with an explicit scheduling layer.\n• Compare single-arm-optimal symbolic decompositions against dual-arm-aware decompositions.\n• Use GPU motion planning only as a feasibility oracle at first, then progressively tighten integration.\n• Try a geometry-summary layer that flags likely corridor conflicts before expensive motion calls."
+    },
+    {
+      "id": "doc:research_plan/current_plan.md",
+      "slug": "research-plan-current-plan-md",
+      "title": "Current Plan",
+      "kind": "plan",
+      "path": "research_plan/current_plan.md",
+      "updated": "2026-06-07",
+      "topics": [
+        "planning",
+        "ontology-lite",
+        "graph-building",
+        "daily-refresh"
+      ],
+      "entities": [
+        "PDDLStream",
+        "COAST",
+        "Drake",
+        "IRIS",
+        "behavior trees",
+        "scheduling formulations",
+        "assembly benchmarks",
+        "markdown metadata graph"
+      ],
+      "sources": [],
+      "excerpt": "Current Plan Objective Build a durable robotics knowledge base around dual-arm task-and-motion planning and keep it fresh with new research notes, source captures, and concise synthesis. Current focus Establish the foundational stack: PDDLStream, LAZY, COAST, GCS/IRIS/Drake, and…",
+      "body": "Current Plan\n\nObjective\nBuild a durable robotics knowledge base around dual-arm task-and-motion planning and keep it fresh with new research notes, source captures, and concise synthesis.\n\nCurrent focus\nEstablish the foundational stack: PDDLStream, LAZY, COAST, GCS/IRIS/Drake, and behavior-tree execution.\nTrack dual-arm-specific benchmarks and failure modes.\nTurn raw links and emails into actual notes with opinions, caveats, and project ideas.\nKeep the repository auditable so daily updates are visible in git history.\n\nNext moves\n• Add one scheduling-focused note that explicitly compares symbolic-only, hybrid, and optimization-based formulations.\n• Add one assembly-specific benchmark/source bundle to complement rearrangement-heavy coverage.\n• Turn the GitHub Pages site into a cleaner source browser with auto-generated sections if the repo grows.\n• Keep the daily refresh automation tied to research emails and lightweight web checks.\n• Stop treating the repo as notes-first only: add a real ontology, seed entity records, and a minimal hydration pipeline.\n• Build a first package/method/benchmark/failure-mode graph from the existing notes and source registry.\n• Expand topic coverage into scheduling, assembly, motion backends, execution robustness, and Akash-specific project ideas."
+    },
+    {
+      "id": "doc:topics/notes/llms-execution-and-applications.md",
+      "slug": "topics-notes-llms-execution-and-applications-md",
+      "title": "LLMs, execution, and applied TAMP frontiers",
+      "kind": "synthesis-note",
+      "path": "topics/notes/llms-execution-and-applications.md",
+      "updated": "2026-06-07",
+      "topics": [
+        "llms",
+        "execution",
+        "behavior-trees",
+        "chemistry-robotics",
+        "applied-tamp"
+      ],
+      "entities": [
+        "CLAIRify",
+        "PDDLStream",
+        "behavior trees",
+        "execution recovery",
+        "chemistry robotics",
+        "dense tabletop rearrangement",
+        "multi-arm assembly"
+      ],
+      "sources": [
+        "https://ac-rad.github.io/clairify/",
+        "https://link.springer.com/article/10.1007/s10514-023-10136-2",
+        "https://arxiv.org/abs/2510.00182",
+        "https://arxiv.org/abs/2403.12761"
+      ],
+      "excerpt": "LLMs, execution, and applied TAMP frontiers Updated: 2026-06-07 Core view LLMs look more useful as interface and repair modules than as the core planner. The strongest pattern across current material is: • let formal planners own correctness-critical search, • let geometry/motion…",
+      "body": "LLMs, execution, and applied TAMP frontiers\n\nUpdated: 2026-06-07\n\nCore view\n\nLLMs look more useful as interface and repair modules than as the core planner.\n\nThe strongest pattern across current material is:\n• let formal planners own correctness-critical search,\n• let geometry/motion layers own feasibility,\n• let execution layers own recovery,\n• and use LLMs where language or iterative repair really helps.\n\nWhere LLMs seem genuinely useful\n\nNatural-language front ends to constrained robot workflows\nCLAIRify is a good example because it does not blindly trust language-model output. It uses iterative prompting plus verification to generate structured programs and then routes execution through a TAMP system.\n\nWhy this matters:\n• turns language into a practical interface rather than a planner fantasy\n• keeps formal verification in the loop\n• fits domains where non-robotic experts need to instruct robots\n\nSource:\n• https://ac-rad.github.io/clairify/\n• https://link.springer.com/article/10.1007/s10514-023-10136-2\n\nTargeted substitution of TAMP subroutines\nThe systematic study of LLMs with PDDLStream is useful mostly as a caution sign. Across thousands of problems, engineered components still beat the LLM-based variants on success rate and time.\n\nImportant takeaway:\n• integration design matters more than raw model cleverness\n• faster non-reasoning variants can outperform slower reasoning variants when the surrounding TAMP system corrects mistakes\n• dumping more geometric detail into the prompt can actually increase task-level errors\n\nSource:\n• https://arxiv.org/abs/2510.00182\n\nExecution is still the hard reality layer\n\nBehavior trees remain compelling because they make retries, fallbacks, guards, and local recovery explicit. They are less glamorous than end-to-end planners, but much closer to what breaks in real robots.\n\nWhat to track here:\n• handoff from planner to executor\n• when to replan globally vs locally recover\n• representation of resource locks and failure causes\n• how execution traces feed back into the knowledge base\n\nSource:\n• https://arxiv.org/abs/2403.12761\n\nApplied domains worth watching\n\nChemistry robotics\nChemistry is interesting because it adds:\n• strong safety constraints\n• many reusable instruments and tools\n• users who want natural-language interfaces\n• long procedures where execution drift matters a lot\n\nCLAIRify makes this space especially relevant because it couples language, verification, and TAMP instead of treating them as separate demos.\n\nDense tabletop rearrangement\nThis is the best near-term proving ground for scheduling-heavy dual-arm systems. It has enough complexity to matter without requiring the full mess of industrial assembly.\n\nMulti-arm assembly\nThis is probably the next escalation path once a rearrangement stack works. Assembly stresses long-horizon dependency handling, narrow-passage geometry, and failure recovery under contact-sensitive operations.\n\nStrong opinion\n\nThe right modern stack is not \"LLM planner plus robot\".\nIt is:\n• a formal planning core,\n• explicit scheduling/resource reasoning,\n• a geometry-aware feasibility layer,\n• a fast motion backend,\n• and an execution wrapper with recovery.\n\nLLMs belong around the edges unless they are being evaluated very carefully inside a constrained subsystem.\n\nQuestions to keep pushing\n\n• Can language models help propose useful abstractions without owning final decisions?\n• How should execution failures be logged so the planner learns which symbolic plans are fragile?\n• What is the cleanest bridge from natural-language task descriptions to benchmarkable dual-arm domains?"
+    },
+    {
+      "id": "doc:topics/brief.md",
+      "slug": "topics-brief-md",
+      "title": "Robotics TAMP KB Brief",
+      "kind": "brief",
+      "path": "topics/brief.md",
+      "updated": "2026-06-07",
+      "topics": [
+        "dual-arm-planning",
+        "task-motion-scheduling",
+        "geometry-aware-feasibility",
+        "execution-replanning"
+      ],
+      "entities": [
+        "PDDLStream",
+        "COAST",
+        "Drake",
+        "IRIS",
+        "Graphs of Convex Sets",
+        "behavior trees",
+        "dual-arm rearrangement"
+      ],
+      "sources": [],
+      "excerpt": "Robotics TAMP KB Brief This project is a local-first knowledge base for robotics task-and-motion planning, with special focus on dual-arm coordination, scheduling, geometric feasibility, and execution/replanning. Priority themes: • PDDLStream and successor-style solvers • dual-ar…",
+      "body": "Robotics TAMP KB Brief\n\nThis project is a local-first knowledge base for robotics task-and-motion planning, with special focus on dual-arm coordination, scheduling, geometric feasibility, and execution/replanning.\n\nPriority themes:\n• PDDLStream and successor-style solvers\n• dual-arm rearrangement / assembly / handoff tasks\n• explicit task-motion-scheduling and shared-resource reasoning\n• graphs of convex sets, IRIS, and Drake-based geometry reasoning\n• behavior trees and execution-layer robustness\n• practical open-source packages and benchmark tasks\n• cautious use of LLMs as interfaces or repair modules rather than core planners\n\nThe goal is not just to collect links. It is to turn research into a durable, searchable systems map with useful notes and project ideas."
+    },
+    {
+      "id": "doc:research_plan/graph/knowledge-graph-design.md",
+      "slug": "research-plan-graph-knowledge-graph-design-md",
+      "title": "Robotics TAMP knowledge graph design",
+      "kind": "design-note",
+      "path": "research_plan/graph/knowledge-graph-design.md",
+      "updated": "2026-06-07",
+      "topics": [
+        "markdown-frontmatter",
+        "graph-mediator",
+        "ontology-lite",
+        "rail-usage"
+      ],
+      "entities": [
+        "markdown metadata",
+        "graph mediator",
+        "Package",
+        "Method",
+        "Benchmark",
+        "FailureMode",
+        "ProjectIdea"
+      ],
+      "sources": [],
+      "excerpt": "Robotics TAMP knowledge graph design Updated: 2026-06-07 Diagnosis Right now this repo is using KRAIL mostly as a research-notes workspace rather than a real knowledge graph project. What is working: • rail search over markdown notes • repo-backed captures in topics/inbox/ • synt…",
+      "body": "Robotics TAMP knowledge graph design\n\nUpdated: 2026-06-07\n\nDiagnosis\n\nRight now this repo is using KRAIL mostly as a research-notes workspace rather than a real knowledge graph project.\n\nWhat is working:\n• rail search over markdown notes\n• repo-backed captures in topics/inbox/\n• synthesis notes in topics/notes/\n• source registry / research-plan scaffolding\n\nWhat is missing:\n• .ontology/ontology.yaml has no classes or properties yet\n• researchplan/state/entitycandidates.json is empty\n• researchplan/state/sources.json is empty\n• researchplan/state/claims.json is empty\n• rail hydrate fails because .ontology/pipelines/project-default.yaml does not exist\n• rail query classes returns nothing useful because there is no populated graph\n\nSo the repo currently behaves like: smart literature review with search.\nNot yet: queryable robotics knowledge graph.\n\nCurrent implementation update\n\nAs of 2026-06-07, the repo now has a practical middle layer:\n\n• markdown frontmatter on core notes and captures\n• optional entitymetadata typing in markdown\n• scripts/buildmarkdowngraph.js as a lightweight mediator\n• generated graph artifacts in researchplan/graph/\n• GitHub Pages data copies in docs/data/\n\nThis is still not the full ontology path, but it is already much better than notes-only research mode.\n\nWhy it feels too much like a research project\n\nThe active pack is research-intelligence, which is good for:\n• papers\n• claims\n• evidence\n• experiments\n• synthesis\n\nBut Akash's use case needs more than that. It needs a system map that answers:\n• which package implements which method?\n• which benchmarks stress which failure modes?\n• which stack is practical to run?\n• where does scheduling sit relative to symbolic planning, motion planning, and execution?\n• which topics connect to ARC / CUDA / path planning / dual-arm experiments?\n\nThat means the repo should shift from paper-centric to stack-centric and entity-centric.\n\nBetter way to use RAIL/KRAIL here\n\nUse KRAIL in 4 layers:\n\nCapture layer\nKeep using:\n• rail capture for papers, GitHub repos, project pages, notes, emails\n\nBut every capture should be classified into one or more entity buckets:\n• Paper\n• Method\n• Package\n• Benchmark\n• RobotSystem\n• GeometryTechnique\n• Scheduler\n• ExecutionFramework\n• FailureMode\n• Experiment\n• ResearchQuestion\n• ProjectIdea\n\nOntology layer\nThe ontology should stop being empty and explicitly model robotics TAMP concepts.\n\nSuggested core classes:\n• Paper\n• Method\n• Package\n• Benchmark\n• TaskFamily\n• RobotSystem\n• Planner\n• MotionPlanner\n• Scheduler\n• GeometryTechnique\n• ExecutionFramework\n• FailureMode\n• Dataset\n• Experiment\n• Claim\n• Limitation\n• OpenProblem\n• ProjectIdea\n• ResearchGroup\n• Person\n\nSuggested relationships:\n• Paper INTRODUCES Method\n• Paper EVALUATESON Benchmark\n• Package IMPLEMENTS Method\n• Package SUPPORTS Benchmark\n• Method REQUIRES GeometryTechnique\n• Method HANDLES FailureMode\n• Method FAILSON FailureMode\n• Benchmark EXPOSES FailureMode\n• Benchmark BELONGSTO TaskFamily\n• Scheduler COORDINATES RobotSystem\n• ExecutionFramework RECOVERSFROM FailureMode\n• Experiment TESTS Method\n• Experiment USES Package\n• ProjectIdea BUILDSON Package\n• ProjectIdea TARGETS Benchmark\n• ResearchGroup MAINTAINS Package\n\nHydration / graph-building layer\nInstead of only saving markdown notes, add a lightweight extraction pass that writes structured entity files from notes.\n\nA good first version does not need full automation. It can start with hand-authored or semi-structured YAML/JSON records for:\n• packages\n• methods\n• benchmarks\n• papers\n• failure modes\n\nThen hydration can build a graph from those records.\n\nQuery / synthesis layer\nOnce entities exist, RAIL becomes much more useful:\n• \"show all packages related to dual-arm rearrangement\"\n• \"which benchmarks expose shared-resource conflicts?\"\n• \"what methods try to insert geometry checks early?\"\n• \"which packages are practical for local experiments?\"\n• \"what is the shortest path from PDDLStream to SDAR via scheduling ideas?\"\n\nTopic expansion plan\n\nThe repo should cover more than the current foundation set.\n\nCore topics already present\n• PDDLStream and descendants\n• dual-arm rearrangement\n• Drake / IRIS / GCS\n• behavior trees / execution\n• LLMs as interface or repair modules\n\nTopics to add next\n\nA. Scheduling / resource reasoning\n• temporal planning for manipulation\n• shared-resource locking\n• overlap / synchronization decisions\n• task allocation across two arms\n• feasibility-aware scheduling\n\nB. Benchmark families\n• assembly and insertion\n• handoff / co-manipulation\n• conveyor / streaming arrivals\n• dense shelf or bin tasks\n• clutter clearing with dependencies\n\nC. Motion / geometry backends\n• CuRobo / GPU motion planning\n• OMPL / MoveIt connections\n• Drake trajectory optimization\n• grasp generation / IK libraries\n• collision-checking acceleration\n\nD. Execution / robustness\n• behavior-tree runtimes\n• replanning triggers\n• failure recovery policies\n• uncertainty / perception drift handling\n• online repair vs full replan\n\nE. System-building topics\n• ROS 2 integration\n• simulators (Isaac / PyBullet / Drake)\n• logging / evaluation protocols\n• hardware transfer constraints\n• profiling and bottlenecks\n\nF. Akash-specific strategy topics\n• ARC-lab-relevant dual-arm experiments\n• CUDA / GPU acceleration hooks\n• practical reproducible student-scale setups\n• publishable benchmark ideas\n• portfolio-worthy project ideas\n\nProposed graph view\n\n \n\nRecommended repo restructuring\n\nKeep\n• topics/inbox/\n• topics/notes/\n• researchplan/\n• docs/\n\nAdd\n• entities/papers/\n• entities/packages/\n• entities/methods/\n• entities/benchmarks/\n• entities/failuremodes/\n• entities/projectideas/\n• .ontology/pipelines/project-default.yaml\n• .ontology/sources/.yaml\n• researchplan/graph/\n\nHigh-leverage first implementation steps\n\nPopulate ontology classes and object properties in .ontology/ontology.yaml.\nCreate 10-20 seed entity records for:\n   - PDDLStream\n   - COAST\n   - Fast Downward\n   - Drake\n   - IRIS\n   - GCS\n   - SDAR\n   - dual-arm benchmark family\n   - behavior trees\n   - common failure modes\nAdd a minimal project-default hydration pipeline.\nGenerate a first graph artifact:\n   - packages ↔ methods ↔ benchmarks ↔ failure modes\nUpdate GitHub Pages to show:\n   - topic map\n   - package map\n   - benchmark map\n   - project ideas\n\nBest framing\n\nThis should become:\n• not just a robotics reading repo\n• not just a paper dump\n• not just a research diary\n\nIt should become a queryable robotics systems map with:\n• opinions\n• evidence\n• package comparisons\n• benchmark coverage\n• project ideas\n• explicit graph structure"
+    }
+  ]
+}

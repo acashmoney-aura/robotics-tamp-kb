@@ -4,244 +4,393 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Robotics TAMP Knowledge Base</title>
-  <meta name="description" content="Markdown-native graph view for a robotics task-and-motion-planning knowledge base.">
+  <meta name="description" content="Browsable GitHub Pages UI for the robotics task-and-motion-planning knowledge base.">
   <style>
     :root {
-      --bg: #0b1020;
-      --panel: #121a31;
-      --panel2: #182341;
-      --text: #eaf0ff;
-      --muted: #9eb0d6;
-      --accent: #72d6ff;
-      --accent2: #9dffb0;
-      --accent3: #ffcf70;
-      --border: rgba(255,255,255,.08);
-      --max: 1180px;
+      --bg: #08111f;
+      --bg2: #0d1830;
+      --panel: rgba(15, 24, 46, 0.86);
+      --panel-strong: rgba(18, 30, 58, 0.96);
+      --text: #ebf2ff;
+      --muted: #99abd0;
+      --line: rgba(255,255,255,.09);
+      --cyan: #7dd3fc;
+      --green: #86efac;
+      --amber: #fdba74;
+      --shadow: 0 18px 60px rgba(0,0,0,.28);
+      --max: 1320px;
+      --radius: 20px;
     }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font: 16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: linear-gradient(180deg, #09101f 0%, #0b1020 100%);
       color: var(--text);
+      font: 15px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(125,211,252,.12), transparent 28%),
+        radial-gradient(circle at top right, rgba(134,239,172,.08), transparent 24%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
     }
-    a { color: var(--accent); }
-    .wrap { max-width: var(--max); margin: 0 auto; padding: 28px 20px 72px; }
-    .hero { padding: 34px 0 22px; border-bottom: 1px solid var(--border); margin-bottom: 28px; }
-    .eyebrow { color: var(--accent2); text-transform: uppercase; letter-spacing: .12em; font-size: 12px; }
-    h1, h2, h3 { line-height: 1.15; }
-    h1 { font-size: clamp(34px, 7vw, 64px); margin: 10px 0 12px; }
-    .lede { font-size: 19px; color: var(--muted); max-width: 800px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 24px 0; }
-    .card {
-      background: linear-gradient(180deg, var(--panel) 0%, var(--panel2) 100%);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.18);
+    a { color: var(--cyan); }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 28px 20px 80px; }
+    .hero {
+      padding: 28px 0 26px;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 22px;
+      align-items: end;
     }
-    .stat { font-size: 34px; font-weight: 800; letter-spacing: -.03em; }
-    .pill {
+    .eyebrow {
       display: inline-block;
-      padding: 6px 10px;
-      margin: 4px 6px 0 0;
-      border-radius: 999px;
-      background: rgba(114,214,255,.08);
-      border: 1px solid rgba(114,214,255,.18);
-      color: #c8efff;
-      font-size: 14px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--green);
+      margin-bottom: 10px;
     }
-    .section { margin-top: 34px; }
-    .list { margin: 0; padding-left: 18px; }
-    .list li { margin-bottom: 8px; }
-    .muted { color: var(--muted); }
-    .tiny { font-size: 13px; color: var(--muted); }
-    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; }
-    .split { display: grid; grid-template-columns: 1.15fr .85fr; gap: 16px; }
-    @media (max-width: 900px) { .split { grid-template-columns: 1fr; } }
-    .footer { margin-top: 48px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--border); padding-top: 18px; }
-    .codeblock {
-      white-space: pre-wrap;
-      word-break: break-word;
-      background: rgba(255,255,255,.04);
+    h1, h2, h3 { line-height: 1.1; margin: 0; }
+    h1 { font-size: clamp(36px, 6vw, 66px); margin-bottom: 14px; }
+    h2 { font-size: 22px; margin-bottom: 14px; }
+    h3 { font-size: 16px; margin-bottom: 8px; }
+    .lede {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 760px;
+      margin: 0 0 18px;
+    }
+    .hero-card, .card {
+      background: var(--panel);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-card { padding: 20px; }
+    .hero-pills, .pills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(125,211,252,.18);
+      background: rgba(125,211,252,.08);
+      color: #d9f4ff;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 14px;
+      margin: 10px 0 26px;
+    }
+    .stat-card { padding: 18px; }
+    .stat-value { font-size: 34px; font-weight: 800; letter-spacing: -.03em; }
+    .stat-label { color: var(--muted); }
+    .layout {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 18px;
+      align-items: start;
+    }
+    .section-stack { display: grid; gap: 18px; }
+    .card { padding: 18px; }
+    .toolbar {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .search {
+      width: 100%;
+      border: 1px solid var(--line);
       border-radius: 14px;
-      padding: 14px;
-      border: 1px solid var(--border);
-      max-height: 360px;
+      padding: 13px 15px;
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      font: inherit;
+      outline: none;
+    }
+    .search::placeholder { color: #7f90b3; }
+    .filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .filter-chip {
+      cursor: pointer;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font: inherit;
+    }
+    .filter-chip.active { color: var(--text); border-color: rgba(125,211,252,.35); background: rgba(125,211,252,.12); }
+    .doc-grid { display: grid; gap: 12px; }
+    .doc-card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px;
+      background: rgba(255,255,255,.025);
+      cursor: pointer;
+      transition: transform .15s ease, border-color .15s ease, background .15s ease;
+    }
+    .doc-card:hover, .doc-card.active { transform: translateY(-1px); border-color: rgba(125,211,252,.32); background: rgba(125,211,252,.06); }
+    .doc-topline { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 8px; }
+    .kind-badge {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--amber);
+      background: rgba(251,191,36,.08);
+      border: 1px solid rgba(251,191,36,.16);
+      border-radius: 999px;
+      padding: 4px 8px;
+    }
+    .doc-title { font-size: 19px; font-weight: 700; margin-bottom: 6px; }
+    .doc-excerpt, .muted { color: var(--muted); }
+    .tiny { font-size: 12px; color: var(--muted); }
+    .meta-line { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px; }
+    .sidebar-grid { display: grid; gap: 18px; position: sticky; top: 18px; }
+    .detail-body {
+      white-space: pre-wrap;
+      color: #dce7ff;
+      max-height: 420px;
       overflow: auto;
+      padding-right: 4px;
+    }
+    .list { margin: 0; padding-left: 18px; }
+    .list li { margin-bottom: 7px; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .empty {
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px dashed var(--line);
+      color: var(--muted);
+      text-align: center;
+    }
+    .footer { margin-top: 26px; color: var(--muted); font-size: 13px; }
+    @media (max-width: 1080px) {
+      .hero, .layout { grid-template-columns: 1fr; }
+      .sidebar-grid { position: static; }
+    }
+    @media (max-width: 720px) {
+      .stats { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .toolbar { grid-template-columns: 1fr; }
+      .two-col { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
     <section class="hero">
-      <div class="eyebrow">markdown-native graph mode • robotics research</div>
-      <h1>Robotics TAMP Knowledge Base</h1>
-      <p class="lede">A graph-backed systems map for dual-arm task-and-motion planning, scheduling, geometry-aware feasibility, execution-time recovery, and practical package/benchmark strategy.</p>
-      <div id="hero-pills"></div>
+      <div>
+        <div class="eyebrow">GitHub Pages · robotics knowledge base</div>
+        <h1>Robotics TAMP KB</h1>
+        <p class="lede">A nicer way to browse the dual-arm planning, scheduling, geometry, execution, and world-model notes — without digging through raw markdown or broken Pages links.</p>
+        <div class="hero-pills" id="heroPills"></div>
+      </div>
+      <aside class="hero-card">
+        <h3 style="margin-bottom:10px">What’s here</h3>
+        <div class="muted">This site is generated from markdown metadata plus document bodies. You can search notes, filter by kind, inspect sources, and read each synthesis note directly inside Pages.</div>
+      </aside>
     </section>
 
-    <section class="grid" id="stats"></section>
+    <section class="stats" id="stats"></section>
 
-    <section class="split section">
-      <article class="card">
-        <h2>What this graph is doing</h2>
-        <p class="muted">This repo uses markdown frontmatter as the lightweight structure layer. Notes declare topics, entities, sources, and relations. A small mediator script builds a graph from that metadata without waiting for a full ontology/hydration setup.</p>
-        <ul class="list">
-          <li>markdown files stay human-editable</li>
-          <li>git remains the source of truth</li>
-          <li>packages, benchmarks, methods, and failure modes become graph nodes</li>
-          <li>research notes become structured systems maps instead of just bookmarks</li>
-        </ul>
-      </article>
-      <article class="card">
-        <h2>Key files</h2>
-        <ul class="list">
-          <li><a href="../README.md">README</a></li>
-          <li><a href="../topics/brief.md">Project brief</a></li>
-          <li><a href="../research_plan/graph/knowledge-graph-design.md">Knowledge graph design</a></li>
-          <li><a href="../research_plan/graph/markdown-metadata-schema.md">Markdown metadata schema</a></li>
-          <li><a href="data/graph.json">Graph JSON</a></li>
-          <li><a href="data/graph.mmd">Mermaid graph</a></li>
-        </ul>
-      </article>
+    <section class="layout">
+      <div class="section-stack">
+        <article class="card">
+          <div class="toolbar">
+            <input id="search" class="search" type="search" placeholder="Search notes, topics, entities, or source links…">
+            <div class="tiny" id="resultsMeta"></div>
+          </div>
+          <div class="filter-row" id="kindFilters"></div>
+          <div class="doc-grid" id="docGrid"></div>
+        </article>
+      </div>
+
+      <aside class="sidebar-grid">
+        <article class="card">
+          <h2>Document viewer</h2>
+          <div id="detailPanel" class="muted">Pick a note on the left. The newest synthesis notes are a good place to start.</div>
+        </article>
+
+        <article class="card">
+          <h2>Top topics</h2>
+          <div class="pills" id="topics"></div>
+        </article>
+
+        <article class="card two-col">
+          <div>
+            <h2>Entity types</h2>
+            <div class="pills" id="entityTypes"></div>
+          </div>
+          <div>
+            <h2>Sample relations</h2>
+            <ol class="list" id="relations"></ol>
+          </div>
+        </article>
+      </aside>
     </section>
 
-    <section class="grid section">
-      <article class="card">
-        <h2>Entity types</h2>
-        <div id="entity-types"></div>
-      </article>
-      <article class="card">
-        <h2>Top topics</h2>
-        <div id="topics"></div>
-      </article>
-      <article class="card">
-        <h2>Top connected entities</h2>
-        <ol class="list" id="entities"></ol>
-      </article>
-    </section>
-
-    <section class="split section">
-      <article class="card">
-        <h2>Documents with the richest metadata</h2>
-        <ol class="list" id="documents"></ol>
-      </article>
-      <article class="card">
-        <h2>Sample relations</h2>
-        <ol class="list" id="relations"></ol>
-      </article>
-    </section>
-
-    <section class="section">
-      <article class="card">
-        <h2>Mermaid graph excerpt</h2>
-        <div class="codeblock mono" id="mermaid-excerpt">Loading graph…</div>
-      </article>
-    </section>
-
-    <p class="footer" id="footer">Loading graph metadata…</p>
+    <p class="footer" id="footer"></p>
   </div>
 
   <script>
-    function el(id) { return document.getElementById(id); }
-    function escapeHtml(str) {
-      return String(str)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;');
+    const state = { kind: 'all', query: '', selectedId: null };
+    const heroTopics = ['dual-arm planning', 'task-motion-scheduling', 'geometry-aware feasibility', 'execution recovery', 'world models', 'planner interfaces'];
+
+    const el = id => document.getElementById(id);
+    const esc = s => String(s ?? '').replace(/[&<>"']/g, ch => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[ch]));
+    const fmtDate = value => value ? String(value).slice(0, 10) : 'unknown';
+
+    function renderStats(graph, documents) {
+      const items = [
+        ['Documents', graph.counts.documents],
+        ['Nodes', graph.counts.nodes],
+        ['Edges', graph.counts.edges],
+        ['Recent note', fmtDate(documents[0]?.updated)]
+      ];
+      el('stats').innerHTML = items.map(([label, value]) => `
+        <article class="card stat-card">
+          <div class="stat-value">${esc(value)}</div>
+          <div class="stat-label">${esc(label)}</div>
+        </article>`).join('');
+    }
+
+    function renderFilters(documents) {
+      const kinds = ['all', ...Array.from(new Set(documents.map(d => d.kind))).sort()];
+      el('kindFilters').innerHTML = kinds.map(kind => `
+        <button class="filter-chip ${kind === state.kind ? 'active' : ''}" data-kind="${esc(kind)}">${esc(kind)}${kind === 'all' ? '' : ` · ${documents.filter(d => d.kind === kind).length}`}</button>
+      `).join('');
+      el('kindFilters').querySelectorAll('[data-kind]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          state.kind = btn.dataset.kind;
+          renderFilters(documents);
+          renderDocuments(documents);
+        });
+      });
+    }
+
+    function filteredDocuments(documents) {
+      const q = state.query.trim().toLowerCase();
+      return documents.filter(doc => {
+        if (state.kind !== 'all' && doc.kind !== state.kind) return false;
+        if (!q) return true;
+        const hay = [doc.title, doc.excerpt, doc.body, ...(doc.topics||[]), ...(doc.entities||[]), ...(doc.sources||[])].join(' ').toLowerCase();
+        return hay.includes(q);
+      });
+    }
+
+    function renderDocuments(documents) {
+      const filtered = filteredDocuments(documents);
+      el('resultsMeta').textContent = `${filtered.length} result${filtered.length === 1 ? '' : 's'}`;
+      if (!filtered.length) {
+        el('docGrid').innerHTML = '<div class="empty">No notes matched that filter. Try a broader keyword.</div>';
+        return;
+      }
+      if (!state.selectedId || !filtered.some(d => d.id === state.selectedId)) state.selectedId = filtered[0].id;
+      el('docGrid').innerHTML = filtered.map(doc => `
+        <article class="doc-card ${doc.id === state.selectedId ? 'active' : ''}" data-id="${esc(doc.id)}">
+          <div class="doc-topline">
+            <span class="kind-badge">${esc(doc.kind)}</span>
+            <span class="tiny">updated ${esc(fmtDate(doc.updated))}</span>
+          </div>
+          <div class="doc-title">${esc(doc.title)}</div>
+          <div class="doc-excerpt">${esc(doc.excerpt || 'No excerpt available.')}</div>
+          <div class="meta-line">${(doc.topics || []).slice(0, 4).map(topic => `<span class="pill">${esc(topic)}</span>`).join('')}</div>
+        </article>`).join('');
+      el('docGrid').querySelectorAll('[data-id]').forEach(card => {
+        card.addEventListener('click', () => {
+          state.selectedId = card.dataset.id;
+          renderDocuments(documents);
+          renderDetail(documents.find(d => d.id === state.selectedId));
+        });
+      });
+      renderDetail(documents.find(d => d.id === state.selectedId));
+    }
+
+    function renderDetail(doc) {
+      if (!doc) {
+        el('detailPanel').innerHTML = '<div class="muted">No document selected.</div>';
+        return;
+      }
+      el('detailPanel').innerHTML = `
+        <div class="doc-topline" style="margin-bottom:10px">
+          <span class="kind-badge">${esc(doc.kind)}</span>
+          <span class="tiny">${esc(doc.path)}</span>
+        </div>
+        <h3 style="font-size:20px; margin-bottom:10px">${esc(doc.title)}</h3>
+        <div class="pills" style="margin-bottom:12px">${(doc.topics || []).map(topic => `<span class="pill">${esc(topic)}</span>`).join('')}</div>
+        <div class="detail-body">${esc(doc.body || doc.excerpt || 'No body content available.')}</div>
+        <div style="margin-top:14px">
+          <h3>Entities</h3>
+          <div class="pills">${(doc.entities || []).slice(0, 20).map(entity => `<span class="pill">${esc(entity)}</span>`).join('') || '<span class="muted">None listed.</span>'}</div>
+        </div>
+        <div style="margin-top:14px">
+          <h3>Sources</h3>
+          <ol class="list">${(doc.sources || []).map(src => `<li><a href="${esc(src)}" target="_blank" rel="noreferrer">${esc(src)}</a></li>`).join('') || '<li class="muted">No source URLs listed.</li>'}</ol>
+        </div>`;
+    }
+
+    function renderTopics(graph) {
+      const nodes = new Map((graph.nodes || []).map(n => [n.id, n]));
+      const counts = new Map();
+      for (const edge of graph.edges || []) {
+        if (edge.type !== 'has_topic') continue;
+        const label = nodes.get(edge.to)?.label;
+        if (!label) continue;
+        counts.set(label, (counts.get(label) || 0) + 1);
+      }
+      el('topics').innerHTML = Array.from(counts.entries())
+        .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+        .slice(0, 14)
+        .map(([topic, count]) => `<span class="pill">${esc(topic)} · ${count}</span>`).join('');
+    }
+
+    function renderEntityTypes(graph) {
+      el('entityTypes').innerHTML = Object.entries(graph.entityTypeCounts || {})
+        .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+        .map(([type, count]) => `<span class="pill">${esc(type)} · ${count}</span>`).join('');
+    }
+
+    function renderRelations(graph) {
+      const nodes = new Map((graph.nodes || []).map(n => [n.id, n]));
+      el('relations').innerHTML = (graph.edges || [])
+        .filter(edge => String(edge.from).startsWith('entity:') && String(edge.to).startsWith('entity:'))
+        .slice(0, 10)
+        .map(edge => `<li><strong>${esc(nodes.get(edge.from)?.label || edge.from)}</strong> <span class="tiny">${esc(edge.type)}</span> <strong>${esc(nodes.get(edge.to)?.label || edge.to)}</strong></li>`)
+        .join('');
     }
 
     async function main() {
+      el('heroPills').innerHTML = heroTopics.map(topic => `<span class="pill">${esc(topic)}</span>`).join('');
       try {
-        const [graphRes, mmdRes] = await Promise.all([
-          fetch('./data/graph.json', { cache: 'no-store' }),
-          fetch('./data/graph.mmd', { cache: 'no-store' })
+        const [graph, docsData] = await Promise.all([
+          fetch('./data/graph.json', { cache: 'no-store' }).then(r => r.json()),
+          fetch('./data/documents.json', { cache: 'no-store' }).then(r => r.json())
         ]);
-        const graph = await graphRes.json();
-        const mmd = await mmdRes.text();
+        const documents = docsData.documents || [];
+        renderStats(graph, documents);
+        renderFilters(documents);
+        renderDocuments(documents);
+        renderTopics(graph);
+        renderEntityTypes(graph);
+        renderRelations(graph);
+        el('footer').textContent = `Last rebuilt ${graph.generatedAt}. GitHub Pages is now serving searchable note content from docs/data/documents.json instead of linking to unpublished markdown paths.`;
 
-        const heroTopics = ['dual-arm planning', 'task-motion-scheduling', 'PDDLStream', 'Drake / IRIS / GCS', 'execution & behavior trees', 'benchmark strategy'];
-        el('hero-pills').innerHTML = heroTopics.map(t => `<span class="pill">${escapeHtml(t)}</span>`).join('');
-
-        const stats = [
-          ['Documents', graph.counts.documents],
-          ['Nodes', graph.counts.nodes],
-          ['Edges', graph.counts.edges],
-          ['Entity types', Object.keys(graph.entityTypeCounts || {}).length],
-        ];
-        el('stats').innerHTML = stats.map(([label, value]) => `
-          <article class="card">
-            <div class="stat">${escapeHtml(value)}</div>
-            <div class="muted">${escapeHtml(label)}</div>
-          </article>
-        `).join('');
-
-        el('entity-types').innerHTML = Object.entries(graph.entityTypeCounts || {})
-          .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-          .map(([k, v]) => `<span class="pill">${escapeHtml(k)} · ${v}</span>`)
-          .join('');
-
-        const edges = graph.edges || [];
-        const nodes = new Map((graph.nodes || []).map(n => [n.id, n]));
-
-        const topicCounts = new Map();
-        for (const edge of edges) {
-          if (edge.type !== 'has_topic') continue;
-          const topic = nodes.get(edge.to)?.label;
-          if (!topic) continue;
-          topicCounts.set(topic, (topicCounts.get(topic) || 0) + 1);
-        }
-        el('topics').innerHTML = Array.from(topicCounts.entries())
-          .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-          .slice(0, 12)
-          .map(([topic, count]) => `<span class="pill">${escapeHtml(topic)} · ${count}</span>`)
-          .join('');
-
-        const entityDegree = new Map();
-        for (const edge of edges) {
-          for (const side of [edge.from, edge.to]) {
-            const node = nodes.get(side);
-            if (!node || node.nodeType !== 'entity') continue;
-            entityDegree.set(node.label, (entityDegree.get(node.label) || 0) + 1);
-          }
-        }
-        el('entities').innerHTML = Array.from(entityDegree.entries())
-          .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-          .slice(0, 12)
-          .map(([name, degree]) => `<li><strong>${escapeHtml(name)}</strong> <span class="tiny">(${degree} graph links)</span></li>`)
-          .join('');
-
-        const docs = (graph.nodes || []).filter(n => n.nodeType === 'document');
-        const docStats = docs.map(doc => {
-          const linkedEdges = edges.filter(e => e.from === doc.id);
-          return {
-            ...doc,
-            score: linkedEdges.length,
-            relationCount: linkedEdges.filter(e => e.type !== 'has_topic' && e.type !== 'mentions' && e.type !== 'cites').length,
-          };
-        }).sort((a, b) => b.score - a.score || a.label.localeCompare(b.label));
-
-        el('documents').innerHTML = docStats.slice(0, 10)
-          .map(doc => `<li><strong>${escapeHtml(doc.label)}</strong> <span class="tiny">(${escapeHtml(doc.kind || 'document')}, ${doc.score} outgoing links)</span><br><span class="mono">${escapeHtml(doc.path || '')}</span></li>`)
-          .join('');
-
-        const relationEdges = edges.filter(e => String(e.from).startsWith('entity:') && String(e.to).startsWith('entity:'));
-        el('relations').innerHTML = relationEdges.slice(0, 16)
-          .map(edge => {
-            const from = nodes.get(edge.from)?.label || edge.from;
-            const to = nodes.get(edge.to)?.label || edge.to;
-            return `<li><strong>${escapeHtml(from)}</strong> <span class="tiny">${escapeHtml(edge.type)}</span> <strong>${escapeHtml(to)}</strong></li>`;
-          })
-          .join('');
-
-        el('mermaid-excerpt').textContent = mmd.split('\n').slice(0, 40).join('\n');
-        el('footer').textContent = `Graph last rebuilt: ${graph.generatedAt} · GitHub Pages is rendering markdown-derived graph data from docs/data/graph.json.`;
+        el('search').addEventListener('input', e => {
+          state.query = e.target.value;
+          renderDocuments(documents);
+        });
       } catch (err) {
-        el('stats').innerHTML = '<article class="card"><div class="muted">Could not load graph data yet.</div></article>';
-        el('footer').textContent = `Graph load failed: ${err}`;
+        el('docGrid').innerHTML = `<div class="empty">Could not load site data: ${esc(err)}</div>`;
+        el('footer').textContent = 'Site data failed to load.';
       }
     }
 

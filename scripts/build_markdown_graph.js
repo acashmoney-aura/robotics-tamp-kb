@@ -111,6 +111,31 @@ function getEntityId(name) {
   return `entity:${slugify(name)}`;
 }
 
+function stripMarkdown(text) {
+  return String(text)
+    .replace(/^---[\s\S]*?---\n?/, '')
+    .replace(/```[\s\S]*?```/g, ' ')
+    .replace(/`([^`]+)`/g, '$1')
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+    .replace(/^#+\s*/gm, '')
+    .replace(/^>\s?/gm, '')
+    .replace(/^[-*]\s+/gm, '• ')
+    .replace(/^\d+\.\s+/gm, '')
+    .replace(/\|/g, ' ')
+    .replace(/\*\*|__/g, '')
+    .replace(/\*|_/g, '')
+    .replace(/\r/g, '')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
+function makeExcerpt(text, max = 280) {
+  const flat = text.replace(/\s+/g, ' ').trim();
+  if (flat.length <= max) return flat;
+  return `${flat.slice(0, max).replace(/[,:;\-\s]+$/,'')}…`;
+}
+
 const nodes = new Map();
 const edges = new Map();
 const docs = [];
@@ -129,8 +154,23 @@ for (const file of walk(repoRoot)) {
     parsed.data.url,
     parsed.data.source_url,
   ]);
+  const plainBody = stripMarkdown(parsed.body);
 
-  docs.push({ path: relPath, title, kind, data: parsed.data });
+  docs.push({
+    id: docId,
+    slug: slugify(relPath),
+    path: relPath,
+    title,
+    kind,
+    updated: parsed.data.updated || parsed.data.captured_at || null,
+    topics: parsed.data.topics || [],
+    entities: uniq([...(parsed.data.entities || []), ...((parsed.data.entity_metadata || []).map(x => x?.name).filter(Boolean))]),
+    sources: sourceList,
+    excerpt: makeExcerpt(plainBody),
+    body: plainBody,
+    data: parsed.data,
+  });
+
   addNode(nodes, docId, {
     label: title,
     nodeType: 'document',
@@ -208,10 +248,27 @@ const entityTypeCounts = graph.nodes
 graph.nodeTypeCounts = nodeTypeCounts;
 graph.entityTypeCounts = entityTypeCounts;
 
+const docsForJson = docs
+  .map(doc => ({
+    id: doc.id,
+    slug: doc.slug,
+    title: doc.title,
+    kind: doc.kind,
+    path: doc.path,
+    updated: doc.updated,
+    topics: doc.topics,
+    entities: doc.entities,
+    sources: doc.sources,
+    excerpt: doc.excerpt,
+    body: doc.body,
+  }))
+  .sort((a, b) => (String(b.updated || '')).localeCompare(String(a.updated || '')) || a.title.localeCompare(b.title));
+
 fs.mkdirSync(graphDir, { recursive: true });
 fs.mkdirSync(docsDataDir, { recursive: true });
 fs.writeFileSync(path.join(graphDir, 'graph.json'), JSON.stringify(graph, null, 2) + '\n');
 fs.writeFileSync(path.join(docsDataDir, 'graph.json'), JSON.stringify(graph, null, 2) + '\n');
+fs.writeFileSync(path.join(docsDataDir, 'documents.json'), JSON.stringify({ generatedAt: graph.generatedAt, documents: docsForJson }, null, 2) + '\n');
 
 const mermaidLines = ['graph TD'];
 for (const edge of graph.edges) {
@@ -231,10 +288,10 @@ const topDocs = docs
     path: d.path,
     title: d.title,
     kind: d.kind,
-    entities: (d.data.entities || []).length + (d.data.entity_metadata || []).length,
+    entities: d.entities.length,
     relations: (d.data.relations || []).length,
     topics: (d.data.topics || []).length,
-    sources: uniq([...(d.data.sources || []), d.data.url, d.data.source_url]).length,
+    sources: d.sources.length,
   }))
   .sort((a, b) => b.relations - a.relations || b.entities - a.entities || b.sources - a.sources);
 
@@ -266,6 +323,7 @@ const summary = [
   '- `research_plan/graph/summary.md`',
   '- `docs/data/graph.json`',
   '- `docs/data/graph.mmd`',
+  '- `docs/data/documents.json`',
 ];
 fs.writeFileSync(path.join(graphDir, 'summary.md'), summary.join('\n') + '\n');
 fs.writeFileSync(path.join(docsDataDir, 'summary.md'), summary.join('\n') + '\n');
