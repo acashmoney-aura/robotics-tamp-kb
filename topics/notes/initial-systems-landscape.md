@@ -1,7 +1,7 @@
 ---
 title: Initial systems landscape: dual-arm task and motion planning
 kind: synthesis-note
-updated: 2026-06-10
+updated: 2026-06-13
 topics:
   - dual-arm-planning
   - task-motion-scheduling
@@ -13,6 +13,7 @@ topics:
 entities:
   - PDDLStream
   - Policy-Guided Lazy Search with Feedback
+  - Learning to Search in Task and Motion Planning with Streams
   - COAST
   - Drake
   - IRIS
@@ -28,6 +29,8 @@ entity_metadata:
   - name: PDDLStream
     entity_type: Package
   - name: Policy-Guided Lazy Search with Feedback
+    entity_type: Method
+  - name: Learning to Search in Task and Motion Planning with Streams
     entity_type: Method
   - name: COAST
     entity_type: Package
@@ -54,6 +57,7 @@ entity_metadata:
 sources:
   - https://arxiv.org/abs/1802.08705
   - https://arxiv.org/abs/2210.14055
+  - https://arxiv.org/abs/2111.13144
   - https://branvu.github.io/coast.github.io/
   - https://drake.mit.edu/doxygen_cxx/group__planning__iris.html
   - https://arxiv.org/abs/2403.12761
@@ -67,6 +71,9 @@ relations:
   - from: Policy-Guided Lazy Search with Feedback
     type: refines
     to: PDDLStream
+  - from: Learning to Search in Task and Motion Planning with Streams
+    type: guides
+    to: stream expansion
   - from: COAST
     type: narrows
     to: symbolic search
@@ -89,7 +96,7 @@ relations:
 
 # Initial systems landscape: dual-arm task and motion planning
 
-Updated: 2026-06-10
+Updated: 2026-06-13
 
 ## Core thesis
 
@@ -124,7 +131,13 @@ Source: https://arxiv.org/abs/1802.08705
 ### Search improvements over action skeletons
 LAZY / Policy-Guided Lazy Search matters because it tries to keep a single integrated search that becomes progressively more geometrically informed, instead of separating symbolic planning too sharply from motion feasibility.
 
-Source: https://arxiv.org/abs/2210.14055
+A useful adjacent paper from Akash's notes is *Learning to Search in Task and Motion Planning with Streams*. It uses a learned graph-guided priority signal to expand stream-relevant objects and facts more selectively instead of broad optimistic expansion.
+
+Practical opinion: this is interesting, but still a second-step optimization. First get the benchmark and scheduling layer right; only then spend time on learned search guidance.
+
+Sources:
+- https://arxiv.org/abs/2210.14055
+- https://arxiv.org/abs/2111.13144
 
 ### Constraint-guided TAMP
 COAST is important because it uses constraints and streams together to shrink the task-planning search space before or during sampling. That feels especially relevant for dual-arm settings where brute-force symbolic branching explodes quickly.
@@ -168,6 +181,20 @@ Source: https://arxiv.org/abs/2403.08094
 - obstacle-clearing plus placement
 - queue or conveyor tasks with continuous arrivals
 - container holding plus insertion
+
+## Benchmark triage from Akash's email
+
+Best near-term targets:
+- entangled tabletop rearrangement: strongest fit for exposing shared-resource and overlap decisions
+- handoff across arm workspaces: clean test for explicit coordination and staging
+- container holding plus insertion: good for asymmetric arm roles and precedence constraints
+- assembly with precedence constraints: good once the simpler coordination cases are stable
+
+Lower-priority early benchmarks:
+- shared shelf organization: realistic, but easier to let perception and scene semantics distract the planning question
+- dynamic queue / conveyor tasks: valuable later, but too execution-heavy for a first reproducible TAMP benchmark
+
+Opinionated takeaway: the email reinforces that the repo should stay centered on the missing middle layer — scheduling, overlap, resource locking, and early geometry checks — rather than drifting into generic world models or LLM planning demos.
 
 ## Practical opinion
 
