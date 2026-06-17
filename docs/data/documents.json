@@ -1,6 +1,80 @@
 {
-  "generatedAt": "2026-06-12T21:22:49.772Z",
+  "generatedAt": "2026-06-17T11:41:46.235Z",
   "documents": [
+    {
+      "id": "doc:topics/inbox/2026-06-13-bc4d7eb206.md",
+      "slug": "topics-inbox-2026-06-13-bc4d7eb206-md",
+      "title": "Akash email: dual-arm TAMP benchmark and paper notes",
+      "kind": "note",
+      "path": "topics/inbox/2026-06-13-bc4d7eb206.md",
+      "updated": "2026-06-13T11:42:03.764172+00:00",
+      "topics": [
+        "dual-arm-planning",
+        "task-motion-scheduling",
+        "benchmarks",
+        "pddlstream",
+        "behavior-trees",
+        "geometry"
+      ],
+      "entities": [
+        "Akash Dubey",
+        "PDDLStream",
+        "COAST",
+        "behavior trees",
+        "Drake",
+        "IRIS",
+        "Learning to Search in Task and Motion Planning with Streams"
+      ],
+      "sources": [],
+      "excerpt": "Email metadata: • from: Akash Dubey <akashdub06@gmail.com> • to: moneyacash07@gmail.com • date: 2026-06-06 23:06 -0400 • subject: research • gmailthreadid: 19ea00c2d3a87e6e Raw notes: The goal is dual-arm task-motion-scheduling: deciding what each arm should do, when actions shou…",
+      "body": "Email metadata:\n• from: Akash Dubey <akashdub06@gmail.com>\n• to: moneyacash07@gmail.com\n• date: 2026-06-06 23:06 -0400\n• subject: research\n• gmailthreadid: 19ea00c2d3a87e6e\n\nRaw notes:\n\nThe goal is dual-arm task-motion-scheduling: deciding what each arm should do, when actions should overlap, how to generate feasible motions, and how to replan when manipulation timing or geometry breaks the symbolic plan.\n\nSuggested benchmark/task ideas:\n• entangled tabletop rearrangement\n• shared shelf organization\n• dual-arm block tower / shared construction zone\n• obstacle-clearing plus placement\n• dual-arm sorting with uncertain action durations\n• assembly with precedence constraints\n• container holding + insertion\n• handoff benchmark\n• dynamic queue / continuous task stream\n\nAkash's framing:\n• long-horizon bimanual coordination fails when symbolic plans look good but geometry fails late\n• task-motion-scheduling is the missing middle layer between task planning and motion planning\n• behavior trees may be the practical execution abstraction\n• Drake / IRIS / GCS are worth tracking for geometry structure\n\nLinks called out:\n• PDDLStream: https://github.com/caelan/pddlstream\n• Behavior trees / execution layer: https://arxiv.org/abs/2403.12761\n• COAST: https://branvu.github.io/coast.github.io/\n• Fast Downward: https://github.com/aibasel/downward\n• Drake IRIS docs: https://drake.mit.edu/doxygencxx/groupplanningiris.html\n• C-IRIS: https://alexandreamice.github.io/publication/dai-2023-certified/\n• Learning to Search in TAMP with Streams: https://arxiv.org/abs/2111.13144\n• Hierarchical 3D scene graphs: https://arxiv.org/abs/2403.08094\n• SDAR: https://arxiv.org/abs/2512.08206\n\nLow-confidence / likely lower-signal items to verify later before promoting:\n• chemistry/planning crossover paper: https://link.springer.com/article/10.1007/s10514-023-10136-2\n• ScienceDirect paper: https://www.sciencedirect.com/science/article/pii/S0736584526000591\n• ChatGPT share links included in email but not promoted into synthesis"
+    },
+    {
+      "id": "doc:topics/notes/initial-systems-landscape.md",
+      "slug": "topics-notes-initial-systems-landscape-md",
+      "title": "Initial systems landscape: dual-arm task and motion planning",
+      "kind": "synthesis-note",
+      "path": "topics/notes/initial-systems-landscape.md",
+      "updated": "2026-06-13",
+      "topics": [
+        "dual-arm-planning",
+        "task-motion-scheduling",
+        "symbolic-planning",
+        "motion-planning",
+        "execution",
+        "geometry",
+        "scene-graphs"
+      ],
+      "entities": [
+        "PDDLStream",
+        "Policy-Guided Lazy Search with Feedback",
+        "Learning to Search in Task and Motion Planning with Streams",
+        "COAST",
+        "Drake",
+        "IRIS",
+        "behavior trees",
+        "SDAR",
+        "task-motion-scheduling",
+        "entangled tabletop rearrangement",
+        "shared-resource conflict",
+        "corridor interference",
+        "C-IRIS",
+        "hierarchical 3D scene graphs"
+      ],
+      "sources": [
+        "https://arxiv.org/abs/1802.08705",
+        "https://arxiv.org/abs/2210.14055",
+        "https://arxiv.org/abs/2111.13144",
+        "https://branvu.github.io/coast.github.io/",
+        "https://drake.mit.edu/doxygen_cxx/group__planning__iris.html",
+        "https://arxiv.org/abs/2403.12761",
+        "https://arxiv.org/abs/2512.08206",
+        "https://alexandreamice.github.io/publication/dai-2023-certified/",
+        "https://arxiv.org/abs/2403.08094"
+      ],
+      "excerpt": "Initial systems landscape: dual-arm task and motion planning Updated: 2026-06-13 Core thesis The biggest systems gap is not just task planning or motion planning alone. It is the missing middle layer that decides: • what each arm should do, • which actions may overlap, • which sh…",
+      "body": "Initial systems landscape: dual-arm task and motion planning\n\nUpdated: 2026-06-13\n\nCore thesis\n\nThe biggest systems gap is not just task planning or motion planning alone.\nIt is the missing middle layer that decides:\n\n• what each arm should do,\n• which actions may overlap,\n• which shared resources are locked,\n• when geometry should be tested early enough to avoid late collapse,\n• and how execution should recover when the symbolic plan stops being feasible.\n\nThat gap is best described here as task-motion-scheduling.\n\nWhy this matters\n\nLong-horizon dual-arm tasks are much harsher than single-arm toy domains. A symbolic plan can look perfectly fine, but fail late because:\n\n• arms interfere in shared workspace,\n• one arm blocks the other's motion corridor,\n• feasibility checks are deferred too long,\n• durations drift and invalidate overlap assumptions,\n• handoff or assembly order creates fragile dependencies.\n\nKey source buckets\n\nPDDLStream foundation\nPDDLStream is the cleanest base abstraction for mixing symbolic planning with black-box geometric sampling. It is still one of the clearest starting points for reasoning about TAMP systems that must deal with kinematics, collisions, visibility, and motion constraints.\n\nSource: https://arxiv.org/abs/1802.08705\n\nSearch improvements over action skeletons\nLAZY / Policy-Guided Lazy Search matters because it tries to keep a single integrated search that becomes progressively more geometrically informed, instead of separating symbolic planning too sharply from motion feasibility.\n\nA useful adjacent paper from Akash's notes is Learning to Search in Task and Motion Planning with Streams. It uses a learned graph-guided priority signal to expand stream-relevant objects and facts more selectively instead of broad optimistic expansion.\n\nPractical opinion: this is interesting, but still a second-step optimization. First get the benchmark and scheduling layer right; only then spend time on learned search guidance.\n\nSources:\n• https://arxiv.org/abs/2210.14055\n• https://arxiv.org/abs/2111.13144\n\nConstraint-guided TAMP\nCOAST is important because it uses constraints and streams together to shrink the task-planning search space before or during sampling. That feels especially relevant for dual-arm settings where brute-force symbolic branching explodes quickly.\n\nSource: https://branvu.github.io/coast.github.io/\n\nGeometry-aware feasibility layers\nDrake, IRIS, and Graphs of Convex Sets look promising for a more structured geometry layer. They matter when the question becomes: how do we represent feasible regions cleanly enough that high-level plans are not lying to us?\n\nThe strongest new addition here is C-IRIS. It is not just another motion-planning paper; it is evidence that certified convex decompositions can scale to a 12-DOF bimanual manipulator. That makes it much more relevant to dual-arm TAMP than generic geometry papers that never leave low-DOF toy settings.\n\nPractical opinion: if a future stack wants to use Drake seriously, C-IRIS-style regions look like one of the few geometry summaries that could actually be surfaced early enough to help scheduling and avoid late symbolic collapse.\n\nSources:\n• https://drake.mit.edu/doxygencxx/groupplanningiris.html\n• https://alexandreamice.github.io/publication/dai-2023-certified/\n\nExecution / recovery layer\nBehavior trees are interesting not as hype, but as a practical execution abstraction for retries, fallbacks, and replanning transitions.\n\nSource: https://arxiv.org/abs/2403.12761\n\nDirect dual-arm target system\nSDAR is the most directly relevant seed item because it focuses on synchronous dual-arm rearrangement, dependency-driven task planning, layered motion planning, and hardware transfer.\n\nSource: https://arxiv.org/abs/2512.08206\n\nWorld-model abstraction, but with caution\nHierarchical 3D scene graphs are interesting because they show how to derive sparse planning domains from a much richer world model. That is a useful abstraction lesson for any knowledge-heavy planning system.\n\nBut this should stay secondary for now. It is more relevant to large-scene mobile manipulation than to the repo's core dual-arm tabletop focus. Good idea to borrow from; bad idea to let it distract the main benchmark path.\n\nSource: https://arxiv.org/abs/2403.08094\n\nBenchmark tasks worth tracking\n\n• entangled tabletop rearrangement\n• shared shelf organization\n• dual-arm assembly / block construction\n• handoff across arm workspaces\n• obstacle-clearing plus placement\n• queue or conveyor tasks with continuous arrivals\n• container holding plus insertion\n\nBenchmark triage from Akash's email\n\nBest near-term targets:\n• entangled tabletop rearrangement: strongest fit for exposing shared-resource and overlap decisions\n• handoff across arm workspaces: clean test for explicit coordination and staging\n• container holding plus insertion: good for asymmetric arm roles and precedence constraints\n• assembly with precedence constraints: good once the simpler coordination cases are stable\n\nLower-priority early benchmarks:\n• shared shelf organization: realistic, but easier to let perception and scene semantics distract the planning question\n• dynamic queue / conveyor tasks: valuable later, but too execution-heavy for a first reproducible TAMP benchmark\n\nOpinionated takeaway: the email reinforces that the repo should stay centered on the missing middle layer — scheduling, overlap, resource locking, and early geometry checks — rather than drifting into generic world models or LLM planning demos.\n\nPractical opinion\n\nThe likely winning stack is not “LLM planner solves robotics.”\nIt is probably a layered system:\n\nsymbolic abstraction,\nscheduling / resource reasoning,\ngeometry-aware feasibility checks, ideally with reusable summaries rather than only fresh stream calls,\nfast motion planning backend,\nexecution and recovery.\n\nThat is a systems-engineering problem more than a prompting problem.\n\nImmediate next questions\n\n• What is the cleanest open-source experiment path: PDDLStream, Drake/GCS, or a hybrid?\n• How should dual-arm scheduling be represented explicitly rather than buried inside symbolic operators?\n• Which benchmark should become the first reproducible project target?\n• How should this map onto Akash's path-planning / CUDA / ARC interests?"
+    },
     {
       "id": "doc:topics/notes/recent-robotics-interfaces-and-world-models.md",
       "slug": "topics-notes-recent-robotics-interfaces-and-world-models-md",
@@ -90,50 +164,6 @@
       ],
       "excerpt": "Source URL: https://alexandreamice.github.io/publication/dai-2023-certified/",
       "body": "Source URL: https://alexandreamice.github.io/publication/dai-2023-certified/"
-    },
-    {
-      "id": "doc:topics/notes/initial-systems-landscape.md",
-      "slug": "topics-notes-initial-systems-landscape-md",
-      "title": "Initial systems landscape: dual-arm task and motion planning",
-      "kind": "synthesis-note",
-      "path": "topics/notes/initial-systems-landscape.md",
-      "updated": "2026-06-10",
-      "topics": [
-        "dual-arm-planning",
-        "task-motion-scheduling",
-        "symbolic-planning",
-        "motion-planning",
-        "execution",
-        "geometry",
-        "scene-graphs"
-      ],
-      "entities": [
-        "PDDLStream",
-        "Policy-Guided Lazy Search with Feedback",
-        "COAST",
-        "Drake",
-        "IRIS",
-        "behavior trees",
-        "SDAR",
-        "task-motion-scheduling",
-        "entangled tabletop rearrangement",
-        "shared-resource conflict",
-        "corridor interference",
-        "C-IRIS",
-        "hierarchical 3D scene graphs"
-      ],
-      "sources": [
-        "https://arxiv.org/abs/1802.08705",
-        "https://arxiv.org/abs/2210.14055",
-        "https://branvu.github.io/coast.github.io/",
-        "https://drake.mit.edu/doxygen_cxx/group__planning__iris.html",
-        "https://arxiv.org/abs/2403.12761",
-        "https://arxiv.org/abs/2512.08206",
-        "https://alexandreamice.github.io/publication/dai-2023-certified/",
-        "https://arxiv.org/abs/2403.08094"
-      ],
-      "excerpt": "Initial systems landscape: dual-arm task and motion planning Updated: 2026-06-10 Core thesis The biggest systems gap is not just task planning or motion planning alone. It is the missing middle layer that decides: • what each arm should do, • which actions may overlap, • which sh…",
-      "body": "Initial systems landscape: dual-arm task and motion planning\n\nUpdated: 2026-06-10\n\nCore thesis\n\nThe biggest systems gap is not just task planning or motion planning alone.\nIt is the missing middle layer that decides:\n\n• what each arm should do,\n• which actions may overlap,\n• which shared resources are locked,\n• when geometry should be tested early enough to avoid late collapse,\n• and how execution should recover when the symbolic plan stops being feasible.\n\nThat gap is best described here as task-motion-scheduling.\n\nWhy this matters\n\nLong-horizon dual-arm tasks are much harsher than single-arm toy domains. A symbolic plan can look perfectly fine, but fail late because:\n\n• arms interfere in shared workspace,\n• one arm blocks the other's motion corridor,\n• feasibility checks are deferred too long,\n• durations drift and invalidate overlap assumptions,\n• handoff or assembly order creates fragile dependencies.\n\nKey source buckets\n\nPDDLStream foundation\nPDDLStream is the cleanest base abstraction for mixing symbolic planning with black-box geometric sampling. It is still one of the clearest starting points for reasoning about TAMP systems that must deal with kinematics, collisions, visibility, and motion constraints.\n\nSource: https://arxiv.org/abs/1802.08705\n\nSearch improvements over action skeletons\nLAZY / Policy-Guided Lazy Search matters because it tries to keep a single integrated search that becomes progressively more geometrically informed, instead of separating symbolic planning too sharply from motion feasibility.\n\nSource: https://arxiv.org/abs/2210.14055\n\nConstraint-guided TAMP\nCOAST is important because it uses constraints and streams together to shrink the task-planning search space before or during sampling. That feels especially relevant for dual-arm settings where brute-force symbolic branching explodes quickly.\n\nSource: https://branvu.github.io/coast.github.io/\n\nGeometry-aware feasibility layers\nDrake, IRIS, and Graphs of Convex Sets look promising for a more structured geometry layer. They matter when the question becomes: how do we represent feasible regions cleanly enough that high-level plans are not lying to us?\n\nThe strongest new addition here is C-IRIS. It is not just another motion-planning paper; it is evidence that certified convex decompositions can scale to a 12-DOF bimanual manipulator. That makes it much more relevant to dual-arm TAMP than generic geometry papers that never leave low-DOF toy settings.\n\nPractical opinion: if a future stack wants to use Drake seriously, C-IRIS-style regions look like one of the few geometry summaries that could actually be surfaced early enough to help scheduling and avoid late symbolic collapse.\n\nSources:\n• https://drake.mit.edu/doxygencxx/groupplanningiris.html\n• https://alexandreamice.github.io/publication/dai-2023-certified/\n\nExecution / recovery layer\nBehavior trees are interesting not as hype, but as a practical execution abstraction for retries, fallbacks, and replanning transitions.\n\nSource: https://arxiv.org/abs/2403.12761\n\nDirect dual-arm target system\nSDAR is the most directly relevant seed item because it focuses on synchronous dual-arm rearrangement, dependency-driven task planning, layered motion planning, and hardware transfer.\n\nSource: https://arxiv.org/abs/2512.08206\n\nWorld-model abstraction, but with caution\nHierarchical 3D scene graphs are interesting because they show how to derive sparse planning domains from a much richer world model. That is a useful abstraction lesson for any knowledge-heavy planning system.\n\nBut this should stay secondary for now. It is more relevant to large-scene mobile manipulation than to the repo's core dual-arm tabletop focus. Good idea to borrow from; bad idea to let it distract the main benchmark path.\n\nSource: https://arxiv.org/abs/2403.08094\n\nBenchmark tasks worth tracking\n\n• entangled tabletop rearrangement\n• shared shelf organization\n• dual-arm assembly / block construction\n• handoff across arm workspaces\n• obstacle-clearing plus placement\n• queue or conveyor tasks with continuous arrivals\n• container holding plus insertion\n\nPractical opinion\n\nThe likely winning stack is not “LLM planner solves robotics.”\nIt is probably a layered system:\n\nsymbolic abstraction,\nscheduling / resource reasoning,\ngeometry-aware feasibility checks, ideally with reusable summaries rather than only fresh stream calls,\nfast motion planning backend,\nexecution and recovery.\n\nThat is a systems-engineering problem more than a prompting problem.\n\nImmediate next questions\n\n• What is the cleanest open-source experiment path: PDDLStream, Drake/GCS, or a hybrid?\n• How should dual-arm scheduling be represented explicitly rather than buried inside symbolic operators?\n• Which benchmark should become the first reproducible project target?\n• How should this map onto Akash's path-planning / CUDA / ARC interests?"
     },
     {
       "id": "doc:research_plan/source_registry.md",

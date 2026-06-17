@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-06-12T21:22:49.772Z",
+  "generatedAt": "2026-06-17T11:41:46.235Z",
   "counts": {
-    "nodes": 160,
-    "edges": 249,
-    "documents": 17
+    "nodes": 165,
+    "edges": 265,
+    "documents": 18
   },
   "nodes": [
     {
@@ -111,6 +111,14 @@
       "updated": "2026-06-10T11:10:47.227317+00:00"
     },
     {
+      "id": "doc:topics/inbox/2026-06-13-bc4d7eb206.md",
+      "label": "Akash email: dual-arm TAMP benchmark and paper notes",
+      "nodeType": "document",
+      "kind": "note",
+      "path": "topics/inbox/2026-06-13-bc4d7eb206.md",
+      "updated": "2026-06-13T11:42:03.764172+00:00"
+    },
+    {
       "id": "doc:topics/notes/benchmark-and-tooling-map.md",
       "label": "Benchmark and tooling map for dual-arm TAMP",
       "nodeType": "document",
@@ -124,7 +132,7 @@
       "nodeType": "document",
       "kind": "synthesis-note",
       "path": "topics/notes/initial-systems-landscape.md",
-      "updated": "2026-06-10"
+      "updated": "2026-06-13"
     },
     {
       "id": "doc:topics/notes/llms-execution-and-applications.md",
@@ -141,6 +149,12 @@
       "kind": "synthesis-note",
       "path": "topics/notes/recent-robotics-interfaces-and-world-models.md",
       "updated": "2026-06-12"
+    },
+    {
+      "id": "entity:akash-dubey",
+      "label": "Akash Dubey",
+      "nodeType": "entity",
+      "entityType": "Concept"
     },
     {
       "id": "entity:apt",
@@ -387,6 +401,13 @@
       "nodeType": "entity"
     },
     {
+      "id": "entity:learning-to-search-in-task-and-motion-planning-with-streams",
+      "label": "Learning to Search in Task and Motion Planning with Streams",
+      "nodeType": "entity",
+      "entityType": "Method",
+      "status": null
+    },
+    {
       "id": "entity:mana",
       "label": "Mana",
       "nodeType": "entity",
@@ -542,6 +563,11 @@
       "nodeType": "entity"
     },
     {
+      "id": "entity:stream-expansion",
+      "label": "stream expansion",
+      "nodeType": "entity"
+    },
+    {
       "id": "entity:structured-graph",
       "label": "structured graph",
       "nodeType": "entity"
@@ -648,6 +674,12 @@
       "label": "https://arxiv.org/abs/1802.08705",
       "nodeType": "source",
       "url": "https://arxiv.org/abs/1802.08705"
+    },
+    {
+      "id": "source:https-arxiv-org-abs-2111-13144",
+      "label": "https://arxiv.org/abs/2111.13144",
+      "nodeType": "source",
+      "url": "https://arxiv.org/abs/2111.13144"
     },
     {
       "id": "source:https-arxiv-org-abs-2210-14055",
@@ -1729,6 +1761,97 @@
       "source": "topics/inbox/2026-06-10-055dd8b2d2.md"
     },
     {
+      "id": "doc:topics/inbox/2026-06-13-bc4d7eb206.md::has_topic::topic:behavior-trees",
+      "from": "doc:topics/inbox/2026-06-13-bc4d7eb206.md",
+      "type": "has_topic",
+      "to": "topic:behavior-trees",
+      "source": "topics/inbox/2026-06-13-bc4d7eb206.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-13-bc4d7eb206.md::has_topic::topic:benchmarks",
+      "from": "doc:topics/inbox/2026-06-13-bc4d7eb206.md",
+      "type": "has_topic",
+      "to": "topic:benchmarks",
+      "source": "topics/inbox/2026-06-13-bc4d7eb206.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-13-bc4d7eb206.md::has_topic::topic:dual-arm-planning",
+      "from": "doc:topics/inbox/2026-06-13-bc4d7eb206.md",
+      "type": "has_topic",
+      "to": "topic:dual-arm-planning",
+      "source": "topics/inbox/2026-06-13-bc4d7eb206.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-13-bc4d7eb206.md::has_topic::topic:geometry",
+      "from": "doc:topics/inbox/2026-06-13-bc4d7eb206.md",
+      "type": "has_topic",
+      "to": "topic:geometry",
+      "source": "topics/inbox/2026-06-13-bc4d7eb206.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-13-bc4d7eb206.md::has_topic::topic:pddlstream",
+      "from": "doc:topics/inbox/2026-06-13-bc4d7eb206.md",
+      "type": "has_topic",
+      "to": "topic:pddlstream",
+      "source": "topics/inbox/2026-06-13-bc4d7eb206.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-13-bc4d7eb206.md::has_topic::topic:task-motion-scheduling",
+      "from": "doc:topics/inbox/2026-06-13-bc4d7eb206.md",
+      "type": "has_topic",
+      "to": "topic:task-motion-scheduling",
+      "source": "topics/inbox/2026-06-13-bc4d7eb206.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-13-bc4d7eb206.md::mentions::entity:akash-dubey",
+      "from": "doc:topics/inbox/2026-06-13-bc4d7eb206.md",
+      "type": "mentions",
+      "to": "entity:akash-dubey",
+      "source": "topics/inbox/2026-06-13-bc4d7eb206.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-13-bc4d7eb206.md::mentions::entity:behavior-trees",
+      "from": "doc:topics/inbox/2026-06-13-bc4d7eb206.md",
+      "type": "mentions",
+      "to": "entity:behavior-trees",
+      "source": "topics/inbox/2026-06-13-bc4d7eb206.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-13-bc4d7eb206.md::mentions::entity:coast",
+      "from": "doc:topics/inbox/2026-06-13-bc4d7eb206.md",
+      "type": "mentions",
+      "to": "entity:coast",
+      "source": "topics/inbox/2026-06-13-bc4d7eb206.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-13-bc4d7eb206.md::mentions::entity:drake",
+      "from": "doc:topics/inbox/2026-06-13-bc4d7eb206.md",
+      "type": "mentions",
+      "to": "entity:drake",
+      "source": "topics/inbox/2026-06-13-bc4d7eb206.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-13-bc4d7eb206.md::mentions::entity:iris",
+      "from": "doc:topics/inbox/2026-06-13-bc4d7eb206.md",
+      "type": "mentions",
+      "to": "entity:iris",
+      "source": "topics/inbox/2026-06-13-bc4d7eb206.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-13-bc4d7eb206.md::mentions::entity:learning-to-search-in-task-and-motion-planning-with-streams",
+      "from": "doc:topics/inbox/2026-06-13-bc4d7eb206.md",
+      "type": "mentions",
+      "to": "entity:learning-to-search-in-task-and-motion-planning-with-streams",
+      "source": "topics/inbox/2026-06-13-bc4d7eb206.md"
+    },
+    {
+      "id": "doc:topics/inbox/2026-06-13-bc4d7eb206.md::mentions::entity:pddlstream",
+      "from": "doc:topics/inbox/2026-06-13-bc4d7eb206.md",
+      "type": "mentions",
+      "to": "entity:pddlstream",
+      "source": "topics/inbox/2026-06-13-bc4d7eb206.md"
+    },
+    {
       "id": "doc:topics/notes/benchmark-and-tooling-map.md::cites::source:https-arxiv-org-abs-1802-08705",
       "from": "doc:topics/notes/benchmark-and-tooling-map.md",
       "type": "cites",
@@ -1939,6 +2062,13 @@
       "source": "topics/notes/initial-systems-landscape.md"
     },
     {
+      "id": "doc:topics/notes/initial-systems-landscape.md::cites::source:https-arxiv-org-abs-2111-13144",
+      "from": "doc:topics/notes/initial-systems-landscape.md",
+      "type": "cites",
+      "to": "source:https-arxiv-org-abs-2111-13144",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
       "id": "doc:topics/notes/initial-systems-landscape.md::cites::source:https-arxiv-org-abs-2210-14055",
       "from": "doc:topics/notes/initial-systems-landscape.md",
       "type": "cites",
@@ -2083,6 +2213,13 @@
       "from": "doc:topics/notes/initial-systems-landscape.md",
       "type": "mentions",
       "to": "entity:iris",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
+      "id": "doc:topics/notes/initial-systems-landscape.md::mentions::entity:learning-to-search-in-task-and-motion-planning-with-streams",
+      "from": "doc:topics/notes/initial-systems-landscape.md",
+      "type": "mentions",
+      "to": "entity:learning-to-search-in-task-and-motion-planning-with-streams",
       "source": "topics/notes/initial-systems-landscape.md"
     },
     {
@@ -2583,6 +2720,13 @@
       "source": "topics/notes/recent-robotics-interfaces-and-world-models.md"
     },
     {
+      "id": "entity:learning-to-search-in-task-and-motion-planning-with-streams::guides::entity:stream-expansion",
+      "from": "entity:learning-to-search-in-task-and-motion-planning-with-streams",
+      "type": "guides",
+      "to": "entity:stream-expansion",
+      "source": "topics/notes/initial-systems-landscape.md"
+    },
+    {
       "id": "entity:mana::structures::entity:dexterous-tool-use",
       "from": "entity:mana",
       "type": "structures",
@@ -2731,20 +2875,20 @@
     }
   ],
   "nodeTypeCounts": {
-    "document": 17,
-    "entity": 72,
-    "source": 28,
+    "document": 18,
+    "entity": 75,
+    "source": 29,
     "topic": 43
   },
   "entityTypeCounts": {
-    "Method": 16,
+    "Concept": 8,
+    "Method": 17,
     "Benchmark": 11,
     "ExecutionFramework": 1,
-    "Concept": 7,
     "GeometryTechnique": 3,
     "TaskFamily": 1,
     "Package": 6,
-    "Unspecified": 19,
+    "Unspecified": 20,
     "FailureMode": 3,
     "ResearchTheme": 3,
     "SystemDesign": 1,
