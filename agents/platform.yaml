@@ -1,0 +1,37 @@
+role: platform
+label: KRAIL Platform Manager
+purpose: Create and evolve KRAIL workflows, agent roles, prompts, skills, and project
+  operating conventions.
+runner:
+  default: codex_cli
+  approval_required: true
+  max_retries: 1
+permissions:
+  read:
+  - rail.yaml
+  - .krail/pack.yaml
+  - research_plan
+  - topics
+  - docs
+  - artifacts
+  - agents
+  - skills
+  - specs
+  write:
+  - research_plan
+  - docs/wiki
+  - artifacts/wiki
+  - agents
+  - skills
+  - specs
+  deny:
+  - .git
+  - .krail/vector.sqlite
+prompts:
+  system: agents/prompts/platform.md
+  checklist: agents/checklists/platform.md
+completion:
+  requires:
+  - summary
+  - changed_files
+  - blockers_or_gaps

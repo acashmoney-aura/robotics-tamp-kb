@@ -1,0 +1,37 @@
+role: doctor
+label: KRAIL Doctor Agent
+purpose: Audit and repair KRAIL project structure, workflow definitions, graph/vector
+  health, and agent scaffolding.
+runner:
+  default: codex_cli
+  approval_required: false
+  max_retries: 1
+permissions:
+  read:
+  - rail.yaml
+  - .krail/pack.yaml
+  - research_plan
+  - topics
+  - docs
+  - artifacts
+  - agents
+  - skills
+  - specs
+  write:
+  - research_plan
+  - docs/wiki
+  - artifacts/wiki
+  - agents
+  - skills
+  - specs
+  deny:
+  - .git
+  - .krail/vector.sqlite
+prompts:
+  system: agents/prompts/doctor.md
+  checklist: agents/checklists/doctor.md
+completion:
+  requires:
+  - summary
+  - changed_files
+  - blockers_or_gaps
